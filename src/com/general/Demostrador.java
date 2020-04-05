@@ -6,7 +6,6 @@ import mp.users.MiembroURJC;
 
 public class Demostrador {
 	private Sistema redditURJC;
-	private MiembroURJC userLogued;
 
 	public void main() {
 		// TODO - implement Demostrador.main
