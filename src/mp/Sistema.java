@@ -1,7 +1,11 @@
 package mp;
 
+import mp.exceptions.EmailIncorrecto;
+import mp.exceptions.UsuarioRegistrado;
 import mp.exceptions.UsuarioYaExistente;
+import mp.users.Alumno;
 import mp.users.MiembroURJC;
+import mp.users.Profesor;
 
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -9,6 +13,10 @@ import java.util.regex.Pattern;
 
 public class Sistema {
 	private HashMap<Integer, MiembroURJC> usuarios;
+
+	public Sistema() {
+		this.usuarios=new HashMap<>();
+	}
 
 	/**
 	 * 
@@ -22,29 +30,32 @@ public class Sistema {
 
 	/**
 	 * 
+	 * @param nombre
+	 * @param apellidos
 	 * @param nick
-	 * @param apellido
-	 * @param apell
 	 * @param contrasena
 	 * @param email
 	 */
-	public boolean registrarUsuario(String nick, String apellido, String  apell, String contrasena, String email) {
+	public boolean registrarUsuario(String nombre, String  apellidos, String nick, String contrasena, String email) throws UsuarioYaExistente, EmailIncorrecto, UsuarioRegistrado {
 		// TODO - implement Sistema.registro
 		int tipo = validarEmail(email);
-		//MiembroURJC
-		if (tipo==1){
-
-		}else if (tipo==2){
-
+		MiembroURJC nuevoUsuario;
+		if (tipo==0){
+			throw new EmailIncorrecto(email);
 		}else{
-			return false;
+			if (tipo==1){
+				nuevoUsuario = new Profesor(nombre,apellidos,nick,contrasena,email);
+			}else{
+				nuevoUsuario = new Alumno(nombre,apellidos,nick,contrasena,email);
+			}
+			this.registrarUsuario(nuevoUsuario);
+			throw new UsuarioRegistrado(nuevoUsuario);
 		}
-		throw new UnsupportedOperationException();
 	}
 
-	public boolean registrarUsuario(MiembroURJC nuevoUsuario) throws UsuarioYaExistente {
+	private boolean registrarUsuario(MiembroURJC nuevoUsuario) throws UsuarioYaExistente {
 		if (nuevoUsuario!=null) {
-			if (usuarios.containsValue(nuevoUsuario)){
+			if (!usuarios.containsValue(nuevoUsuario)){
 				this.usuarios.put(nuevoUsuario.getId(),nuevoUsuario);
 				return true;
 			}else{
@@ -70,7 +81,7 @@ public class Sistema {
 		if (mather.find() == true) {
 			String[] partes = email.split("@");
 			String dominio = partes[1];
-			if (partes[1]=="urjc.es"){
+			if (partes[1].equals("urjc.es")){
 				return 1;
 			}else{
 				return 2;
