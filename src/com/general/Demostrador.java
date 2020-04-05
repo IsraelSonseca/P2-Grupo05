@@ -77,6 +77,7 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+		//Checked that is all okey
 		int a=1+1;
 		//throw new UnsupportedOperationException();
 	}
