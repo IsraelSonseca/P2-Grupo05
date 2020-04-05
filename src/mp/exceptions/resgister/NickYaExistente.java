@@ -1,5 +1,6 @@
-package mp.exceptions;
+package mp.exceptions.resgister;
 
+import mp.exceptions.Result;
 import mp.users.MiembroURJC;
 
 public class NickYaExistente extends Result {

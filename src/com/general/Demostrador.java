@@ -62,6 +62,21 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+
+
+
+
+		//Cierre de sesión
+		try {//1 logoutCorrecto
+			redditURJC.logout();
+		}catch (Result result){
+			System.out.println(result.getMessage());
+		}
+		try {//2 logOutIncorrecto
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 		int a=1+1;
 		//throw new UnsupportedOperationException();
 	}

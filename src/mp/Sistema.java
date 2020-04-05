@@ -1,6 +1,15 @@
 package mp;
 
-import mp.exceptions.*;
+import mp.exceptions.logIn.IncorrectPassword;
+import mp.exceptions.logIn.LogedCorrect;
+import mp.exceptions.logIn.SesionYaIniciada;
+import mp.exceptions.logIn.UsuarioNoExistente;
+import mp.exceptions.logOut.CierreSesion;
+import mp.exceptions.logOut.SesionNoIniciada;
+import mp.exceptions.resgister.EmailIncorrecto;
+import mp.exceptions.resgister.EmailPreviamenteRegistrado;
+import mp.exceptions.resgister.NickYaExistente;
+import mp.exceptions.resgister.RegistroCorrecto;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
@@ -38,6 +47,18 @@ public class Sistema {
 		}else{
 			throw new UsuarioNoExistente(nick);
 		}
+	}
+
+	public boolean logout() throws CierreSesion, SesionNoIniciada {
+		// TODO - implement Sistema.login
+		if (sesionIniciada()){
+			MiembroURJC user= this.userLogued;
+			this.userLogued=null;
+			throw new CierreSesion(user);
+		} else{
+			throw new SesionNoIniciada();
+		}
+
 	}
 
 	private boolean sesionIniciada() {

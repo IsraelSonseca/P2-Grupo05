@@ -1,4 +1,6 @@
-package mp.exceptions;
+package mp.exceptions.resgister;
+
+import mp.exceptions.Result;
 
 public class EmailPreviamenteRegistrado extends Result {
     public EmailPreviamenteRegistrado(String email) {
