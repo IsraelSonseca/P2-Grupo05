@@ -77,7 +77,44 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
-		//Checked that is all okey
+
+
+
+
+		//CrearSubforo
+		try {//1 CrearSubfotoCorrectamente
+			redditURJC.login("agpardo","12345");
+		}catch (Result result){
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crarSubforo("Metodología de la Programación");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2 CrearSubForoYaCreado
+			redditURJC.crarSubforo("Metodología de la Programación");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//3 CrearSubforo Sin haber iniciado sesión
+			redditURJC.logout();
+		}catch (Result result){
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crarSubforo("ABC");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4 Crear subForo con un alumno
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4 Crear subForo con un alumno
+			redditURJC.crarSubforo("ABC");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+
+
+
 		int a=1+1;
 		//throw new UnsupportedOperationException();
 	}
