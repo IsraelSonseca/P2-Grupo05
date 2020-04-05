@@ -1,9 +1,6 @@
 package mp;
 
-import mp.exceptions.EmailIncorrecto;
-import mp.exceptions.EmailPreviamenteRegistrado;
-import mp.exceptions.RegistroCorrecto;
-import mp.exceptions.NickYaExistente;
+import mp.exceptions.*;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
@@ -13,7 +10,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Sistema {
-	private HashMap<Integer, MiembroURJC> usuarios;
+	private HashMap<String, MiembroURJC> usuarios;
+	private MiembroURJC userLogued;
 
 	public Sistema() {
 		this.usuarios=new HashMap<>();
@@ -24,9 +22,26 @@ public class Sistema {
 	 * @param nick
 	 * @param cont
 	 */
-	public boolean login(String nick, String cont) {
+	public boolean login(String nick, String cont) throws LogedCorrect, IncorrectPassword, UsuarioNoExistente, SesionYaIniciada {
 		// TODO - implement Sistema.login
-		throw new UnsupportedOperationException();
+		if (sesionIniciada()){
+			throw new SesionYaIniciada(this.userLogued);
+		}
+		if (usuarios.containsKey(nick)){
+			MiembroURJC user =usuarios.get(nick);
+			if (user.getContrasena().equals(cont)){
+				this.userLogued=user;
+				throw new LogedCorrect(user);
+			}else{
+				throw new IncorrectPassword(cont,nick);
+			}
+		}else{
+			throw new UsuarioNoExistente(nick);
+		}
+	}
+
+	private boolean sesionIniciada() {
+		return !(userLogued ==null);
 	}
 
 	/**
@@ -60,7 +75,7 @@ public class Sistema {
 	private boolean registrarUsuario(MiembroURJC nuevoUsuario) throws NickYaExistente, RegistroCorrecto {
 		if (nuevoUsuario!=null) {
 			if (!usuarios.containsValue(nuevoUsuario)){
-				this.usuarios.put(nuevoUsuario.getId(),nuevoUsuario);
+				this.usuarios.put(nuevoUsuario.getNick(),nuevoUsuario);
 				throw new RegistroCorrecto(nuevoUsuario);
 			}else{
 				throw new NickYaExistente(nuevoUsuario);
@@ -73,7 +88,7 @@ public class Sistema {
 	 * 1->Profesor 2->Alumno 0->Email invalido
 	 * @param email
 	 */
-	public int validarEmail(String email) {
+	private int validarEmail(String email) {
 		// TODO - implement Sistema.validarEmail
 		// Patrón para validar el email
 		Pattern pattern = Pattern

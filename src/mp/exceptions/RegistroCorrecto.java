@@ -6,6 +6,6 @@ import mp.users.Profesor;
 
 public class RegistroCorrecto extends Result {
     public RegistroCorrecto(MiembroURJC nuevoUsuario) {
-        super(nuevoUsuario.getClass()+" registrado correctamente.");
+        super(nuevoUsuario.getClass()+" "+nuevoUsuario.getNick()+" registrado correctamente. REGISTRO CORRECTO");
     }
 }

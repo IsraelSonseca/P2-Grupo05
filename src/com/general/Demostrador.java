@@ -1,7 +1,7 @@
 package com.general;
 
 import mp.Sistema;
-import mp.exceptions.Result;
+import mp.exceptions.*;
 import mp.users.MiembroURJC;
 
 public class Demostrador {
@@ -42,8 +42,26 @@ public class Demostrador {
 
 
 		//Inicios de sesión
-
-
+		try {//1 usuario no registrado
+			redditURJC.login("IsraelSonsec", "123");
+		}catch (Result result){
+			System.out.println(result.getMessage());
+		}
+		try {//2 contraseña incorrecta
+			redditURJC.login("IsraelSonseca","123");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		try {// 3 login correcto
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		try {// 4 sesion iniciada
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 		int a=1+1;
 		//throw new UnsupportedOperationException();
 	}
