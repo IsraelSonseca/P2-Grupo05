@@ -1,8 +1,6 @@
 package mp;
 
-import mp.exceptions.EmailIncorrecto;
-import mp.exceptions.UsuarioRegistrado;
-import mp.exceptions.UsuarioYaExistente;
+import mp.exceptions.*;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
@@ -12,7 +10,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Sistema {
-	private HashMap<Integer, MiembroURJC> usuarios;
+	private HashMap<String, MiembroURJC> usuarios;
+	private MiembroURJC userLogued;
 
 	public Sistema() {
 		this.usuarios=new HashMap<>();
@@ -23,43 +22,63 @@ public class Sistema {
 	 * @param nick
 	 * @param cont
 	 */
-	public boolean login(String nick, String cont) {
+	public boolean login(String nick, String cont) throws LogedCorrect, IncorrectPassword, UsuarioNoExistente, SesionYaIniciada {
 		// TODO - implement Sistema.login
-		throw new UnsupportedOperationException();
+		if (sesionIniciada()){
+			throw new SesionYaIniciada(this.userLogued);
+		}
+		if (usuarios.containsKey(nick)){
+			MiembroURJC user =usuarios.get(nick);
+			if (user.getContrasena().equals(cont)){
+				this.userLogued=user;
+				throw new LogedCorrect(user);
+			}else{
+				throw new IncorrectPassword(cont,nick);
+			}
+		}else{
+			throw new UsuarioNoExistente(nick);
+		}
+	}
+
+	private boolean sesionIniciada() {
+		return !(userLogued ==null);
 	}
 
 	/**
-	 * 
-	 * @param nombre
+	 *  @param nombre
 	 * @param apellidos
 	 * @param nick
 	 * @param contrasena
 	 * @param email
 	 */
-	public boolean registrarUsuario(String nombre, String  apellidos, String nick, String contrasena, String email) throws UsuarioYaExistente, EmailIncorrecto, UsuarioRegistrado {
+	public void registrarUsuario(String nombre, String  apellidos, String nick, String contrasena, String email) throws NickYaExistente, EmailIncorrecto, RegistroCorrecto, EmailPreviamenteRegistrado {
 		// TODO - implement Sistema.registro
 		int tipo = validarEmail(email);
 		MiembroURJC nuevoUsuario;
 		if (tipo==0){
 			throw new EmailIncorrecto(email);
 		}else{
+			for (MiembroURJC usuario : usuarios.values()) {
+				if (usuario.getEmail().equals(email)){
+					throw new EmailPreviamenteRegistrado(email);
+				}
+			}
 			if (tipo==1){
 				nuevoUsuario = new Profesor(nombre,apellidos,nick,contrasena,email);
 			}else{
 				nuevoUsuario = new Alumno(nombre,apellidos,nick,contrasena,email);
 			}
 			this.registrarUsuario(nuevoUsuario);
-			throw new UsuarioRegistrado(nuevoUsuario);
 		}
 	}
 
-	private boolean registrarUsuario(MiembroURJC nuevoUsuario) throws UsuarioYaExistente {
+	private boolean registrarUsuario(MiembroURJC nuevoUsuario) throws NickYaExistente, RegistroCorrecto {
 		if (nuevoUsuario!=null) {
 			if (!usuarios.containsValue(nuevoUsuario)){
-				this.usuarios.put(nuevoUsuario.getId(),nuevoUsuario);
-				return true;
+				this.usuarios.put(nuevoUsuario.getNick(),nuevoUsuario);
+				throw new RegistroCorrecto(nuevoUsuario);
 			}else{
-				throw new UsuarioYaExistente(nuevoUsuario);
+				throw new NickYaExistente(nuevoUsuario);
 			}
 		}
 		return false;
@@ -69,7 +88,7 @@ public class Sistema {
 	 * 1->Profesor 2->Alumno 0->Email invalido
 	 * @param email
 	 */
-	public int validarEmail(String email) {
+	private int validarEmail(String email) {
 		// TODO - implement Sistema.validarEmail
 		// Patrón para validar el email
 		Pattern pattern = Pattern

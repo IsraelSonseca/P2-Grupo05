@@ -145,11 +145,11 @@ public class MiembroURJC {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MiembroURJC that = (MiembroURJC) o;
-        return email.equals(that.email);
+        return nick.equals(that.nick);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email);
+        return Objects.hash(nick);
     }
 }
