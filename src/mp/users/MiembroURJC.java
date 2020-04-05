@@ -4,6 +4,8 @@ import mp.subforos.Comentario;
 import mp.subforos.Entrada;
 import mp.subforos.Texto;
 
+import java.util.Objects;
+
 public class MiembroURJC {
     private static int contador=0;
     private int id;
@@ -138,5 +140,16 @@ public class MiembroURJC {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MiembroURJC that = (MiembroURJC) o;
+        return email.equals(that.email);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(email);
+    }
 }
