@@ -1,5 +1,10 @@
 package mp;
 
+import mp.admin.Administrador;
+import mp.exceptions.crearEntrada.CrearEntradaSinForo;
+import mp.exceptions.crearEntrada.CrearEntradaSinPermiso;
+import mp.exceptions.crearEntrada.EntradaCreada;
+import mp.exceptions.crearEntrada.EntradaYaExistente;
 import mp.exceptions.subForo.*;
 import mp.exceptions.logIn.IncorrectPassword;
 import mp.exceptions.logIn.LogedCorrect;
@@ -11,6 +16,7 @@ import mp.exceptions.resgister.EmailIncorrecto;
 import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
+import mp.subforos.Entrada;
 import mp.subforos.SubForo;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
@@ -24,10 +30,12 @@ public class Sistema {
     private HashMap<String, MiembroURJC> usuarios;
 	private HashMap<Integer, SubForo> subForos;
     private MiembroURJC userLogued;
+    private Administrador admin;
 
     public Sistema() {
         this.usuarios = new HashMap<>();
         this.subForos = new HashMap<>();
+        this.admin= new Administrador();
     }
 
     /**
@@ -171,7 +179,29 @@ public class Sistema {
         }else{
             throw new VerSubForoSinPermiso();//no tiene permisos
         }
+    }
 
+    public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
+        if (sesionIniciada()){
+            if(existeForo(foro)){
+                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto);
+                this.admin.anadirEntAValidar(nuevaEntrada);
+                this.addEntrada(nuevaEntrada,foro);
+            } else {
+                throw new CrearEntradaSinForo(foro);
+            }
+        }else{
+            throw new CrearEntradaSinPermiso();//no tiene permisos
+        }
+    }
+
+    private void addEntrada(Entrada nuevaEntrada, int subForo) throws EntradaCreada, EntradaYaExistente {
+        this.subForos.get(subForo).addEntrada(nuevaEntrada);
+
+    }
+
+    private boolean existeForo(int foro) {
+        return subForos.containsKey(foro);
     }
 
 }

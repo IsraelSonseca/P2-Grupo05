@@ -6,7 +6,6 @@ import mp.users.MiembroURJC;
 
 public class Demostrador {
 	private Sistema redditURJC;
-	private MiembroURJC userLogued;
 
 	public void main() {
 		// TODO - implement Demostrador.main
@@ -148,6 +147,25 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 
+
+		//CrearEntradas con titulo y texto.---- CrearEntrada,CrearEntradaSinForo, CrearEntradaSinPermiso.
+		try {//1 Crear Una entrada Correctamente
+			redditURJC.crearEntrada("Prac1","La fecha limite es el 20 de abril.",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2 Crear Una entrada en un foro que no existe
+			redditURJC.crearEntrada("Prac1","La fecha limite es el 20 de abril.",99);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3 Crear Una entrada sin iniciarSesion
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Prac1","La fecha limite es el 20 de abril.",99);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 
 		int a=1+1;
 		//throw new UnsupportedOperationException();
