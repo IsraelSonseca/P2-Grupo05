@@ -1,8 +1,6 @@
 package mp;
 
-import mp.exceptions.subForo.CrearSubforoSinPermiso;
-import mp.exceptions.subForo.SubForoYaExistente;
-import mp.exceptions.subForo.SubforoCreado;
+import mp.exceptions.subForo.*;
 import mp.exceptions.logIn.IncorrectPassword;
 import mp.exceptions.logIn.LogedCorrect;
 import mp.exceptions.logIn.SesionYaIniciada;
@@ -104,6 +102,7 @@ public class Sistema {
                 this.usuarios.put(nuevoUsuario.getNick(), nuevoUsuario);
                 throw new RegistroCorrecto(nuevoUsuario);
             } else {
+                nuevoUsuario.eliminar();
                 throw new NickYaExistente(nuevoUsuario);
             }
         }
@@ -137,11 +136,11 @@ public class Sistema {
         }
     }
 
-    public void crarSubforo(String nombre) throws SesionNoIniciada, SubforoCreado, SubForoYaExistente, CrearSubforoSinPermiso {
+    public void crearSubforo(String nombre) throws SesionNoIniciada, SubforoCreado, SubForoYaExistente, CrearSubforoSinPermiso {
     	if (sesionIniciada()){
     		if (this.userLogued instanceof Profesor){
     			SubForo nuevoSubforo= ((Profesor) this.userLogued).crearSubforo(nombre);
-    			this.crearSubforo(nuevoSubforo,this.userLogued);
+    			this.addSubforo(nuevoSubforo,this.userLogued);
 			}else{
     			throw new CrearSubforoSinPermiso(this.userLogued);
 			}
@@ -150,15 +149,29 @@ public class Sistema {
 		}
 	}
 
-	private void crearSubforo(SubForo nuevoForo,MiembroURJC user) throws SubforoCreado, SubForoYaExistente {
+	private void addSubforo(SubForo nuevoForo,MiembroURJC user) throws SubforoCreado, SubForoYaExistente {
 		if (nuevoForo != null) {
 			if (!subForos.containsValue(nuevoForo)) {
 				this.subForos.put(nuevoForo.getId(), nuevoForo);
 				throw new SubforoCreado(nuevoForo,user);
 			} else {
+			    nuevoForo.eliminar();
 				throw new SubForoYaExistente(nuevoForo,user);
 			}
 		}
 	}
+
+	public void listSubforos() throws VerSubForoSinPermiso, VerSubforo {
+        if (sesionIniciada()){
+            String strForos="";
+            for (SubForo subForo : subForos.values()) {
+                strForos= strForos+this.userLogued.viewSubForo(subForo)+"\n";
+            }
+            throw new VerSubforo(this.userLogued,strForos);
+        }else{
+            throw new VerSubForoSinPermiso();//no tiene permisos
+        }
+
+    }
 
 }

@@ -2,6 +2,7 @@ package mp.users;
 
 import mp.subforos.Comentario;
 import mp.subforos.Entrada;
+import mp.subforos.SubForo;
 import mp.subforos.Texto;
 
 import java.util.Objects;
@@ -68,6 +69,10 @@ public class MiembroURJC {
         this.nick = nick;
         this.contrasena = contrasena;
         this.email = email;
+    }
+
+    public void eliminar(){
+        contador--;
     }
 
     public void verNotificaciones() {
@@ -138,6 +143,10 @@ public class MiembroURJC {
     public Subscripcion subscribirse(int idSubforo) {
         // TODO - implement MiembroURJC.subscribirse
         throw new UnsupportedOperationException();
+    }
+
+    public String viewSubForo(SubForo subForo){
+        return subForo.toString();
     }
 
     @Override

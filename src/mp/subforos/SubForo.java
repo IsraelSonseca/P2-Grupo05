@@ -5,8 +5,9 @@ import java.util.Objects;
 public class SubForo {
 
 	private static int contador=0;
-	private String nombre;
 	private int id;
+	private String nombre;
+
 
 	public String getNombre() {
 		return nombre;
@@ -30,6 +31,10 @@ public class SubForo {
 		this.id = contador;
 	}
 
+	public void eliminar(){
+		contador--;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -41,5 +46,10 @@ public class SubForo {
 	@Override
 	public int hashCode() {
 		return Objects.hash(nombre);
+	}
+
+	@Override
+	public String toString() {
+		return "SubForo " + id + " => " + nombre;
 	}
 }

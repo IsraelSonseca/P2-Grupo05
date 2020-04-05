@@ -52,7 +52,7 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
-		try {// 3 login correcto
+		try {// 3 login correcto alumno
 			redditURJC.login("IsraelSonseca","12345");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
@@ -60,6 +60,14 @@ public class Demostrador {
 		try {// 4 sesion iniciada
 			redditURJC.login("IsraelSonseca","12345");
 		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try{//5Inicio de sesion como profesor
+			redditURJC.logout();
+		}catch (Result result){
+			System.out.println(result.getMessage());
+		}try{
+			redditURJC.login("agpardo","12345");
+		}catch (Result result){
 			System.out.println(result.getMessage());
 		}
 
@@ -87,11 +95,11 @@ public class Demostrador {
 		}catch (Result result){
 			System.out.println(result.getMessage());
 		} try {
-			redditURJC.crarSubforo("Metodología de la Programación");
+			redditURJC.crearSubforo("Metodología de la Programación");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		} try {//2 CrearSubForoYaCreado
-			redditURJC.crarSubforo("Metodología de la Programación");
+			redditURJC.crearSubforo("Metodología de la Programación");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}try {//3 CrearSubforo Sin haber iniciado sesión
@@ -99,7 +107,7 @@ public class Demostrador {
 		}catch (Result result){
 			System.out.println(result.getMessage());
 		} try {
-			redditURJC.crarSubforo("ABC");
+			redditURJC.crearSubforo("ABC");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		} try {//4 Crear subForo con un alumno
@@ -107,12 +115,38 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		} try {//4 Crear subForo con un alumno
-			redditURJC.crarSubforo("ABC");
+			redditURJC.crearSubforo("ABC");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
 
 
+		//Ver SUBFOROS
+		try {//1 Ver Subforos Correctamente
+			redditURJC.listSubforos();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2 Ver Subforos sin iniciar sesion ERROR
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.listSubforos();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3 Ver Subforos como se actualiza
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearSubforo("ABC");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.listSubforos();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 
 
 		int a=1+1;
