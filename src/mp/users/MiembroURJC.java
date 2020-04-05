@@ -84,11 +84,10 @@ public class MiembroURJC {
      * Es el compartir entrada general que solo permite a�adir texto plano
      * @param txt
      * @param titulo
-     * @param idSubforo
      */
-    public Entrada crearEntrada(Texto txt, String titulo, int idSubforo) {
+    public Entrada crearEntrada(String titulo, String txt) {
         // TODO - implement MiembroURJC.crearEntrada
-        throw new UnsupportedOperationException();
+        return new Entrada(titulo,txt);
     }
 
     /**

@@ -1,5 +1,9 @@
 package mp.subforos;
 
+import mp.exceptions.crearEntrada.EntradaCreada;
+import mp.exceptions.crearEntrada.EntradaYaExistente;
+
+import java.util.HashMap;
 import java.util.Objects;
 
 public class SubForo {
@@ -7,6 +11,7 @@ public class SubForo {
 	private static int contador=0;
 	private int id;
 	private String nombre;
+	private HashMap<Integer, Entrada> entradas;
 
 
 	public String getNombre() {
@@ -29,10 +34,7 @@ public class SubForo {
 		contador++;
 		this.nombre = nombre;
 		this.id = contador;
-	}
-
-	public void eliminar(){
-		contador--;
+		this.entradas = new HashMap<>();
 	}
 
 	@Override
@@ -46,6 +48,20 @@ public class SubForo {
 	@Override
 	public int hashCode() {
 		return Objects.hash(nombre);
+	}
+
+	public void addEntrada(Entrada entrada) throws EntradaYaExistente, EntradaCreada {
+		if (!entradas.containsValue(entrada)) {
+			this.entradas.put(entrada.getId(), entrada);
+			throw new EntradaCreada(entrada);
+		} else {
+			entrada.eliminar();
+			throw new EntradaYaExistente(entrada);
+		}
+	}
+
+	public void eliminar() {
+		contador--;
 	}
 
 	@Override

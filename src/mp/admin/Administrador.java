@@ -1,8 +1,17 @@
 package mp.admin;
 
+import mp.subforos.Entrada;
 import mp.users.MiembroURJC;
 
+import java.util.LinkedList;
+
 public class Administrador {
+
+	private LinkedList entradasAValidar;
+
+	public Administrador() {
+		this.entradasAValidar = new LinkedList();
+	}
 
 	/**
 	 * 
@@ -20,6 +29,10 @@ public class Administrador {
 	public void penalizar(MiembroURJC parameter) {
 		// TODO - implement Administrador.penalizar
 		throw new UnsupportedOperationException();
+	}
+
+	public void anadirEntAValidar(Entrada entrada){
+		entradasAValidar.addFirst(entrada);
 	}
 
 }
