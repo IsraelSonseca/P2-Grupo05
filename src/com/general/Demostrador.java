@@ -167,6 +167,26 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 
+
+		//Crear varias entradas para probar la validación de estas
+		try {
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Prac2","Esta practica consiste en la implementacion del enunciado 1",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Covid-19","Se ha producido una cancelacion de las clases presenciales para este curso",2);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+		//Inicio de sesion admin incorrecto, inicio de sesion correcto admin, iniciar admin aun estando ya iniciado
+		//cierre sesion ok, cierre de sesion sin tener iniciada
+
+
 		int a=1+1;
 		//throw new UnsupportedOperationException();
 	}

@@ -5,11 +5,10 @@ import mp.exceptions.crearEntrada.CrearEntradaSinForo;
 import mp.exceptions.crearEntrada.CrearEntradaSinPermiso;
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
+import mp.exceptions.logIn.*;
+import mp.exceptions.logOut.AdminCierreSesion;
+import mp.exceptions.logOut.AdminSesionNoIniciada;
 import mp.exceptions.subForo.*;
-import mp.exceptions.logIn.IncorrectPassword;
-import mp.exceptions.logIn.LogedCorrect;
-import mp.exceptions.logIn.SesionYaIniciada;
-import mp.exceptions.logIn.UsuarioNoExistente;
 import mp.exceptions.logOut.CierreSesion;
 import mp.exceptions.logOut.SesionNoIniciada;
 import mp.exceptions.resgister.EmailIncorrecto;
@@ -39,6 +38,25 @@ public class Sistema {
     }
 
     /**
+     *
+     * @param cont
+     */
+    public void loginAdmin(String cont) throws AdminLogedCorrect, AdminIncorrectPassword, AdminWasLoged {
+        // TODO - implement Sistema.login
+        this.admin.logIn(cont);
+    }
+
+    public void logoutAdmin() throws AdminCierreSesion, AdminSesionNoIniciada {
+        // TODO - implement Sistema.login
+        this.admin.logOut();
+    }
+
+
+    private boolean adminLogued() {
+        return (this.admin.isLogued());
+    }
+
+    /**
      * @param nick
      * @param cont
      */
@@ -49,7 +67,7 @@ public class Sistema {
         }
         if (usuarios.containsKey(nick)) {
             MiembroURJC user = usuarios.get(nick);
-            if (user.getContrasena().equals(cont)) {
+            if (user.accepContrasena(cont)) {
                 this.userLogued = user;
                 throw new LogedCorrect(user);
             } else {
@@ -203,5 +221,7 @@ public class Sistema {
     private boolean existeForo(int foro) {
         return subForos.containsKey(foro);
     }
+
+
 
 }

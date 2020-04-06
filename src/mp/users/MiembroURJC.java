@@ -45,11 +45,11 @@ public class MiembroURJC {
         this.nick = nick;
     }
 
-    public String getContrasena() {
+    private String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(String contrasena) {
+    private void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
@@ -159,5 +159,9 @@ public class MiembroURJC {
     @Override
     public int hashCode() {
         return Objects.hash(nick);
+    }
+
+    public boolean accepContrasena(String cont) {
+        return this.getContrasena().equals(cont);
     }
 }
