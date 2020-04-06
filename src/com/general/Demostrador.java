@@ -185,7 +185,27 @@ public class Demostrador {
 
 		//Inicio de sesion admin incorrecto, inicio de sesion correcto admin, iniciar admin aun estando ya iniciado
 		//cierre sesion ok, cierre de sesion sin tener iniciada
-
+		try {//1Inicio de sesion admin incorrecto
+			redditURJC.loginAdmin("111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//2 inicio de sesion correcto admin
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3 iniciar admin aun estando ya iniciado
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4 logout ok
+			redditURJC.logoutAdmin();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//5 logout sin log in
+			redditURJC.logoutAdmin();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 
 		int a=1+1;
 		//throw new UnsupportedOperationException();
