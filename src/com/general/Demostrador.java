@@ -167,6 +167,95 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 
+
+		//Crear varias entradas para probar la validación de estas
+		try {
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Prac2","Esta practica consiste en la implementacion del enunciado 1",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Covid-19","Se ha producido una cancelacion de las clases presenciales para este curso",2);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+		//Inicio de sesion admin incorrecto, inicio de sesion correcto admin, iniciar admin aun estando ya iniciado
+		//cierre sesion ok, cierre de sesion sin tener iniciada
+		try {//1Inicio de sesion admin incorrecto
+			redditURJC.loginAdmin("111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//2 inicio de sesion correcto admin
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3 iniciar admin aun estando ya iniciado
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4 logout ok
+			redditURJC.logoutAdmin();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//5 logout sin log in
+			redditURJC.logoutAdmin();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+		//VER ENTRADAS PENDIENTES SIN ADMIN---- VER ENTRADAS PENDIENTES CON ADMIN
+		try {//1 VER ENTRADAS PENDIENTES SIN ADMIN
+			redditURJC.verEntradasPendientes();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2 VER ENTRADAS PENDIENTES CON ADMIN
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.verEntradasPendientes();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+
+
+
+		//Vamos a proceder con la validación de Entradas EntradaValidada, EntradaValidadaSinPermiso, EntradasValidadas
+		try {//1EntradaValidada correctamente
+			redditURJC.validarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//2EntradaValidadaSinPermiso
+			redditURJC.logoutAdmin();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.validarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3Validar todas y seguir validando
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.validarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.validarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.validarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
 		int a=1+1;
 		//throw new UnsupportedOperationException();
 	}

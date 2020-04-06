@@ -67,7 +67,7 @@ public class Entrada extends ObjetoPuntuable {
 
 	public void validar() {
 		// TODO - implement Entrada.validar
-		throw new UnsupportedOperationException();
+		this.setEstado(EstadoEntrada.validada);
 	}
 
 	public void eliminar() {
@@ -85,5 +85,10 @@ public class Entrada extends ObjetoPuntuable {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	@Override
+	public String toString() {
+		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
 }
