@@ -1,6 +1,7 @@
 package mp;
 
 import mp.admin.Administrador;
+import mp.exceptions.admin.*;
 import mp.exceptions.crearEntrada.CrearEntradaSinForo;
 import mp.exceptions.crearEntrada.CrearEntradaSinPermiso;
 import mp.exceptions.crearEntrada.EntradaCreada;
@@ -197,6 +198,14 @@ public class Sistema {
         }else{
             throw new VerSubForoSinPermiso();//no tiene permisos
         }
+    }
+
+    public void verEntradasPendientes() throws VerEntradasPendientes, VerEntradasPendientesSinPermiso {
+        this.admin.verEntradasPendientes();
+    }
+
+    public void validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasValidadas {
+        this.admin.validarEntrada();
     }
 
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {

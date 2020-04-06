@@ -1,5 +1,6 @@
 package mp.admin;
 
+import mp.exceptions.admin.*;
 import mp.exceptions.logIn.*;
 import mp.exceptions.logOut.AdminCierreSesion;
 import mp.exceptions.logOut.AdminSesionNoIniciada;
@@ -12,7 +13,7 @@ public class Administrador {
 
 	final private String CONTRASENA="11111";
 	private String cont;
-	private LinkedList entradasAValidar;
+	private LinkedList<Entrada> entradasAValidar;
 	private boolean logued;
 
 	public Administrador() {
@@ -34,12 +35,25 @@ public class Administrador {
 	}
 
 	/**
-	 * 
-	 * @param idEntrada
+	 *
 	 */
-	public boolean validarEntrada(int idEntrada) {
+	public boolean validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasValidadas {
 		// TODO - implement Administrador.validarEntrada
-		throw new UnsupportedOperationException();
+		if (this.isLogued()){
+			if (existsEntradasPendientes()) {
+				Entrada entrada = entradasAValidar.removeLast();
+				entrada.validar();
+				throw new EntradaValidada(entrada);
+			}else{
+				throw new EntradasValidadas();
+			}
+		}else{
+			throw new EntradaValidadaSinPermiso();//no tiene permisos
+		}
+	}
+
+	private boolean existsEntradasPendientes() {
+		return (entradasAValidar.size()>0);
 	}
 
 	/**
@@ -60,7 +74,7 @@ public class Administrador {
 	}
 
 	public void logIn(String cont) throws AdminLogedCorrect, AdminIncorrectPassword, AdminWasLoged {
-		if (this.logued) {
+		if (this.isLogued()) {
 			throw new AdminWasLoged();
 		}else {
 			if (this.accepContrasena(cont)) {
@@ -77,12 +91,28 @@ public class Administrador {
 	}
 
 	public void logOut() throws AdminCierreSesion, AdminSesionNoIniciada {
-		if (this.logued) {
+		if (this.isLogued()) {
 			this.setLogued(false);
 			throw new AdminCierreSesion();
 		} else {
 			throw new AdminSesionNoIniciada();
 		}
 
+	}
+
+	public void verEntradasPendientes() throws VerEntradasPendientes, VerEntradasPendientesSinPermiso {
+		if (this.isLogued()){
+			String strEntradas="";
+			for (Entrada entrada : entradasAValidar) {
+				strEntradas= strEntradas+this.viewEntrada(entrada)+"\n";
+			}
+			throw new VerEntradasPendientes(strEntradas);
+		}else{
+			throw new VerEntradasPendientesSinPermiso();//no tiene permisos
+		}
+	}
+
+	private String viewEntrada(Entrada entrada) {
+		return entrada.toString();
 	}
 }
