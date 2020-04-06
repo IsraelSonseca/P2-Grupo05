@@ -2,6 +2,7 @@ package mp.users;
 
 import mp.subforos.Ejercicio;
 import mp.subforos.Encuesta;
+import mp.subforos.SubForo;
 import mp.subforos.Texto;
 
 public class Profesor extends MiembroURJC{
@@ -13,10 +14,11 @@ public class Profesor extends MiembroURJC{
     /**
      *
      * @param nombre
+     * @return
      */
-    public void crearSubforo(String nombre) {
+    public SubForo crearSubforo(String nombre) {
         // TODO - implement Profesores.crearSubforo
-        throw new UnsupportedOperationException();
+        return new SubForo(nombre);
     }
 
     /**

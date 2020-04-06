@@ -2,6 +2,7 @@ package mp.users;
 
 import mp.subforos.Comentario;
 import mp.subforos.Entrada;
+import mp.subforos.SubForo;
 import mp.subforos.Texto;
 
 import java.util.Objects;
@@ -44,11 +45,11 @@ public class MiembroURJC {
         this.nick = nick;
     }
 
-    public String getContrasena() {
+    private String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(String contrasena) {
+    private void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
@@ -70,6 +71,10 @@ public class MiembroURJC {
         this.email = email;
     }
 
+    public void eliminar(){
+        contador--;
+    }
+
     public void verNotificaciones() {
         // TODO - implement MiembroURJC.verNotificaciones
         throw new UnsupportedOperationException();
@@ -79,11 +84,10 @@ public class MiembroURJC {
      * Es el compartir entrada general que solo permite a�adir texto plano
      * @param txt
      * @param titulo
-     * @param idSubforo
      */
-    public Entrada crearEntrada(Texto txt, String titulo, int idSubforo) {
+    public Entrada crearEntrada(String titulo, String txt) {
         // TODO - implement MiembroURJC.crearEntrada
-        throw new UnsupportedOperationException();
+        return new Entrada(titulo,txt);
     }
 
     /**
@@ -140,6 +144,10 @@ public class MiembroURJC {
         throw new UnsupportedOperationException();
     }
 
+    public String viewSubForo(SubForo subForo){
+        return subForo.toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -151,5 +159,9 @@ public class MiembroURJC {
     @Override
     public int hashCode() {
         return Objects.hash(nick);
+    }
+
+    public boolean accepContrasena(String cont) {
+        return this.getContrasena().equals(cont);
     }
 }
