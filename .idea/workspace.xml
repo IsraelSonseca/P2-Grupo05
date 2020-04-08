@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="" />
+    <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazadaSinPermiso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/admin/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/admin/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradasValidadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradasRevisadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,26 +27,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a7N36nxjYFYV60qqVeVXOtLQz3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mp" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="mp.exceptions.admin" />
-      <recent name="mp.exceptions" />
-      <recent name="mp.exceptions.logOut" />
-      <recent name="mp.exceptions.logIn" />
-      <recent name="mp.exceptions.crearEntrada" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="mp.exceptions" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mp.exceptions" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="mp.exceptions.admin" />
+      <recent name="mp.exceptions" />
+      <recent name="mp.exceptions.logOut" />
+      <recent name="mp.exceptions.logIn" />
+      <recent name="mp.exceptions.crearEntrada" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -132,17 +141,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="-P2-Grupo05" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <module name="-P2-Grupo05" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,7 +210,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
-          <line>258</line>
+          <line>309</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -256,6 +256,57 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 
+		//Vamos a proceder a rechazar entradas EntradaRechazada, EntradasRevisadas, EntradaRechazadaSinPermiso
+		//para eso primero vamos a crear 2 entradas
+		//Crear varias entradas para probar la validación de estas
+		try {
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Prac2COPIA","Esta practica podemos hacerla toda la clase juntos y hacer trampas",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.crearEntrada("Covid-19 quedada","Vamos a la uni sin que nos pillen. quedada",2);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		//Vamos a proceder con el rechazo de EntradaRechazada, EntradasRevisadas, EntradaRechazadaSinPermiso
+		try {//1EntradaRechazada correctamente
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.rechazarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//2EntradaRechazadaSinPermiso
+			redditURJC.logoutAdmin();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.rechazarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3EntradasRevisadas
+			redditURJC.loginAdmin("11111");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.rechazarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.rechazarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
 		int a=11+1;
 		//throw new UnsupportedOperationException();
 	}

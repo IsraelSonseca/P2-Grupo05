@@ -204,8 +204,12 @@ public class Sistema {
         this.admin.verEntradasPendientes();
     }
 
-    public void validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasValidadas {
+    public void validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasRevisadas {
         this.admin.validarEntrada();
+    }
+
+    public void rechazarEntrada() throws EntradaRechazada, EntradasRevisadas, EntradaRechazadaSinPermiso {
+        this.admin.rechazarEntrada();
     }
 
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {

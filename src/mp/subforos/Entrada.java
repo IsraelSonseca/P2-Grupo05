@@ -70,6 +70,11 @@ public class Entrada extends ObjetoPuntuable {
 		this.setEstado(EstadoEntrada.validada);
 	}
 
+	public void rechazar() {
+		// TODO - implement Entrada.validar
+		this.setEstado(EstadoEntrada.rechazada);
+	}
+
 	public void eliminar() {
 		contador--;
 	}
@@ -91,4 +96,6 @@ public class Entrada extends ObjetoPuntuable {
 	public String toString() {
 		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
+
+
 }
