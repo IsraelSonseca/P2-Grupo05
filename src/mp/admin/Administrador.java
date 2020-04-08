@@ -7,6 +7,7 @@ import mp.exceptions.logOut.AdminSesionNoIniciada;
 import mp.subforos.Entrada;
 import mp.users.MiembroURJC;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Administrador {
@@ -37,7 +38,7 @@ public class Administrador {
 	/**
 	 *
 	 */
-	public boolean validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasValidadas {
+	public boolean validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasRevisadas {
 		// TODO - implement Administrador.validarEntrada
 		if (this.isLogued()){
 			if (existsEntradasPendientes()) {
@@ -45,10 +46,30 @@ public class Administrador {
 				entrada.validar();
 				throw new EntradaValidada(entrada);
 			}else{
-				throw new EntradasValidadas();
+				throw new EntradasRevisadas();
 			}
 		}else{
 			throw new EntradaValidadaSinPermiso();//no tiene permisos
+		}
+	}
+
+	/**
+	 *
+	 */
+	public void rechazarEntrada(HashMap<String, MiembroURJC> usuarios) throws EntradasRevisadas, EntradaRechazada, EntradaRechazadaSinPermiso {
+		// TODO - implement Administrador.validarEntrada
+		if (this.isLogued()){
+			if (existsEntradasPendientes()) {
+				Entrada entrada = entradasAValidar.removeLast();
+				entrada.rechazar();
+				MiembroURJC creador=usuarios.get(entrada.getCreador());
+				creador.penalizar();
+				throw new EntradaRechazada(entrada,creador);
+			}else{
+				throw new EntradasRevisadas();
+			}
+		}else{
+			throw new EntradaRechazadaSinPermiso();//no tiene permisos
 		}
 	}
 
@@ -115,4 +136,5 @@ public class Administrador {
 	private String viewEntrada(Entrada entrada) {
 		return entrada.toString();
 	}
+
 }
