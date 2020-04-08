@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/logIn/UsuarioPenalizado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/VerEntradas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Entrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Entrada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/admin/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/admin/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/penalizaciones/Penalizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/penalizaciones/Penalizacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +50,11 @@
       <recent name="mp.exceptions" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="mp.exceptions.crearEntrada" />
       <recent name="mp.exceptions.logIn" />
       <recent name="mp.exceptions.admin" />
       <recent name="mp.exceptions" />
       <recent name="mp.exceptions.logOut" />
-      <recent name="mp.exceptions.crearEntrada" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -142,6 +148,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="-P2-Grupo05" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <module name="-P2-Grupo05" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -211,7 +228,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
-          <line>321</line>
+          <line>329</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -231,8 +248,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
-          <line>284</line>
-          <option name="timeStamp" value="16" />
+          <line>322</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
+          <line>323</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

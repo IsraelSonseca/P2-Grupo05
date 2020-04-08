@@ -12,6 +12,7 @@ public class Entrada extends ObjetoPuntuable {
 	private String creador;
 
 	public Entrada(String titulo, String texto,String creadorNick) {
+		super(0);
 		contador++;
 		this.id=contador;
 		this.titulo = titulo;
@@ -106,6 +107,5 @@ public class Entrada extends ObjetoPuntuable {
 	public String toString() {
 		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
-
 
 }

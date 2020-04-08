@@ -319,6 +319,14 @@ public class Demostrador {
 		}
 
 
+		//VERLAS ENTRADAS CON MAYOR VALORACION
+		try {
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+
 		int a=11+1;
 		//throw new UnsupportedOperationException();
 	}
