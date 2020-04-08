@@ -61,7 +61,7 @@ public class Sistema {
      * @param nick
      * @param cont
      */
-    public boolean login(String nick, String cont) throws LogedCorrect, IncorrectPassword, UsuarioNoExistente, SesionYaIniciada {
+    public boolean login(String nick, String cont) throws LogedCorrect, IncorrectPassword, UsuarioNoExistente, SesionYaIniciada, UsuarioPenalizado {
         // TODO - implement Sistema.login
         if (sesionIniciada()) {
             throw new SesionYaIniciada(this.userLogued);
@@ -69,8 +69,12 @@ public class Sistema {
         if (usuarios.containsKey(nick)) {
             MiembroURJC user = usuarios.get(nick);
             if (user.accepContrasena(cont)) {
-                this.userLogued = user;
-                throw new LogedCorrect(user);
+                if (user.estaPenalizado()){
+                    throw new UsuarioPenalizado(user);
+                } else {
+                    this.userLogued = user;
+                    throw new LogedCorrect(user);
+                }
             } else {
                 throw new IncorrectPassword(cont, nick);
             }

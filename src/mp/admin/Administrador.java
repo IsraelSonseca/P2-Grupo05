@@ -64,7 +64,7 @@ public class Administrador {
 				entrada.rechazar();
 				MiembroURJC creador=usuarios.get(entrada.getCreador());
 				creador.penalizar();
-				throw new EntradaRechazada(entrada);
+				throw new EntradaRechazada(entrada,creador);
 			}else{
 				throw new EntradasRevisadas();
 			}

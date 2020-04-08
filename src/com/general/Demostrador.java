@@ -275,6 +275,10 @@ public class Demostrador {
 			redditURJC.crearEntrada("Covid-19 quedada","Vamos a la uni sin que nos pillen. quedada",2);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
+		} try {
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
 		}
 		//Vamos a proceder con el rechazo de EntradaRechazada, EntradasRevisadas, EntradaRechazadaSinPermiso
 		try {//1EntradaRechazada correctamente
@@ -306,6 +310,14 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+
+		//MOSTRAR QUENO SE PUEDE INICIAR SESION CON EL USUARIO QUE HA SIDO PENALIZADO
+		try {
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
 
 		int a=11+1;
 		//throw new UnsupportedOperationException();

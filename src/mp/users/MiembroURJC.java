@@ -63,6 +63,14 @@ public class MiembroURJC {
         this.email = email;
     }
 
+    public Penalizacion getPenalizacion() {
+        return penalizacion;
+    }
+
+    public void setPenalizacion(Penalizacion penalizacion) {
+        this.penalizacion = penalizacion;
+    }
+
     public MiembroURJC(String nombre, String apellidos, String nick, String contrasena, String email) {
         contador++;
         this.id=contador;
@@ -169,6 +177,14 @@ public class MiembroURJC {
 
     public void penalizar(){
         this.penalizacion=new Penalizacion();
+    }
+
+    public boolean estaPenalizado(){
+        if (this.penalizacion == null){
+            return false;
+        } else {
+            return this.penalizacion.siguePenalizando();
+        }
     }
 
 }

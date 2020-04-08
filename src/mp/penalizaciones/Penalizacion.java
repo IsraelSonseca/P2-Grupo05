@@ -29,4 +29,9 @@ public class Penalizacion {
 	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
+
+	public boolean siguePenalizando(){
+		Date presente = new Date();
+		return this.fechaFin.after(presente);
+	}
 }
