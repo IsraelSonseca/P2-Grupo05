@@ -2,10 +2,7 @@ package mp;
 
 import mp.admin.Administrador;
 import mp.exceptions.admin.*;
-import mp.exceptions.crearEntrada.CrearEntradaSinForo;
-import mp.exceptions.crearEntrada.CrearEntradaSinPermiso;
-import mp.exceptions.crearEntrada.EntradaCreada;
-import mp.exceptions.crearEntrada.EntradaYaExistente;
+import mp.exceptions.crearEntrada.*;
 import mp.exceptions.logIn.*;
 import mp.exceptions.logOut.AdminCierreSesion;
 import mp.exceptions.logOut.AdminSesionNoIniciada;
@@ -17,11 +14,15 @@ import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
 import mp.subforos.Entrada;
+import mp.subforos.EstadoEntrada;
 import mp.subforos.SubForo;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -61,7 +62,7 @@ public class Sistema {
      * @param nick
      * @param cont
      */
-    public boolean login(String nick, String cont) throws LogedCorrect, IncorrectPassword, UsuarioNoExistente, SesionYaIniciada {
+    public boolean login(String nick, String cont) throws LogedCorrect, IncorrectPassword, UsuarioNoExistente, SesionYaIniciada, UsuarioPenalizado {
         // TODO - implement Sistema.login
         if (sesionIniciada()) {
             throw new SesionYaIniciada(this.userLogued);
@@ -69,8 +70,12 @@ public class Sistema {
         if (usuarios.containsKey(nick)) {
             MiembroURJC user = usuarios.get(nick);
             if (user.accepContrasena(cont)) {
-                this.userLogued = user;
-                throw new LogedCorrect(user);
+                if (user.estaPenalizado()){
+                    throw new UsuarioPenalizado(user);
+                } else {
+                    this.userLogued = user;
+                    throw new LogedCorrect(user);
+                }
             } else {
                 throw new IncorrectPassword(cont, nick);
             }
@@ -200,12 +205,33 @@ public class Sistema {
         }
     }
 
+    public void verEntradasMayorValoración() throws VerEntradas {
+        ArrayList<Entrada> entradas = new ArrayList<>();
+        for (SubForo subForo : subForos.values()) {
+            for (Entrada entrada : subForo.getEntradas().values()) {
+                if (entrada.getEstado()== EstadoEntrada.validada){
+                    entradas.add(entrada);
+                }
+            }
+        }
+        Collections.sort(entradas);
+        String entradasStr = "";
+        for (Entrada entrada : entradas){
+            entradasStr=entradasStr+entrada.toString()+"\n";
+        }
+        throw new VerEntradas(entradasStr);
+    }
+
     public void verEntradasPendientes() throws VerEntradasPendientes, VerEntradasPendientesSinPermiso {
         this.admin.verEntradasPendientes();
     }
 
-    public void validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasValidadas {
+    public void validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasRevisadas {
         this.admin.validarEntrada();
+    }
+
+    public void rechazarEntrada() throws EntradaRechazada, EntradasRevisadas, EntradaRechazadaSinPermiso {
+        this.admin.rechazarEntrada(this.usuarios);
     }
 
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
@@ -230,6 +256,8 @@ public class Sistema {
     private boolean existeForo(int foro) {
         return subForos.containsKey(foro);
     }
+
+
 
 
 

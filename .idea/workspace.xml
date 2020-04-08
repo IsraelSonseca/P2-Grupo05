@@ -19,26 +19,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a7N36nxjYFYV60qqVeVXOtLQz3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mp" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="mp.exceptions.admin" />
-      <recent name="mp.exceptions" />
-      <recent name="mp.exceptions.logOut" />
-      <recent name="mp.exceptions.logIn" />
-      <recent name="mp.exceptions.crearEntrada" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="mp.exceptions" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mp.exceptions" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="mp.exceptions.crearEntrada" />
+      <recent name="mp.exceptions.logIn" />
+      <recent name="mp.exceptions.admin" />
+      <recent name="mp.exceptions" />
+      <recent name="mp.exceptions.logOut" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -212,7 +213,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
-          <line>258</line>
+          <line>329</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -224,6 +225,21 @@
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
           <line>15</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
+          <line>283</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
+          <line>322</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
+          <line>323</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

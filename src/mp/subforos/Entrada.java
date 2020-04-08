@@ -9,13 +9,16 @@ public class Entrada extends ObjetoPuntuable {
 	private String titulo;
 	private String texto;
 	private EstadoEntrada estado;
+	private String creador;
 
-	public Entrada(String titulo, String texto) {
+	public Entrada(String titulo, String texto,String creadorNick) {
+		super(0);
 		contador++;
 		this.id=contador;
 		this.titulo = titulo;
 		this.texto = texto;
 		this.estado = EstadoEntrada.creada;
+		this.creador=creadorNick;
 	}
 
 	public int getId() {
@@ -50,6 +53,14 @@ public class Entrada extends ObjetoPuntuable {
 		this.estado = estado;
 	}
 
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
 	public void crear() {
 		// TODO - implement Entrada.crear
 		throw new UnsupportedOperationException();
@@ -68,6 +79,11 @@ public class Entrada extends ObjetoPuntuable {
 	public void validar() {
 		// TODO - implement Entrada.validar
 		this.setEstado(EstadoEntrada.validada);
+	}
+
+	public void rechazar() {
+		// TODO - implement Entrada.validar
+		this.setEstado(EstadoEntrada.rechazada);
 	}
 
 	public void eliminar() {
@@ -91,4 +107,5 @@ public class Entrada extends ObjetoPuntuable {
 	public String toString() {
 		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
+
 }

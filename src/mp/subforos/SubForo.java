@@ -30,6 +30,14 @@ public class SubForo {
 		this.id = id;
 	}
 
+	public HashMap<Integer, Entrada> getEntradas() {
+		return entradas;
+	}
+
+	public void setEntradas(HashMap<Integer, Entrada> entradas) {
+		this.entradas = entradas;
+	}
+
 	public SubForo(String nombre) {
 		contador++;
 		this.nombre = nombre;
