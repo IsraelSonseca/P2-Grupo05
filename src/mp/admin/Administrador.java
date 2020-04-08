@@ -7,6 +7,7 @@ import mp.exceptions.logOut.AdminSesionNoIniciada;
 import mp.subforos.Entrada;
 import mp.users.MiembroURJC;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Administrador {
@@ -55,12 +56,14 @@ public class Administrador {
 	/**
 	 *
 	 */
-	public void rechazarEntrada() throws EntradasRevisadas, EntradaRechazada, EntradaRechazadaSinPermiso {
+	public void rechazarEntrada(HashMap<String, MiembroURJC> usuarios) throws EntradasRevisadas, EntradaRechazada, EntradaRechazadaSinPermiso {
 		// TODO - implement Administrador.validarEntrada
 		if (this.isLogued()){
 			if (existsEntradasPendientes()) {
 				Entrada entrada = entradasAValidar.removeLast();
 				entrada.rechazar();
+				MiembroURJC creador=usuarios.get(entrada.getCreador());
+				creador.penalizar();
 				throw new EntradaRechazada(entrada);
 			}else{
 				throw new EntradasRevisadas();

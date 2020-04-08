@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazadaSinPermiso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/penalizaciones/Penalizacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/penalizaciones/Penalizacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Entrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Entrada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mp/admin/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/admin/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradasValidadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradasRevisadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/penalizaciones/Penalizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/penalizaciones/Penalizacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,6 +226,11 @@
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
           <line>15</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

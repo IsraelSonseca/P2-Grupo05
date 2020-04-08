@@ -1,5 +1,6 @@
 package mp.users;
 
+import mp.penalizaciones.Penalizacion;
 import mp.subforos.Comentario;
 import mp.subforos.Entrada;
 import mp.subforos.SubForo;
@@ -15,6 +16,7 @@ public class MiembroURJC {
     private String nick;
     private String contrasena;
     private String email;
+    private Penalizacion penalizacion;
 
     //GettersAndSetters
     public int getId() {
@@ -87,7 +89,7 @@ public class MiembroURJC {
      */
     public Entrada crearEntrada(String titulo, String txt) {
         // TODO - implement MiembroURJC.crearEntrada
-        return new Entrada(titulo,txt);
+        return new Entrada(titulo,txt,this.getNick());
     }
 
     /**
@@ -164,4 +166,9 @@ public class MiembroURJC {
     public boolean accepContrasena(String cont) {
         return this.getContrasena().equals(cont);
     }
+
+    public void penalizar(){
+        this.penalizacion=new Penalizacion();
+    }
+
 }

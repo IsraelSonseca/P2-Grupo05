@@ -9,13 +9,15 @@ public class Entrada extends ObjetoPuntuable {
 	private String titulo;
 	private String texto;
 	private EstadoEntrada estado;
+	private String creador;
 
-	public Entrada(String titulo, String texto) {
+	public Entrada(String titulo, String texto,String creadorNick) {
 		contador++;
 		this.id=contador;
 		this.titulo = titulo;
 		this.texto = texto;
 		this.estado = EstadoEntrada.creada;
+		this.creador=creadorNick;
 	}
 
 	public int getId() {
@@ -48,6 +50,14 @@ public class Entrada extends ObjetoPuntuable {
 
 	public void setEstado(EstadoEntrada estado) {
 		this.estado = estado;
+	}
+
+	public String getCreador() {
+		return creador;
+	}
+
+	public void setCreador(String creador) {
+		this.creador = creador;
 	}
 
 	public void crear() {

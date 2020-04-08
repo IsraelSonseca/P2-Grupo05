@@ -209,7 +209,7 @@ public class Sistema {
     }
 
     public void rechazarEntrada() throws EntradaRechazada, EntradasRevisadas, EntradaRechazadaSinPermiso {
-        this.admin.rechazarEntrada();
+        this.admin.rechazarEntrada(this.usuarios);
     }
 
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
