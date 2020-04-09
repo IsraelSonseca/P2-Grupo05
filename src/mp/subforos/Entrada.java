@@ -1,8 +1,9 @@
 package mp.subforos;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Entrada extends ObjetoPuntuable {
+public class Entrada extends ObjetoPuntuable implements Serializable {
 
 	private static int contador=0;
 	private int id;

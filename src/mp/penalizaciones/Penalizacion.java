@@ -1,8 +1,9 @@
 package mp.penalizaciones;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Penalizacion {
+public class Penalizacion implements Serializable {
 
 	private Date fechaInicio;
 	private Date fechaFin;

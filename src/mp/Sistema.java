@@ -20,14 +20,14 @@ import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Sistema {
+public class Sistema implements Serializable {
     private HashMap<String, MiembroURJC> usuarios;
 	private HashMap<Integer, SubForo> subForos;
     private MiembroURJC userLogued;
@@ -89,6 +89,7 @@ public class Sistema {
         if (sesionIniciada()) {
             MiembroURJC user = this.userLogued;
             this.userLogued = null;
+            this.guardarSistema();
             throw new CierreSesion(user);
         } else {
             throw new SesionNoIniciada("LOG OUT CANCELADO");
@@ -257,8 +258,17 @@ public class Sistema {
         return subForos.containsKey(foro);
     }
 
-
-
+    private void guardarSistema(){
+        try {
+            FileOutputStream fos = new FileOutputStream("fichero.bin");
+            ObjectOutputStream oos =new ObjectOutputStream(fos);
+            oos.writeObject(this);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

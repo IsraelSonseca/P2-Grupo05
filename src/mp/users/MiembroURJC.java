@@ -6,9 +6,10 @@ import mp.subforos.Entrada;
 import mp.subforos.SubForo;
 import mp.subforos.Texto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class MiembroURJC {
+public class MiembroURJC implements Serializable {
     private static int contador=0;
     private int id;
     private String nombre;

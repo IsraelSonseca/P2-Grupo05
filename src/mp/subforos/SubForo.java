@@ -3,10 +3,11 @@ package mp.subforos;
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class SubForo {
+public class SubForo implements Serializable {
 
 	private static int contador=0;
 	private int id;
