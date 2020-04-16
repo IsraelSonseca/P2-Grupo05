@@ -23,7 +23,7 @@ public class Comentario extends ObjetoPuntuable {
 	public void comentar() {
             id=id++;
             
-            Comentario comment=new Comentario(int puntos,String texto,TipoComentario tipo);		// TODO - implement Comentario.comentar
+            //Comentario comment=new Comentario(int puntos,String texto,TipoComentario tipo);		// TODO - implement Comentario.comentar
 		
 	}
         
