@@ -6,3 +6,5 @@
 P2-Grupo05.iml
 .idea/P2-Grupo05.iml
 .idea/workspace.xml
+/build/
+/dist/
