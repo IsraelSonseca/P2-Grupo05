@@ -5,6 +5,7 @@ import mp.exceptions.crearEntrada.EntradaYaExistente;
 import mp.exceptions.suscripciones.SuscripcionActivada;
 import mp.exceptions.suscripciones.SuscriptorYaExistente;
 import mp.users.MiembroURJC;
+import mp.users.Notificacion;
 import mp.users.Subscriptor;
 
 import java.io.Serializable;
@@ -69,6 +70,7 @@ public class SubForo implements Subject,Serializable {
 	public void addEntrada(Entrada entrada) throws EntradaYaExistente, EntradaCreada {
 		if (!entradas.containsValue(entrada)) {
 			this.entradas.put(entrada.getId(), entrada);
+			this.notificar(entrada);
 			throw new EntradaCreada(entrada,this);
 		} else {
 			entrada.eliminar();
@@ -102,15 +104,14 @@ public class SubForo implements Subject,Serializable {
 	}
 
 	@Override
-	public void notificar() {
-		String notificacion;
-		notificacion=this.getNombre();
+	public void notificar(Entrada entrada) {
+		Notificacion notificacion=this.generateNotificacion(entrada);
 		for (Subscriptor user:subscriptors){
 			user.recibirNotificacion(notificacion);
 		}
 	}
 
-	public String generateNotificacion(){
-		return"";
+	public Notificacion generateNotificacion(Entrada entrada){
+		return new Notificacion(this.getNombre()+": "+entrada.msgNotificacion());
 	}
 }

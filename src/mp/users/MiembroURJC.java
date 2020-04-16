@@ -4,10 +4,11 @@ import mp.penalizaciones.Penalizacion;
 import mp.subforos.Comentario;
 import mp.subforos.Entrada;
 import mp.subforos.SubForo;
-import mp.subforos.Texto;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Queue;
 
 public class MiembroURJC implements Serializable,Subscriptor {
     private static int contador=0;
@@ -18,6 +19,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
     private String contrasena;
     private String email;
     private Penalizacion penalizacion;
+    private Queue<Notificacion> notificaciones;
 
     //GettersAndSetters
     public int getId() {
@@ -80,6 +82,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
         this.nick = nick;
         this.contrasena = contrasena;
         this.email = email;
+        this.notificaciones=new LinkedList<Notificacion>();
     }
 
     public void eliminar(){
@@ -96,9 +99,9 @@ public class MiembroURJC implements Serializable,Subscriptor {
      * @param txt
      * @param titulo
      */
-    public Entrada crearEntrada(String titulo, String txt) {
+    public Entrada crearEntrada(String titulo, String txt,SubForo subForo) {
         // TODO - implement MiembroURJC.crearEntrada
-        return new Entrada(titulo,txt,this.getNick());
+        return new Entrada(titulo,txt,this.getNick(),subForo);
     }
 
     /**
@@ -189,7 +192,19 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     @Override
-    public void recibirNotificacion(String notificacion) {
+    public void recibirNotificacion(Notificacion notificacion) {
+        this.notificaciones.add(notificacion);
+    }
 
+    public String listNotificaciones() {
+            String strNotificaciones="";
+            for (int i = 0; i < getNumNotificaciones(); ++i) {
+                strNotificaciones= strNotificaciones+notificaciones.remove().toString()+"\n";
+            }
+            return strNotificaciones;
+    }
+
+    public int getNumNotificaciones() {
+        return this.notificaciones.size();
     }
 }

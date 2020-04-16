@@ -359,6 +359,49 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 
+		//A continuacion vamosa crear una entrada y vamos a  ver la notificacion de agpardo al iniciar sesion
+		try {
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.registrarUsuario("Jonathan","Crespo Herrero","robojon","12345","jonathan.crespo@urjc.es");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//iniciamos sesion
+			redditURJC.login("robojon","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//creamos la entrada
+			redditURJC.crearEntrada("Notas Prac 1","Podeis ver vuestras notas de la Practica 1 en el aula virtual",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//validamos la entrada
+			redditURJC.validarEntrada();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//cerramos sesion de Jonathan
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//Iniciamos sesion con agpardo para verificar la notificación
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+		//A continuacion vamos a cerrar sesion e iniciar para verificar que ya no aparecen notificaciones
+		try {//cerramos sesion de agpardo
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//Iniciamos sesion con agpardo para verificar la notificación
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+
 		int a=11+11;
 		//throw new UnsupportedOperationException();
 	}

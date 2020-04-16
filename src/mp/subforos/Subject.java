@@ -11,5 +11,5 @@ public interface Subject {
     ArrayList<Subscriptor> subscriptores = new ArrayList<Subscriptor>();
     void anadirSubscriptor(MiembroURJC user) throws SuscriptorYaExistente, SuscripcionActivada;
     void eliminarSubscriptor(MiembroURJC user);
-    void notificar();
+    void notificar(Entrada entrada);
 }

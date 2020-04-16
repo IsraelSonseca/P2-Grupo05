@@ -1,5 +1,5 @@
 package mp.users;
 
 public interface Subscriptor {
-    void recibirNotificacion(String notificacion);
+    void recibirNotificacion(Notificacion notificacion);
 }

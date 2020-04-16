@@ -78,7 +78,9 @@ public class Sistema implements Serializable {
                     throw new UsuarioPenalizado(user);
                 } else {
                     this.userLogued = user;
-                    throw new LogedCorrect(user);
+                    int n= this.userLogued.getNumNotificaciones();
+                    String strNotificaciones = this.userLogued.listNotificaciones();
+                    throw new LogedCorrect(user,strNotificaciones,n);
                 }
             } else {
                 throw new IncorrectPassword(cont, nick);
@@ -242,7 +244,7 @@ public class Sistema implements Serializable {
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
         if (sesionIniciada()){
             if(existeForo(foro)){
-                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto);
+                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto,this.subForos.get(foro));
                 this.admin.anadirEntAValidar(nuevaEntrada);
                 this.addEntrada(nuevaEntrada,foro);
             } else {
