@@ -13,6 +13,10 @@ import mp.exceptions.resgister.EmailIncorrecto;
 import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
+import mp.exceptions.suscripciones.SuscribirSinForo;
+import mp.exceptions.suscripciones.SuscribirSinPermiso;
+import mp.exceptions.suscripciones.SuscripcionActivada;
+import mp.exceptions.suscripciones.SuscriptorYaExistente;
 import mp.subforos.Entrada;
 import mp.subforos.EstadoEntrada;
 import mp.subforos.SubForo;
@@ -256,6 +260,22 @@ public class Sistema implements Serializable {
 
     private boolean existeForo(int foro) {
         return subForos.containsKey(foro);
+    }
+
+    public void suscribirAForo(int foro) throws SuscriptorYaExistente, SuscripcionActivada, SuscribirSinForo, SuscribirSinPermiso {
+        if (sesionIniciada()){
+            if(existeForo(foro)){
+                this.addSuscriptor(this.userLogued,foro);
+            } else {
+                throw new SuscribirSinForo(foro);
+            }
+        }else{
+            throw new SuscribirSinPermiso();//no tiene permisos
+        }
+    }
+
+    private void addSuscriptor(MiembroURJC userLogued, int subForo) throws SuscriptorYaExistente, SuscripcionActivada {
+        this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }
 
     private void guardarSistema(){

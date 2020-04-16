@@ -9,7 +9,7 @@ import mp.subforos.Texto;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class MiembroURJC implements Serializable {
+public class MiembroURJC implements Serializable,Subscriptor {
     private static int contador=0;
     private int id;
     private String nombre;
@@ -188,4 +188,8 @@ public class MiembroURJC implements Serializable {
         }
     }
 
+    @Override
+    public void recibirNotificacion(String notificacion) {
+
+    }
 }

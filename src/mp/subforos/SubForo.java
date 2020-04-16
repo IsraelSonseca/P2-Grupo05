@@ -2,13 +2,19 @@ package mp.subforos;
 
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
+import mp.exceptions.suscripciones.SuscripcionActivada;
+import mp.exceptions.suscripciones.SuscriptorYaExistente;
+import mp.users.MiembroURJC;
+import mp.users.Subscriptor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class SubForo implements Serializable {
+public class SubForo implements Subject,Serializable {
 
+	private ArrayList<Subscriptor> subscriptors;
 	private static int contador=0;
 	private int id;
 	private String nombre;
@@ -44,6 +50,7 @@ public class SubForo implements Serializable {
 		this.nombre = nombre;
 		this.id = contador;
 		this.entradas = new HashMap<>();
+		this.subscriptors = new ArrayList<>();
 	}
 
 	@Override
@@ -62,7 +69,7 @@ public class SubForo implements Serializable {
 	public void addEntrada(Entrada entrada) throws EntradaYaExistente, EntradaCreada {
 		if (!entradas.containsValue(entrada)) {
 			this.entradas.put(entrada.getId(), entrada);
-			throw new EntradaCreada(entrada);
+			throw new EntradaCreada(entrada,this);
 		} else {
 			entrada.eliminar();
 			throw new EntradaYaExistente(entrada);
@@ -76,5 +83,34 @@ public class SubForo implements Serializable {
 	@Override
 	public String toString() {
 		return "SubForo " + id + " => " + nombre;
+	}
+
+	@Override
+	public void anadirSubscriptor(MiembroURJC user) throws SuscriptorYaExistente, SuscripcionActivada {
+		if (!subscriptors.contains(user)) {
+			this.subscriptors.add(user);
+			throw new SuscripcionActivada(user,this);
+		} else {
+			throw new SuscriptorYaExistente(user,this);
+		}
+
+	}
+
+	@Override
+	public void eliminarSubscriptor(MiembroURJC user) {
+		this.subscriptors.remove(user);
+	}
+
+	@Override
+	public void notificar() {
+		String notificacion;
+		notificacion=this.getNombre();
+		for (Subscriptor user:subscriptors){
+			user.recibirNotificacion(notificacion);
+		}
+	}
+
+	public String generateNotificacion(){
+		return"";
 	}
 }

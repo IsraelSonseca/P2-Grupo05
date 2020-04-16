@@ -327,6 +327,38 @@ public class Demostrador {
 		}
 
 
+		//1añadir subscriptor, 2 usuario no existe, 3 foro no existe, 4 ya estaba subscrito
+		//SuscribirSinPermiso, SuscripcionActivada, SuscriptorYaExistente, SuscribirSinForo
+		try {//1SuscribirSinPermiso
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.suscribirAForo(1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2SuscripcionActivada
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.listSubforos();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.suscribirAForo(1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3 SuscriptorYaExistente
+			redditURJC.suscribirAForo(1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4 SuscribirSinForo
+			redditURJC.suscribirAForo(-1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
 		int a=11+11;
 		//throw new UnsupportedOperationException();
 	}
