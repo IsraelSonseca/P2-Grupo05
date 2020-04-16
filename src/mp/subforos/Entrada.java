@@ -1,8 +1,9 @@
 package mp.subforos;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Entrada extends ObjetoPuntuable {
+public class Entrada extends ObjetoPuntuable implements Serializable {
 
 	private static int contador=0;
 	private int id;
@@ -10,8 +11,9 @@ public class Entrada extends ObjetoPuntuable {
 	private String texto;
 	private EstadoEntrada estado;
 	private String creador;
+	private SubForo subForo;
 
-	public Entrada(String titulo, String texto,String creadorNick) {
+	public Entrada(String titulo, String texto,String creadorNick,SubForo subForo) {
 		super(0);
 		contador++;
 		this.id=contador;
@@ -19,6 +21,7 @@ public class Entrada extends ObjetoPuntuable {
 		this.texto = texto;
 		this.estado = EstadoEntrada.creada;
 		this.creador=creadorNick;
+		this.subForo=subForo;
 	}
 
 	public int getId() {
@@ -59,6 +62,14 @@ public class Entrada extends ObjetoPuntuable {
 
 	public void setCreador(String creador) {
 		this.creador = creador;
+	}
+
+	public SubForo getSubForo() {
+		return subForo;
+	}
+
+	public void setSubForo(SubForo subForo) {
+		this.subForo = subForo;
 	}
 
 	public void crear() {
@@ -108,4 +119,8 @@ public class Entrada extends ObjetoPuntuable {
 		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
 
+
+	public String msgNotificacion(){
+		return "Nueva entrada con título "+ this.getTitulo();
+	}
 }

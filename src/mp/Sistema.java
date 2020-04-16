@@ -13,6 +13,10 @@ import mp.exceptions.resgister.EmailIncorrecto;
 import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
+import mp.exceptions.suscripciones.SuscribirSinForo;
+import mp.exceptions.suscripciones.SuscribirSinPermiso;
+import mp.exceptions.suscripciones.SuscripcionActivada;
+import mp.exceptions.suscripciones.SuscriptorYaExistente;
 import mp.subforos.Entrada;
 import mp.subforos.EstadoEntrada;
 import mp.subforos.SubForo;
@@ -20,14 +24,14 @@ import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Sistema {
+public class Sistema implements Serializable {
     private HashMap<String, MiembroURJC> usuarios;
 	private HashMap<Integer, SubForo> subForos;
     private MiembroURJC userLogued;
@@ -74,7 +78,9 @@ public class Sistema {
                     throw new UsuarioPenalizado(user);
                 } else {
                     this.userLogued = user;
-                    throw new LogedCorrect(user);
+                    int n= this.userLogued.getNumNotificaciones();
+                    String strNotificaciones = this.userLogued.listNotificaciones();
+                    throw new LogedCorrect(user,strNotificaciones,n);
                 }
             } else {
                 throw new IncorrectPassword(cont, nick);
@@ -89,6 +95,7 @@ public class Sistema {
         if (sesionIniciada()) {
             MiembroURJC user = this.userLogued;
             this.userLogued = null;
+            this.guardarSistema();
             throw new CierreSesion(user);
         } else {
             throw new SesionNoIniciada("LOG OUT CANCELADO");
@@ -237,7 +244,7 @@ public class Sistema {
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
         if (sesionIniciada()){
             if(existeForo(foro)){
-                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto);
+                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto,this.subForos.get(foro));
                 this.admin.anadirEntAValidar(nuevaEntrada);
                 this.addEntrada(nuevaEntrada,foro);
             } else {
@@ -257,8 +264,33 @@ public class Sistema {
         return subForos.containsKey(foro);
     }
 
+    public void suscribirAForo(int foro) throws SuscriptorYaExistente, SuscripcionActivada, SuscribirSinForo, SuscribirSinPermiso {
+        if (sesionIniciada()){
+            if(existeForo(foro)){
+                this.addSuscriptor(this.userLogued,foro);
+            } else {
+                throw new SuscribirSinForo(foro);
+            }
+        }else{
+            throw new SuscribirSinPermiso();//no tiene permisos
+        }
+    }
 
+    private void addSuscriptor(MiembroURJC userLogued, int subForo) throws SuscriptorYaExistente, SuscripcionActivada {
+        this.subForos.get(subForo).anadirSubscriptor(userLogued);
+    }
 
+    private void guardarSistema(){
+        try {
+            FileOutputStream fos = new FileOutputStream("fichero.bin");
+            ObjectOutputStream oos =new ObjectOutputStream(fos);
+            oos.writeObject(this);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

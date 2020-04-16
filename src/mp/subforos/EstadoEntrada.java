@@ -1,6 +1,9 @@
 package mp.subforos;
 
-public enum EstadoEntrada {
+import java.awt.*;
+import java.io.Serializable;
+
+public enum EstadoEntrada implements Serializable {
 	creada,
 	validada,
 	rechazada

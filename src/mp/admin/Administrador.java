@@ -1,5 +1,6 @@
 package mp.admin;
 
+import mp.Sistema;
 import mp.exceptions.admin.*;
 import mp.exceptions.logIn.*;
 import mp.exceptions.logOut.AdminCierreSesion;
@@ -7,10 +8,11 @@ import mp.exceptions.logOut.AdminSesionNoIniciada;
 import mp.subforos.Entrada;
 import mp.users.MiembroURJC;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class Administrador {
+public class Administrador implements Serializable {
 
 	final private String CONTRASENA="11111";
 	private String cont;
