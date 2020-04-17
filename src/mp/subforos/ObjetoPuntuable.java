@@ -1,6 +1,6 @@
 package mp.subforos;
 
-
+import java.util.Comparator;
 
 public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 
@@ -21,13 +21,4 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 		}
 		return resultado;
 	}
-        
-        public void aumentar (){
-            puntos = puntos + 1;
-        }
-        
-        public void disminuir (){
-            puntos = puntos - 1;
-        }
-        
 }
