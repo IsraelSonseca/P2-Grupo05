@@ -54,6 +54,10 @@ public class SubForo implements Subject,Serializable {
 		this.subscriptors = new ArrayList<>();
 	}
 
+	public ArrayList<Subscriptor> getSuscriptores(){
+		return this.subscriptors;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

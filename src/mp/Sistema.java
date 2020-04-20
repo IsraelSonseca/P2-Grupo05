@@ -1,5 +1,6 @@
 package mp;
 
+import com.general.Demostrador;
 import mp.admin.Administrador;
 import mp.exceptions.admin.*;
 import mp.exceptions.crearEntrada.*;
@@ -13,17 +14,16 @@ import mp.exceptions.resgister.EmailIncorrecto;
 import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
-import mp.exceptions.suscripciones.SuscribirSinForo;
-import mp.exceptions.suscripciones.SuscribirSinPermiso;
-import mp.exceptions.suscripciones.SuscripcionActivada;
-import mp.exceptions.suscripciones.SuscriptorYaExistente;
+import mp.exceptions.suscripciones.*;
 import mp.subforos.Entrada;
 import mp.subforos.EstadoEntrada;
 import mp.subforos.SubForo;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
+import mp.users.Subscriptor;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,6 +88,10 @@ public class Sistema implements Serializable {
         } else {
             throw new UsuarioNoExistente(nick);
         }
+    }
+
+    public MiembroURJC getUserLogued(Sistema m){
+        return m.userLogued;
     }
 
     public boolean logout() throws CierreSesion, SesionNoIniciada {
@@ -276,6 +280,29 @@ public class Sistema implements Serializable {
         }
     }
 
+    public void verForosSuscritos(MiembroURJC user) throws NoSuscritoANingunFor, ForosSuscritos, SubforosNoDisponibles {
+        if (sesionIniciada()) {
+            if (subForos.isEmpty()) {
+                throw new NoSuscritoANingunFor();
+            } else {
+                String a = "";
+                for (SubForo subforo : subForos.values()) {
+                    ArrayList<Subscriptor> AlumnosSuscritos = subforo.getSuscriptores();
+                    for (Subscriptor s : AlumnosSuscritos) {
+                        if (s.equals(user)) {
+                            a = a + subforo + ("\n");
+                        }
+                    }
+                }
+                throw new ForosSuscritos(a);
+            }
+
+        }else throw new SubforosNoDisponibles();
+    }
+
+    public void despenalizarUsuario(String s) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado {
+        this.admin.despenalizarUsuario(s, this.usuarios);
+    }
     private void addSuscriptor(MiembroURJC userLogued, int subForo) throws SuscriptorYaExistente, SuscripcionActivada {
         this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }

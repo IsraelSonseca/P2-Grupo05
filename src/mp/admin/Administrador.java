@@ -135,6 +135,19 @@ public class Administrador implements Serializable {
 		}
 	}
 
+	public void despenalizarUsuario(String s,HashMap<String, MiembroURJC> usuarios) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado{
+		if (this.isLogued()) {
+			MiembroURJC usuario = usuarios.get(s);
+			if (usuario.estaPenalizado()) {
+				usuario.despenalizarUsuario();
+				throw new UsuarioDespenalizado(s);
+			} else throw new UsuarioSinPenalizaciones();
+		}
+		else{
+			throw new DespenalizarUsuariosSinPermiso();
+		}
+	}
+
 	private String viewEntrada(Entrada entrada) {
 		return entrada.toString();
 	}

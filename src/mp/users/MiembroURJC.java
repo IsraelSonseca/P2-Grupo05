@@ -191,6 +191,11 @@ public class MiembroURJC implements Serializable,Subscriptor {
         }
     }
 
+    public void despenalizarUsuario(){
+        this.penalizacion = null;
+
+    }
+
     @Override
     public void recibirNotificacion(Notificacion notificacion) {
         this.notificaciones.add(notificacion);
