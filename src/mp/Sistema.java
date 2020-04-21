@@ -26,9 +26,7 @@ import mp.users.MiembroURJC;
 import mp.users.Profesor;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import mp.exceptions.comentario.ComentarSinPermiso;
@@ -315,21 +313,19 @@ public class Sistema implements Serializable {
 
     private void addComentario(Comentario nuevo,ObjetoPuntuable padre) throws ComentarioCreado, ComentarioYaExistente{
         padre.addComentario(nuevo);
-   
-
     }
 
     private boolean existeObjetoPuntuable(int objetoPuntuable) {
         
         boolean encontrado = false;
-        int i = 1;
-        while((!encontrado)&&(i<=this.subForos.size())){
-            
+        Integer i;
+        Set claves= this.subForos.keySet();
+        Iterator iterator = claves.iterator();
+        while((!encontrado)&&(iterator.hasNext())){
+            i= (Integer) iterator.next();
             if(this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)){
                 encontrado = true ;
             }
-            
-            
         } 
         
         return encontrado ;
@@ -340,9 +336,11 @@ public class Sistema implements Serializable {
         
         ObjetoPuntuable obj=null;
         boolean encontrado = false;
-        int i = 1;
-        while((!encontrado)&&(i<=this.subForos.size())){
-            
+         Integer i;
+        Set claves= this.subForos.keySet();
+         Iterator iterator = claves.iterator();
+         while((!encontrado)&&(iterator.hasNext())){
+            i= (Integer) iterator.next();
             if(this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)){
                 obj = this.subForos.get(i).devuelveObjetoPuntuable(objetoPuntuable);
                 encontrado = true ;

@@ -1,6 +1,10 @@
 package mp.subforos;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Objects;
+import java.util.Set;
+
 import mp.exceptions.comentario.ComentarioCreado;
 import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.exceptions.crearEntrada.EntradaCreada;
@@ -11,9 +15,9 @@ import mp.exceptions.crearEntrada.EntradaYaExistente;
 public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 
 	private int puntos;
-        private static int contador=0;
+	private static int contador=0;
 	private int id;
-        private HashMap<Integer, Comentario> comentarios;
+	private HashMap<Integer, Comentario> comentarios;
 
     public int getId() {
         return id;
@@ -22,8 +26,16 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
     public void setId(int id) {
         this.id = id;
     }
-        
-	public ObjetoPuntuable(int puntos) {
+
+    public HashMap<Integer, Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(HashMap<Integer, Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public ObjetoPuntuable(int puntos) {
             contador++;
             this.id=contador;
             this.puntos = puntos;
@@ -63,6 +75,58 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
     public void eliminar() {
         contador--;
         
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ObjetoPuntuable obj = (ObjetoPuntuable) o;
+        return id == obj.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public boolean contieneObjetoPuntuable(int objetoPuntuable) {
+        if (this.comentarios.size()==0){
+            return false;
+        } else if(this.comentarios.containsKey(objetoPuntuable)){
+            return true;
+        }
+        boolean encontrado=false;
+        Integer i;
+        Set claves= this.getComentarios().keySet();
+        Iterator iterator= claves.iterator();
+        while((!encontrado)&&(iterator.hasNext())){
+            i= (Integer) iterator.next();
+            if(this.comentarios.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                encontrado=true;
+            }
+        }
+        return encontrado;
+    }
+
+    public ObjetoPuntuable devuelveObjetoPuntuable(int objetoPuntuable) {
+        if(this.comentarios.containsKey(objetoPuntuable)){
+            return this.comentarios.get(objetoPuntuable);
+        }
+        ObjetoPuntuable obj=null;
+        boolean encontrado = false;
+        Integer i;
+        Set claves = this.getComentarios().keySet();
+        Iterator iterator=claves.iterator();
+        while((!encontrado)&&(iterator.hasNext())){
+            i= (Integer) iterator.next();
+            if(this.comentarios.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                obj = this.comentarios.get(i).devuelveObjetoPuntuable(objetoPuntuable);
+                encontrado = true ;
+            }
+        }
+
+        return obj ;
     }
         
 }
