@@ -1,6 +1,7 @@
 package mp.subforos;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Entrada extends ObjetoPuntuable implements Serializable {
@@ -11,8 +12,10 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 	private String texto;
 	private EstadoEntrada estado;
 	private String creador;
-
-	public Entrada(String titulo, String texto,String creadorNick) {
+	private SubForo subForo;
+        private HashMap<Integer, Comentario> comentarios;
+        
+	public Entrada(String titulo, String texto,String creadorNick,SubForo subForo) {
 		super(0);
 		contador++;
 		this.id=contador;
@@ -20,6 +23,8 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 		this.texto = texto;
 		this.estado = EstadoEntrada.creada;
 		this.creador=creadorNick;
+		this.subForo=subForo;
+                this.comentarios = new HashMap<>();
 	}
 
 	public int getId() {
@@ -60,6 +65,14 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 
 	public void setCreador(String creador) {
 		this.creador = creador;
+	}
+
+	public SubForo getSubForo() {
+		return subForo;
+	}
+
+	public void setSubForo(SubForo subForo) {
+		this.subForo = subForo;
 	}
 
 	public void crear() {
@@ -108,5 +121,44 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 	public String toString() {
 		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
+
+
+	public String msgNotificacion(){
+		return "Nueva entrada con título "+ this.getTitulo();
+	}
+
+    public boolean contieneObjetoPuntuable(int objetoPuntuable) {
+        if(this.comentarios.containsKey(objetoPuntuable)){
+             return true;
+          }
+        boolean encontrado=false;
+        int i = 1;
+        while((!encontrado)&&(i<=this.comentarios.size())){
+            if(this.comentarios.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                  encontrado=true;
+              }
+        } 
+      return encontrado;  
+    }   
+
+    ObjetoPuntuable devuelveObjetoPuntuable(int objetoPuntuable) {
+       if(this.comentarios.containsKey(objetoPuntuable)){
+             return this.comentarios.get(objetoPuntuable);
+          }
+        ObjetoPuntuable obj=null;
+        boolean encontrado = false;
+        int i = 1;
+        while((!encontrado)&&(i<=this.comentarios.size())){
+            
+            if(this.comentarios.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                obj = this.comentarios.get(i).devuelveObjetoPuntuable(objetoPuntuable);
+                encontrado = true ;
+            }
+            
+            
+        } 
+        
+        return obj ;
+    }
 
 }

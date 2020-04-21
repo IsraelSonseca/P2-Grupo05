@@ -1,7 +1,17 @@
 package mp.users;
 
-public class Notificacion {
+import java.io.Serializable;
 
-    private int idEntrada;
+public class Notificacion implements Serializable {
 
+    private String msg;
+
+    public Notificacion(String msg) {
+        this.msg = msg;
+    }
+
+    @Override
+    public String toString() {
+        return msg;
+    }
 }

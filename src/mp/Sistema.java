@@ -1,5 +1,6 @@
 package mp;
 
+import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.admin.Administrador;
 import mp.exceptions.admin.*;
 import mp.exceptions.crearEntrada.*;
@@ -13,6 +14,10 @@ import mp.exceptions.resgister.EmailIncorrecto;
 import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
+import mp.exceptions.suscripciones.SuscribirSinForo;
+import mp.exceptions.suscripciones.SuscribirSinPermiso;
+import mp.exceptions.suscripciones.SuscripcionActivada;
+import mp.exceptions.suscripciones.SuscriptorYaExistente;
 import mp.subforos.Entrada;
 import mp.subforos.EstadoEntrada;
 import mp.subforos.SubForo;
@@ -26,10 +31,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import mp.exceptions.comentario.ComentarSinPermiso;
+import mp.exceptions.comentario.ComentarioCreado;
+import mp.subforos.Comentario;
+
+import mp.subforos.ObjetoPuntuable;
 
 public class Sistema implements Serializable {
     private HashMap<String, MiembroURJC> usuarios;
-	private HashMap<Integer, SubForo> subForos;
+    private HashMap<Integer, SubForo> subForos;
     private MiembroURJC userLogued;
     private Administrador admin;
 
@@ -74,7 +84,9 @@ public class Sistema implements Serializable {
                     throw new UsuarioPenalizado(user);
                 } else {
                     this.userLogued = user;
-                    throw new LogedCorrect(user);
+                    int n= this.userLogued.getNumNotificaciones();
+                    String strNotificaciones = this.userLogued.listNotificaciones();
+                    throw new LogedCorrect(user,strNotificaciones,n);
                 }
             } else {
                 throw new IncorrectPassword(cont, nick);
@@ -238,7 +250,7 @@ public class Sistema implements Serializable {
     public void crearEntrada(String titulo, String texto,int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
         if (sesionIniciada()){
             if(existeForo(foro)){
-                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto);
+                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto,this.subForos.get(foro));
                 this.admin.anadirEntAValidar(nuevaEntrada);
                 this.addEntrada(nuevaEntrada,foro);
             } else {
@@ -258,6 +270,22 @@ public class Sistema implements Serializable {
         return subForos.containsKey(foro);
     }
 
+    public void suscribirAForo(int foro) throws SuscriptorYaExistente, SuscripcionActivada, SuscribirSinForo, SuscribirSinPermiso {
+        if (sesionIniciada()){
+            if(existeForo(foro)){
+                this.addSuscriptor(this.userLogued,foro);
+            } else {
+                throw new SuscribirSinForo(foro);
+            }
+        }else{
+            throw new SuscribirSinPermiso();//no tiene permisos
+        }
+    }
+
+    private void addSuscriptor(MiembroURJC userLogued, int subForo) throws SuscriptorYaExistente, SuscripcionActivada {
+        this.subForos.get(subForo).anadirSubscriptor(userLogued);
+    }
+
     private void guardarSistema(){
         try {
             FileOutputStream fos = new FileOutputStream("fichero.bin");
@@ -269,6 +297,63 @@ public class Sistema implements Serializable {
             e.printStackTrace();
         }
     }
+    
+    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarSinObjetoPuntuable, EntradaCreada, EntradaYaExistente, ComentarioCreado, ComentarioYaExistente {
+        if (sesionIniciada()){
+            if(existeObjetoPuntuable(objetoPuntuable)){
+                ObjetoPuntuable objetoPadre = this.devuelveObjetoPuntuable(objetoPuntuable);
+                Comentario comentario = this.userLogued.crearComentario(coment);
+                
+                this.addComentario(comentario,objetoPadre);
+            } else {
+                throw new ComentarSinObjetoPuntuable(objetoPuntuable);
+            }
+        }else{
+            throw new ComentarSinPermiso();//no tiene permisos
+        }
+    }
+
+    private void addComentario(Comentario nuevo,ObjetoPuntuable padre) throws ComentarioCreado, ComentarioYaExistente{
+        padre.addComentario(nuevo);
+   
+
+    }
+
+    private boolean existeObjetoPuntuable(int objetoPuntuable) {
+        
+        boolean encontrado = false;
+        int i = 1;
+        while((!encontrado)&&(i<=this.subForos.size())){
+            
+            if(this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                encontrado = true ;
+            }
+            
+            
+        } 
+        
+        return encontrado ;
+         
+    }
+    
+     private ObjetoPuntuable devuelveObjetoPuntuable(int objetoPuntuable) {
+        
+        ObjetoPuntuable obj=null;
+        boolean encontrado = false;
+        int i = 1;
+        while((!encontrado)&&(i<=this.subForos.size())){
+            
+            if(this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                obj = this.subForos.get(i).devuelveObjetoPuntuable(objetoPuntuable);
+                encontrado = true ;
+            }
+            
+            
+        } 
+        
+        return obj ;
+     }
+   
 
 
 }
