@@ -401,34 +401,29 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
                 
-                //Vamos a comprobar la funcionalidad de los comentarios
-                try {//cerramos sesion de agpardo
+                //Vamos a comprobar la funcionalidad de los comentarios: 1ComentarSinPermiso, 2ComentarioCreado, 3ComentarSinObjetoPuntuable, 4ComentarioYaExistente
+		try {//1ComentarSinPermiso
 			redditURJC.logout();
 		} catch (Result result) {
 			System.out.println(result.getMessage());
-		}
-                try {//crear Comentario
-			redditURJC.crearComentario("abc",4);
+		} try {
+			redditURJC.crearComentario("Comentario sin iniciar sesion",4);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
-		}
-                try {//cerramos sesion de agpardo
-			redditURJC.logout();
-		} catch (Result result) {
-			System.out.println(result.getMessage());
-		}
-                try {//iniciamos sesion
+		} try {//2ComentarioCreado
 			redditURJC.login("agpardo","12345");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
-		}
-                try {//crear Comentario
-			redditURJC.crearComentario("abc",1);
+		} try {
+			redditURJC.crearComentario("Este es el primer comentario creado correctamente",1);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
-		}
-                  try {//crear Comentario
-			redditURJC.crearComentario("abc",100);
+		} try {////3ComentarSinObjetoPuntuable
+			redditURJC.crearComentario("Este comentario intenta crearse para una entrada que no existe",100);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {////3ComentarSinObjetoPuntuable porque la entrada no esta validada
+			redditURJC.crearComentario("Este comentario intenta crearse para una entrada que no existe ya que fue penalizada",4);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}

@@ -296,7 +296,7 @@ public class Sistema implements Serializable {
         }
     }
     
-    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarSinObjetoPuntuable, EntradaCreada, EntradaYaExistente, ComentarioCreado, ComentarioYaExistente {
+    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarSinObjetoPuntuable, ComentarioCreado, ComentarioYaExistente {
         if (sesionIniciada()){
             if(existeObjetoPuntuable(objetoPuntuable)){
                 ObjetoPuntuable objetoPadre = this.devuelveObjetoPuntuable(objetoPuntuable);

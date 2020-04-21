@@ -114,9 +114,13 @@ public class SubForo implements Subject,Serializable {
 	}
 
     public boolean contieneObjetoPuntuable(int objetoPuntuable) {
-         if(this.entradas.containsKey(objetoPuntuable)){
-             return true;
-          }
+		if(this.entradas.containsKey(objetoPuntuable)){
+			if (this.entradas.get(objetoPuntuable).getEstado()==EstadoEntrada.validada){
+				return true;
+			} else{
+				return false;
+			}
+		}
         boolean encontrado=false;
          Integer i;
         Set claves=this.entradas.keySet();
