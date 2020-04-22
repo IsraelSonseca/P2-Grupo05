@@ -1,6 +1,6 @@
 #  P2-Grupo05
  RedditURJC Practica2 MetodologíaDeLaProgramación
-# santatecla-bibliografia-2
+# RedditURJC
  - [Name of the application](#Name-of-the-application)
  - [Members of the development team](#Members-of-the-development-team)
  - [Teachers](#Teachers)
