@@ -488,6 +488,7 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 		//FUNCIONALIDADES VOTAR:1VotarSinPermiso, 2VotarSinObjetoPuntuable, 3ValoracionNoContemplada, 4VotacionCreada, 5VotacionYaExistente, 6ValorarObjetoPuntuablePropio
+
 		try {//1VotarSinPermiso
 			redditURJC.valorar("positiva",6);
 		} catch (Result result) {
