@@ -1,12 +1,11 @@
 package mp.subforos;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Entrada extends ObjetoPuntuable implements Serializable {
 
-	private static int contador=0;
-	private int id;
 	private String titulo;
 	private String texto;
 	private EstadoEntrada estado;
@@ -15,21 +14,11 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 
 	public Entrada(String titulo, String texto,String creadorNick,SubForo subForo) {
 		super(0);
-		contador++;
-		this.id=contador;
 		this.titulo = titulo;
 		this.texto = texto;
 		this.estado = EstadoEntrada.creada;
 		this.creador=creadorNick;
 		this.subForo=subForo;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getTitulo() {
@@ -97,30 +86,16 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 		this.setEstado(EstadoEntrada.rechazada);
 	}
 
-	public void eliminar() {
-		contador--;
-	}
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		Entrada entrada = (Entrada) o;
-		return id == entrada.id;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
 	@Override
 	public String toString() {
-		return "Entrada" + id + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
+		return "Entrada" + this.getId() + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
 	}
 
 
 	public String msgNotificacion(){
 		return "Nueva entrada con título "+ this.getTitulo();
 	}
+
+
+
 }

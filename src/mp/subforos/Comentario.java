@@ -1,41 +1,22 @@
 package mp.subforos;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import mp.users.MiembroURJC;
 
 public class Comentario extends ObjetoPuntuable {
         
 	// Comentario esRespondido;
-        private LinkedList<Comentario> respuestas;
+       
         private String texto;
-	private TipoComentario tipo;
-	private int id = 0;
+        private MiembroURJC user;
         
-	public Comentario(int puntos,String  texto,TipoComentario tipo) {
-		super(puntos);
-                this.texto=texto;
-                this.tipo=tipo;
-                id=id+1;
-                this.id=id;
-                this.respuestas=null;
+	public Comentario(String  texto,MiembroURJC user) {
+		super(0);
+		this.texto=texto;
+		this.user=user;
 	}
-        
-
-	public void comentar() {
-            id=id++;
-            
-            //Comentario comment=new Comentario(int puntos,String texto,TipoComentario tipo);		// TODO - implement Comentario.comentar
-		
-	}
-        
-
-    public LinkedList<Comentario> getRespuestas() {
-        return respuestas;
-    }
-
-    public void setRespuestas(LinkedList<Comentario> respuestas) {
-        this.respuestas = respuestas;
-    }
-
+   
     public String getTexto() {
         return texto;
     }
@@ -44,21 +25,7 @@ public class Comentario extends ObjetoPuntuable {
         this.texto = texto;
     }
 
-    public TipoComentario getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoComentario tipo) {
-        this.tipo = tipo;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-        
 
 }
+
+        
