@@ -508,12 +508,24 @@ public class Demostrador {
 			redditURJC.valorar("positiva",6);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
+		}try {//ver entradas en orden para comprobar
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
 		} try {//5VotacionYaExistente igual y vemos que no cambia los puntos
 			redditURJC.valorar("positiva",6);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
+		}try {//ver entradas en orden para comprobar
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
 		} try {//5VotacionYaExistente diferente y vemos que pierde el punto y ademas resta otro
 			redditURJC.valorar("negativa",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//ver entradas en orden para comprobar
+			redditURJC.verEntradasMayorValoración();
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		} try {//6ValorarObjetoPuntuablePropio
@@ -521,6 +533,7 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+
 
 		//Ejecuta Correctamente todas las funcionalidades desarrolladas
 		int a=11+11;

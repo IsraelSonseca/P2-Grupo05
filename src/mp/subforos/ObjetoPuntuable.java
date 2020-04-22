@@ -61,10 +61,10 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 	public int compareTo(ObjetoPuntuable objetoPuntuable) {
 		int resultado=0;
 		if (this.puntos<objetoPuntuable.puntos) {
-			resultado = -1;
+			resultado = 1;
 		}
 		else if (this.puntos>objetoPuntuable.puntos) {
-			resultado = 1;
+			resultado = -1;
 		}
 		return resultado;
 	}
