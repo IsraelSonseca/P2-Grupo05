@@ -9,6 +9,9 @@ import mp.exceptions.comentario.ComentarioCreado;
 import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
+import mp.exceptions.votaciones.ValoracionNoContemplada;
+import mp.exceptions.votaciones.VotacionCreada;
+import mp.exceptions.votaciones.VotacionYaExistente;
 import mp.users.MiembroURJC;
 
 
@@ -74,7 +77,7 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 		}
     }
 
-    public void addValoracion(Votacion votacion) throws ComentarioCreado, ComentarioYaExistente {
+    public void addValoracion(Votacion votacion) throws VotacionCreada, VotacionYaExistente {
         if (!valoraciones.containsValue(votacion)) {
             this.valoraciones.put(votacion.getUser().getNick(), votacion);
             actualizarPuntos();
@@ -82,11 +85,11 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
         } else {
             this.valoraciones.get(votacion.getUser().getNick()).setEstado(votacion.getEstado());
             actualizarPuntos();
-            throw new VotacionYaExistente(votacion);
+            throw new VotacionYaExistente(votacion,this);
         }
     }
 
-    private int actualizarPuntos() {
+    private void actualizarPuntos() {
         int puntuacion= 0;
         String valorador;
         Set valoradores = this.valoraciones.keySet();
@@ -100,7 +103,7 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
                 puntuacion-=1;
             }
         }
-        return puntuacion;
+        this.puntos=puntuacion;
     }
 
     public void eliminar() {
@@ -160,11 +163,11 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
         return obj ;
     }
 
-    public void valorar(String valoracion, MiembroURJC user) throws ComentarioYaExistente, ComentarioCreado {
+    public void valorar(String valoracion, MiembroURJC user) throws ValoracionNoContemplada, VotacionCreada, VotacionYaExistente {
         Votacion votacion;
-        if (valoracion.equals(EstadoValoracion.positiva)){
+        if (valoracion.equals("positiva")){
             votacion=new Votacion(user, EstadoValoracion.positiva);
-        } else if (valoracion.equals(EstadoValoracion.negativa)){
+        } else if (valoracion.equals("negativa")){
             votacion=new Votacion(user,EstadoValoracion.negativa);
         } else {
             throw new ValoracionNoContemplada(valoracion);

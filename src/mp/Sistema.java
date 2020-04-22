@@ -1,6 +1,7 @@
 package mp;
 
 import com.general.Demostrador;
+import mp.exceptions.comentario.ComentarSinObjetoPuntuable;
 import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.admin.Administrador;
 import mp.exceptions.admin.*;
@@ -20,11 +21,8 @@ import mp.exceptions.suscripciones.SuscribirSinForo;
 import mp.exceptions.suscripciones.SuscribirSinPermiso;
 import mp.exceptions.suscripciones.SuscripcionActivada;
 import mp.exceptions.suscripciones.SuscriptorYaExistente;
-import mp.exceptions.votaciones.VotarSinObjetoPuntuable;
-import mp.exceptions.votaciones.VotarSinPermiso;
-import mp.subforos.Entrada;
-import mp.subforos.EstadoEntrada;
-import mp.subforos.SubForo;
+import mp.exceptions.votaciones.*;
+import mp.subforos.*;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;
@@ -37,9 +35,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import mp.exceptions.comentario.ComentarSinPermiso;
 import mp.exceptions.comentario.ComentarioCreado;
-import mp.subforos.Comentario;
-
-import mp.subforos.ObjetoPuntuable;
 
 public class Sistema implements Serializable {
     private HashMap<String, MiembroURJC> usuarios;
@@ -329,14 +324,11 @@ public class Sistema implements Serializable {
         }
     }
 
-    public void valorar(String valoracion,int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable {
+    public void valorar(String valoracion, int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable, ValoracionNoContemplada, VotacionCreada, VotacionYaExistente {
         if (sesionIniciada()){
             if(existeObjetoPuntuable(objetoPuntuable)){
                 ObjetoPuntuable objetoAValorar = this.devuelveObjetoPuntuable(objetoPuntuable);
                 objetoAValorar.valorar(valoracion,this.userLogued);
-                Comentario comentario = this.userLogued.crearComentario(coment);
-
-                this.addComentario(comentario,objetoPadre);
             } else {
                 throw new VotarSinObjetoPuntuable(objetoPuntuable);
             }
@@ -345,7 +337,7 @@ public class Sistema implements Serializable {
         }
     }
     
-    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarSinPermiso.ComentarSinObjetoPuntuable, ComentarioCreado, ComentarioYaExistente {
+    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarioCreado, ComentarioYaExistente, ComentarSinObjetoPuntuable {
         if (sesionIniciada()){
             if(existeObjetoPuntuable(objetoPuntuable)){
                 ObjetoPuntuable objetoPadre = this.devuelveObjetoPuntuable(objetoPuntuable);
@@ -353,7 +345,7 @@ public class Sistema implements Serializable {
                 
                 this.addComentario(comentario,objetoPadre);
             } else {
-                throw new ComentarSinPermiso.ComentarSinObjetoPuntuable(objetoPuntuable);
+                throw new ComentarSinObjetoPuntuable(objetoPuntuable);
             }
         }else{
             throw new ComentarSinPermiso();//no tiene permisos

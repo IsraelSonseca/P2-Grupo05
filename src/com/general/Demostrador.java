@@ -474,6 +474,28 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+
+
+
+		//VAMOS A MOSTRAR LAS ENTRADAS SIN INICIAR SESION
+		try {
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
 		//Ejecuta Correctamente todas las funcionalidades desarrolladas
 		int a=11+11;
 		//COMPROBADO QUE SIGUE BIEN
