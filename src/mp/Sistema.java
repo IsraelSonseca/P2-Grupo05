@@ -18,6 +18,8 @@ import mp.exceptions.suscripciones.SuscribirSinForo;
 import mp.exceptions.suscripciones.SuscribirSinPermiso;
 import mp.exceptions.suscripciones.SuscripcionActivada;
 import mp.exceptions.suscripciones.SuscriptorYaExistente;
+import mp.exceptions.votaciones.VotarSinObjetoPuntuable;
+import mp.exceptions.votaciones.VotarSinPermiso;
 import mp.subforos.Entrada;
 import mp.subforos.EstadoEntrada;
 import mp.subforos.SubForo;
@@ -295,8 +297,24 @@ public class Sistema implements Serializable {
             e.printStackTrace();
         }
     }
+
+    public void valorar(String valoracion,int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable {
+        if (sesionIniciada()){
+            if(existeObjetoPuntuable(objetoPuntuable)){
+                ObjetoPuntuable objetoAValorar = this.devuelveObjetoPuntuable(objetoPuntuable);
+                objetoAValorar.valorar(valoracion,this.userLogued);
+                Comentario comentario = this.userLogued.crearComentario(coment);
+
+                this.addComentario(comentario,objetoPadre);
+            } else {
+                throw new VotarSinObjetoPuntuable(objetoPuntuable);
+            }
+        }else{
+            throw new VotarSinPermiso();//no tiene permisos
+        }
+    }
     
-    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarSinObjetoPuntuable, ComentarioCreado, ComentarioYaExistente {
+    public void crearComentario(String coment,int objetoPuntuable) throws ComentarSinPermiso, ComentarSinPermiso.ComentarSinObjetoPuntuable, ComentarioCreado, ComentarioYaExistente {
         if (sesionIniciada()){
             if(existeObjetoPuntuable(objetoPuntuable)){
                 ObjetoPuntuable objetoPadre = this.devuelveObjetoPuntuable(objetoPuntuable);
@@ -304,7 +322,7 @@ public class Sistema implements Serializable {
                 
                 this.addComentario(comentario,objetoPadre);
             } else {
-                throw new ComentarSinObjetoPuntuable(objetoPuntuable);
+                throw new ComentarSinPermiso.ComentarSinObjetoPuntuable(objetoPuntuable);
             }
         }else{
             throw new ComentarSinPermiso();//no tiene permisos

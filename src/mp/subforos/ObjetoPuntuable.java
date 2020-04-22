@@ -9,7 +9,7 @@ import mp.exceptions.comentario.ComentarioCreado;
 import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
-
+import mp.users.MiembroURJC;
 
 
 public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
@@ -18,6 +18,7 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 	private static int contador=0;
 	private int id;
 	private HashMap<Integer, Comentario> comentarios;
+    private HashMap<String, Votacion> valoraciones;
 
     public int getId() {
         return id;
@@ -36,11 +37,12 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
     }
 
     public ObjetoPuntuable(int puntos) {
-            contador++;
-            this.id=contador;
-            this.puntos = puntos;
-            this.comentarios = new HashMap<>();
-	}
+        contador++;
+        this.id=contador;
+        this.puntos = puntos;
+        this.comentarios = new HashMap<>();
+        this.valoraciones = new HashMap<>();
+    }
 
 	@Override
 	public int compareTo(ObjetoPuntuable objetoPuntuable) {
@@ -70,6 +72,35 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 			nuevo.eliminar();
 			throw new ComentarioYaExistente(nuevo);
 		}
+    }
+
+    public void addValoracion(Votacion votacion) throws ComentarioCreado, ComentarioYaExistente {
+        if (!valoraciones.containsValue(votacion)) {
+            this.valoraciones.put(votacion.getUser().getNick(), votacion);
+            actualizarPuntos();
+            throw new VotacionCreada(votacion,this);
+        } else {
+            this.valoraciones.get(votacion.getUser().getNick()).setEstado(votacion.getEstado());
+            actualizarPuntos();
+            throw new VotacionYaExistente(votacion);
+        }
+    }
+
+    private int actualizarPuntos() {
+        int puntuacion= 0;
+        String valorador;
+        Set valoradores = this.valoraciones.keySet();
+        Iterator iterator = valoradores.iterator();
+        while (iterator.hasNext()){
+            valorador= (String) iterator.next();
+            EstadoValoracion estado =this.valoraciones.get(valorador).getEstado();
+            if (estado==EstadoValoracion.positiva){
+                puntuacion+=1;
+            } else {
+                puntuacion-=1;
+            }
+        }
+        return puntuacion;
     }
 
     public void eliminar() {
@@ -128,5 +159,16 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 
         return obj ;
     }
-        
+
+    public void valorar(String valoracion, MiembroURJC user) throws ComentarioYaExistente, ComentarioCreado {
+        Votacion votacion;
+        if (valoracion.equals(EstadoValoracion.positiva)){
+            votacion=new Votacion(user, EstadoValoracion.positiva);
+        } else if (valoracion.equals(EstadoValoracion.negativa)){
+            votacion=new Votacion(user,EstadoValoracion.negativa);
+        } else {
+            throw new ValoracionNoContemplada(valoracion);
+        }
+        this.addValoracion(votacion);
+    }
 }
