@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
+import mp.subforos.ObjetoPuntuable;
 
 public class MiembroURJC implements Serializable,Subscriptor {
     private static int contador=0;
@@ -211,5 +212,9 @@ public class MiembroURJC implements Serializable,Subscriptor {
 
     public int getNumNotificaciones() {
         return this.notificaciones.size();
+    }
+
+    public Comentario crearComentario(String comentario) {
+       return new Comentario(comentario,this); 
     }
 }

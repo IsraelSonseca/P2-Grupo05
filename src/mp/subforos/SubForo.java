@@ -9,9 +9,7 @@ import mp.users.Notificacion;
 import mp.users.Subscriptor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 public class SubForo implements Subject,Serializable {
 
@@ -118,4 +116,46 @@ public class SubForo implements Subject,Serializable {
 	public Notificacion generateNotificacion(Entrada entrada){
 		return new Notificacion(this.getNombre()+": "+entrada.msgNotificacion());
 	}
+
+    public boolean contieneObjetoPuntuable(int objetoPuntuable) {
+		if(this.entradas.containsKey(objetoPuntuable)){
+			if (this.entradas.get(objetoPuntuable).getEstado()==EstadoEntrada.validada){
+				return true;
+			} else{
+				return false;
+			}
+		}
+        boolean encontrado=false;
+         Integer i;
+        Set claves=this.entradas.keySet();
+		Iterator iterator=claves.iterator();
+        while((!encontrado)&&(iterator.hasNext())){
+        	i= (Integer) iterator.next();
+            if(this.entradas.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                encontrado=true;
+            }
+        } 
+     return encontrado;   
+    }
+
+    public ObjetoPuntuable devuelveObjetoPuntuable(int objetoPuntuable) {
+         if(this.entradas.containsKey(objetoPuntuable)){
+             return this.entradas.get(objetoPuntuable);
+          }
+        ObjetoPuntuable obj=null;
+        boolean encontrado = false;
+        Integer i;
+		Set claves=this.entradas.keySet();
+		Iterator iterator=claves.iterator();
+		while((!encontrado)&&(iterator.hasNext())){
+            i= (Integer) iterator.next();
+            if(this.entradas.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+                obj = this.entradas.get(i).devuelveObjetoPuntuable(objetoPuntuable);
+                encontrado = true ;
+            }
+        } 
+        
+        return obj ;
+    }
+
 }
