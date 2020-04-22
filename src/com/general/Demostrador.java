@@ -2,6 +2,14 @@ package com.general;
 
 import mp.Sistema;
 import mp.exceptions.*;
+import mp.exceptions.admin.UsuarioSinPenalizaciones;
+import mp.exceptions.logOut.CierreSesion;
+import mp.exceptions.logOut.SesionNoIniciada;
+import mp.exceptions.subForo.VerSubForoSinPermiso;
+import mp.exceptions.subForo.VerSubforo;
+import mp.exceptions.suscripciones.ForosSuscritos;
+import mp.exceptions.suscripciones.NoSuscritoANingunFor;
+import mp.exceptions.suscripciones.SubforosNoDisponibles;
 import mp.users.MiembroURJC;
 
 public class Demostrador {
@@ -318,6 +326,18 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 
+		//DESPENALIZAR A ALGÚN USUARIO
+
+		try {
+			redditURJC.despenalizarUsuario("IsraelSonseca");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		try {
+			redditURJC.despenalizarUsuario("IsraelSonseca");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 
 		//VERLAS ENTRADAS CON MAYOR VALORACION
 		try {
@@ -358,7 +378,34 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+		try {
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 
+		//Permite ver a que foros está suscrito un usuario
+		try {
+			redditURJC.login("IsraelSonseca","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+	 	try {
+			redditURJC.suscribirAForo(1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		try {
+			redditURJC.suscribirAForo(2);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		try {
+			redditURJC.verForosSuscritos(redditURJC.getUserLogued(redditURJC));
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		
 		//A continuacion vamosa crear una entrada y vamos a  ver la notificacion de agpardo al iniciar sesion
 		try {
 			redditURJC.logout();
@@ -427,6 +474,68 @@ public class Demostrador {
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
+
+
+
+		//VAMOS A MOSTRAR LAS ENTRADAS SIN INICIAR SESION
+		try {
+			redditURJC.logout();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+		//FUNCIONALIDADES VOTAR:1VotarSinPermiso, 2VotarSinObjetoPuntuable, 3ValoracionNoContemplada, 4VotacionCreada, 5VotacionYaExistente, 6ValorarObjetoPuntuablePropio
+
+		try {//1VotarSinPermiso
+			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2VotarSinObjetoPuntuable
+			redditURJC.login("agpardo","12345");
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.valorar("positiva",-1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3ValoracionNoContemplada
+			redditURJC.valorar("+",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4VotacionCreada
+			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//ver entradas en orden para comprobar
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//5VotacionYaExistente igual y vemos que no cambia los puntos
+			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//ver entradas en orden para comprobar
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//5VotacionYaExistente diferente y vemos que pierde el punto y ademas resta otro
+			redditURJC.valorar("negativa",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {//ver entradas en orden para comprobar
+			redditURJC.verEntradasMayorValoración();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//6ValorarObjetoPuntuablePropio
+			redditURJC.valorar("negativa",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
+
+
 		//Ejecuta Correctamente todas las funcionalidades desarrolladas
 		int a=11+11;
 		//COMPROBADO QUE SIGUE BIEN

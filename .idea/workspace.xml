@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/ComentarSinObjetoPuntuable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinPermiso.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioCreado.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioYaExistente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/comentario/ComentarSinObjetoPuntuable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/votaciones/VotarSinObjetoPuntuable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/votaciones/VotarSinPermiso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fichero.bin" beforeDir="false" afterPath="$PROJECT_DIR$/fichero.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/ComentarSinObjetoPuntuable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Votacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Votacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,21 +22,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a7N36nxjYFYV60qqVeVXOtLQz3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mp" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="mp.exceptions" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="mp.exceptions.votaciones" />
       <recent name="mp.exceptions.crearEntrada" />
@@ -61,18 +37,16 @@
       <recent name="mp.exceptions.admin" />
       <recent name="mp.exceptions" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mp.exceptions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -109,26 +83,66 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="258" key="GridCell.Tab.0.bottom" timestamp="1587574694395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587574694395" />
+    <state width="1493" height="258" key="GridCell.Tab.0.center" timestamp="1587574694395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587574694394" />
+    <state width="1493" height="258" key="GridCell.Tab.0.left" timestamp="1587574694394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587574694394" />
+    <state width="1493" height="258" key="GridCell.Tab.0.right" timestamp="1587574694395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587574694395" />
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1587574695045">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587574695045" />
+    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1587574695045">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587574695045" />
+    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1587574695044">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587574695044" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1587574695045">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587574695045" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1587574053427">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1587574053427" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
-          <line>7</line>
+          <line>15</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador.java</url>
-          <line>409</line>
-          <option name="timeStamp" value="20" />
+          <line>485</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

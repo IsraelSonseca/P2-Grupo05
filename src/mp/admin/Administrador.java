@@ -64,7 +64,7 @@ public class Administrador implements Serializable {
 			if (existsEntradasPendientes()) {
 				Entrada entrada = entradasAValidar.removeLast();
 				entrada.rechazar();
-				MiembroURJC creador=usuarios.get(entrada.getCreador());
+				MiembroURJC creador=usuarios.get(entrada.getUser().getNick());
 				creador.penalizar();
 				throw new EntradaRechazada(entrada,creador);
 			}else{
@@ -132,6 +132,19 @@ public class Administrador implements Serializable {
 			throw new VerEntradasPendientes(strEntradas);
 		}else{
 			throw new VerEntradasPendientesSinPermiso();//no tiene permisos
+		}
+	}
+
+	public void despenalizarUsuario(String s,HashMap<String, MiembroURJC> usuarios) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado{
+		if (this.isLogued()) {
+			MiembroURJC usuario = usuarios.get(s);
+			if (usuario.estaPenalizado()) {
+				usuario.despenalizarUsuario();
+				throw new UsuarioDespenalizado(s);
+			} else throw new UsuarioSinPenalizaciones();
+		}
+		else{
+			throw new DespenalizarUsuariosSinPermiso();
 		}
 	}
 

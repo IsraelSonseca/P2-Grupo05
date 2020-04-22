@@ -102,7 +102,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
      */
     public Entrada crearEntrada(String titulo, String txt,SubForo subForo) {
         // TODO - implement MiembroURJC.crearEntrada
-        return new Entrada(titulo,txt,this.getNick(),subForo);
+        return new Entrada(titulo,txt,this,subForo);
     }
 
     /**
@@ -190,6 +190,11 @@ public class MiembroURJC implements Serializable,Subscriptor {
         } else {
             return this.penalizacion.siguePenalizando();
         }
+    }
+
+    public void despenalizarUsuario(){
+        this.penalizacion = null;
+
     }
 
     @Override

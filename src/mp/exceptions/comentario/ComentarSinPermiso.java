@@ -16,15 +16,4 @@ public class ComentarSinPermiso extends Result {
     public ComentarSinPermiso() {
         super("Usted no es Miembro de la URJC, no tiene permisos para crear Comentarios. CREACIÓN COMENTARIO CANCELADA");
     }
-
-    /**
-     *
-     * @author Pablo
-     */
-    static class ComentarSinObjetoPuntuable extends Result {
-          public ComentarSinObjetoPuntuable(int objetoPuntuable) {
-            super("El Objeto/Comentario/Entrada/Respuesta (en el que quiere comentar) número "+objetoPuntuable+"  no existe. COMENTARIO CANCELADO");
-         }
-
-    }
 }
