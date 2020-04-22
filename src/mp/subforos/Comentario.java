@@ -8,13 +8,11 @@ public class Comentario extends ObjetoPuntuable {
         
 	// Comentario esRespondido;
        
-        private String texto;
-        private MiembroURJC user;
+    private String texto;
         
 	public Comentario(String  texto,MiembroURJC user) {
-		super(0);
+		super(0,user);
 		this.texto=texto;
-		this.user=user;
 	}
    
     public String getTexto() {

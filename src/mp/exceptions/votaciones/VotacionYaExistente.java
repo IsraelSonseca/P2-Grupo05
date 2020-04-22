@@ -6,6 +6,6 @@ import mp.subforos.Votacion;
 
 public class VotacionYaExistente extends Result {
     public VotacionYaExistente(Votacion votacion, ObjetoPuntuable objetoPuntuable) {
-        super("El objeto puntuable "+objetoPuntuable.getId()+" ya estaba valorado  por "+votacion.getUser().getNick()+". Ahora quedaré valorado "+votacion.getEstado()+"mente. VOTACION PUBLICADA");
+        super("El objeto puntuable "+objetoPuntuable.getId()+" ya estaba valorado  por "+votacion.getUser().getNick()+". Ahora quedará valorado "+votacion.getEstado()+"mente. VOTACION PUBLICADA");
     }
 }

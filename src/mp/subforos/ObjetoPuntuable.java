@@ -22,6 +22,15 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
 	private int id;
 	private HashMap<Integer, Comentario> comentarios;
     private HashMap<String, Votacion> valoraciones;
+    private MiembroURJC user;
+
+    public MiembroURJC getUser() {
+        return user;
+    }
+
+    public void setUser(MiembroURJC user) {
+        this.user = user;
+    }
 
     public int getId() {
         return id;
@@ -39,12 +48,13 @@ public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
         this.comentarios = comentarios;
     }
 
-    public ObjetoPuntuable(int puntos) {
+    public ObjetoPuntuable(int puntos,MiembroURJC user) {
         contador++;
         this.id=contador;
         this.puntos = puntos;
         this.comentarios = new HashMap<>();
         this.valoraciones = new HashMap<>();
+        this.user=user;
     }
 
 	@Override

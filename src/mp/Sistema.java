@@ -324,11 +324,15 @@ public class Sistema implements Serializable {
         }
     }
 
-    public void valorar(String valoracion, int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable, ValoracionNoContemplada, VotacionCreada, VotacionYaExistente {
+    public void valorar(String valoracion, int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable, ValoracionNoContemplada, VotacionCreada, VotacionYaExistente, ValorarObjetoPuntuablePropio {
         if (sesionIniciada()){
             if(existeObjetoPuntuable(objetoPuntuable)){
                 ObjetoPuntuable objetoAValorar = this.devuelveObjetoPuntuable(objetoPuntuable);
-                objetoAValorar.valorar(valoracion,this.userLogued);
+                if (objetoAValorar.getUser().equals(this.userLogued)){
+                    throw new ValorarObjetoPuntuablePropio(objetoAValorar);
+                }else{
+                    objetoAValorar.valorar(valoracion,this.userLogued);
+                }
             } else {
                 throw new VotarSinObjetoPuntuable(objetoPuntuable);
             }

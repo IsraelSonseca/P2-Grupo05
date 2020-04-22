@@ -486,12 +486,38 @@ public class Demostrador {
 			redditURJC.verEntradasMayorValoración();
 		} catch (Result result) {
 			System.out.println(result.getMessage());
-		} try {
-			redditURJC.login("IsraelSonseca","12345");
+		}
+		//FUNCIONALIDADES VOTAR:1VotarSinPermiso, 2VotarSinObjetoPuntuable, 3ValoracionNoContemplada, 4VotacionCreada, 5VotacionYaExistente, 6ValorarObjetoPuntuablePropio
+		try {//1VotarSinPermiso
+			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//2VotarSinObjetoPuntuable
+			redditURJC.login("agpardo","12345");
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		} try {
+			redditURJC.valorar("positiva",-1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//3ValoracionNoContemplada
+			redditURJC.valorar("+",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//4VotacionCreada
 			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//5VotacionYaExistente igual y vemos que no cambia los puntos
+			redditURJC.valorar("positiva",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//5VotacionYaExistente diferente y vemos que pierde el punto y ademas resta otro
+			redditURJC.valorar("negativa",6);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {//6ValorarObjetoPuntuablePropio
+			redditURJC.valorar("negativa",1);
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}

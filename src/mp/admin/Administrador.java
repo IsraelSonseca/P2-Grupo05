@@ -64,7 +64,7 @@ public class Administrador implements Serializable {
 			if (existsEntradasPendientes()) {
 				Entrada entrada = entradasAValidar.removeLast();
 				entrada.rechazar();
-				MiembroURJC creador=usuarios.get(entrada.getCreador());
+				MiembroURJC creador=usuarios.get(entrada.getUser().getNick());
 				creador.penalizar();
 				throw new EntradaRechazada(entrada,creador);
 			}else{

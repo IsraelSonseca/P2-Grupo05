@@ -1,5 +1,7 @@
 package mp.subforos;
 
+import mp.users.MiembroURJC;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Objects;
@@ -9,15 +11,13 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 	private String titulo;
 	private String texto;
 	private EstadoEntrada estado;
-	private String creador;
 	private SubForo subForo;
 
-	public Entrada(String titulo, String texto,String creadorNick,SubForo subForo) {
-		super(0);
+	public Entrada(String titulo, String texto, MiembroURJC user, SubForo subForo) {
+		super(0,user);
 		this.titulo = titulo;
 		this.texto = texto;
 		this.estado = EstadoEntrada.creada;
-		this.creador=creadorNick;
 		this.subForo=subForo;
 	}
 
@@ -43,14 +43,6 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 
 	public void setEstado(EstadoEntrada estado) {
 		this.estado = estado;
-	}
-
-	public String getCreador() {
-		return creador;
-	}
-
-	public void setCreador(String creador) {
-		this.creador = creador;
 	}
 
 	public SubForo getSubForo() {
