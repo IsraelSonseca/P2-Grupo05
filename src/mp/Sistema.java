@@ -319,5 +319,20 @@ public class Sistema implements Serializable {
         }
     }
 
+    public void valorar(String valoracion,int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable {
+        if (sesionIniciada()){
+            if(existeObjetoPuntuable(objetoPuntuable)){
+                ObjetoPuntuable objetoAValorar = this.devuelveObjetoPuntuable(objetoPuntuable);
+                objetoAValorar.valorar(valoracion,this.userLogued);
+                Comentario comentario = this.userLogued.crearComentario(coment);
+
+                this.addComentario(comentario,objetoPadre);
+            } else {
+                throw new VotarSinObjetoPuntuable(objetoPuntuable);
+            }
+        }else{
+            throw new VotarSinPermiso();//no tiene permisos
+        }
+    }
 
 }
