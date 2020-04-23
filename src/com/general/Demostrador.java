@@ -539,6 +539,20 @@ public class Demostrador {
 		}
 
 
+		//Probamos la funcionalidad de ver el sistema enterio
+		try {
+			redditURJC.crearComentario("okey, esta es mi respuesta al comentario",7);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}try {
+			redditURJC.crearComentario("Este es el segundo comentario",1);
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		} try {
+			redditURJC.verSistema();
+		} catch (Result result) {
+			System.out.println(result.getMessage());
+		}
 		//Ejecuta Correctamente todas las funcionalidades desarrolladas
 		int a=11+11;
 		//COMPROBADO QUE SIGUE BIEN

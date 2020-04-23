@@ -9,6 +9,8 @@ import mp.exceptions.crearEntrada.*;
 import mp.exceptions.logIn.*;
 import mp.exceptions.logOut.AdminCierreSesion;
 import mp.exceptions.logOut.AdminSesionNoIniciada;
+import mp.exceptions.sistem.VerSistema;
+import mp.exceptions.sistem.VerSistemaSinPermiso;
 import mp.exceptions.subForo.*;
 import mp.exceptions.logOut.CierreSesion;
 import mp.exceptions.logOut.SesionNoIniciada;
@@ -214,7 +216,7 @@ public class Sistema implements Serializable {
         if (sesionIniciada()){
             String strForos="";
             for (SubForo subForo : subForos.values()) {
-                strForos= strForos+this.userLogued.viewSubForo(subForo)+"\n";
+                strForos+= "\n"+this.userLogued.viewSubForo(subForo);
             }
             throw new VerSubforo(this.userLogued,strForos);
         }else{
@@ -234,7 +236,7 @@ public class Sistema implements Serializable {
         Collections.sort(entradas);
         String entradasStr = "";
         for (Entrada entrada : entradas){
-            entradasStr=entradasStr+entrada.toString()+"\n";
+            entradasStr+="\n"+entrada.toString();
         }
         throw new VerEntradas(entradasStr);
     }
@@ -296,7 +298,7 @@ public class Sistema implements Serializable {
                     ArrayList<Subscriptor> AlumnosSuscritos = subforo.getSuscriptores();
                     for (Subscriptor s : AlumnosSuscritos) {
                         if (s.equals(user)) {
-                            a = a + subforo + ("\n");
+                            a += "\n"+subforo;
                         }
                     }
                 }
@@ -418,7 +420,18 @@ public class Sistema implements Serializable {
         
         return obj ;
      }
-   
+
+    public void verSistema() throws VerSistemaSinPermiso, VerSistema {
+        if (sesionIniciada()){
+            String sistema="";
+            for (SubForo subForo : subForos.values()) {
+                sistema= sistema+"\n"+this.userLogued.viewSubForoRec(subForo);
+            }
+            throw new VerSistema(this.userLogued,sistema);
+        }else{
+            throw new VerSistemaSinPermiso();//no tiene permisos
+        }
+    }
 
 
 }

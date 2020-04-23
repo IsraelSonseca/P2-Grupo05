@@ -23,6 +23,11 @@ public class Comentario extends ObjetoPuntuable {
         this.texto = texto;
     }
 
+    @Override
+    public String toString() {
+        return "Comentario" + this.getId() + ": "+this.getUser().getNick()+"'" + texto +'\'';
+    }
+
 
 }
 

@@ -81,7 +81,7 @@ public class Entrada extends ObjetoPuntuable implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Entrada" + this.getId() + " => TÍTULO: '" + titulo + '\'' + ", TEXTO: '" + texto + '\'';
+		return "Entrada" + this.getId()+" " +this.getUser().getNick()+ " => TÍTULO: '" + titulo +'\'' + ", TEXTO: '" + texto + '\'';
 	}
 
 

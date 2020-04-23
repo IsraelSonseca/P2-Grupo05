@@ -128,7 +128,7 @@ public class Administrador implements Serializable {
 		if (this.isLogued()){
 			String strEntradas="";
 			for (Entrada entrada : entradasAValidar) {
-				strEntradas= strEntradas+this.viewEntrada(entrada)+"\n";
+				strEntradas+= "\n"+this.viewEntrada(entrada);
 			}
 			throw new VerEntradasPendientes(strEntradas);
 		}else{

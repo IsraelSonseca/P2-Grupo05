@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/sistem/VerSistema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mp/exceptions/sistem/VerSistemaSinPermiso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaseDeDatos.obj" beforeDir="false" afterPath="$PROJECT_DIR$/BaseDeDatos.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/admin/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/admin/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/admin/VerEntradasPendientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/VerEntradasPendientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/VerEntradas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/VerEntradas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/logIn/LogedCorrect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/logIn/LogedCorrect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/subForo/VerSubforo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/subForo/VerSubforo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/suscripciones/ForosSuscritos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/suscripciones/ForosSuscritos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,27 +45,31 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mp" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="mp.exceptions.votaciones" />
-      <recent name="mp.exceptions.crearEntrada" />
-      <recent name="mp.exceptions.logIn" />
-      <recent name="mp.exceptions.admin" />
-      <recent name="mp.exceptions" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="mp.exceptions" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mp.exceptions" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="mp.exceptions.sistem" />
+      <recent name="mp.exceptions.votaciones" />
+      <recent name="mp.exceptions.crearEntrada" />
+      <recent name="mp.exceptions.logIn" />
+      <recent name="mp.exceptions.admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,22 +118,30 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="258" key="GridCell.Tab.0.bottom" timestamp="1587634717661">
+    <state x="537" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1587660025643">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587634717661" />
-    <state width="1493" height="258" key="GridCell.Tab.0.center" timestamp="1587634717660">
+    <state x="537" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587660025643" />
+    <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1587660620812">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587634717660" />
-    <state width="1493" height="258" key="GridCell.Tab.0.left" timestamp="1587634717660">
+    <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1587660620812" />
+    <state width="1493" height="310" key="GridCell.Tab.0.bottom" timestamp="1587662274842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587634717660" />
-    <state width="1493" height="258" key="GridCell.Tab.0.right" timestamp="1587634717661">
+    <state width="1493" height="310" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587662274842" />
+    <state width="1493" height="310" key="GridCell.Tab.0.center" timestamp="1587662274842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587634717661" />
+    <state width="1493" height="310" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587662274842" />
+    <state width="1493" height="310" key="GridCell.Tab.0.left" timestamp="1587662274842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="310" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587662274842" />
+    <state width="1493" height="310" key="GridCell.Tab.0.right" timestamp="1587662274842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="310" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587662274842" />
     <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1587634717899">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

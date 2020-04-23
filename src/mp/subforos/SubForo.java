@@ -159,4 +159,14 @@ public class SubForo implements Subject,Serializable {
         return obj ;
     }
 
+	public String viewRec() {
+		String strForo;
+		strForo=this.toString()+":";
+			for (Entrada entrada:this.entradas.values()){
+				if (entrada.getEstado()==EstadoEntrada.validada){
+					strForo+="\n"+entrada.viewRec("     ");
+				}
+			}
+		return strForo;
+	}
 }

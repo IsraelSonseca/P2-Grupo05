@@ -206,7 +206,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
     public String listNotificaciones() {
             String strNotificaciones="";
             for (int i = 0; i < getNumNotificaciones(); ++i) {
-                strNotificaciones= strNotificaciones+notificaciones.remove().toString()+"\n";
+                strNotificaciones= "\n"+strNotificaciones+notificaciones.remove().toString();
             }
             return strNotificaciones;
     }
@@ -217,5 +217,9 @@ public class MiembroURJC implements Serializable,Subscriptor {
 
     public Comentario crearComentario(String comentario) {
        return new Comentario(comentario,this); 
+    }
+
+    public String viewSubForoRec(SubForo subForo) {
+        return  subForo.viewRec();
     }
 }

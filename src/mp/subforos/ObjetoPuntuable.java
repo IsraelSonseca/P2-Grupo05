@@ -26,6 +26,14 @@ public class ObjetoPuntuable implements Serializable, Comparable<ObjetoPuntuable
     private HashMap<String, Votacion> valoraciones;
     private MiembroURJC user;
 
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
     public MiembroURJC getUser() {
         return user;
     }
@@ -185,5 +193,13 @@ public class ObjetoPuntuable implements Serializable, Comparable<ObjetoPuntuable
             throw new ValoracionNoContemplada(valoracion);
         }
         this.addValoracion(votacion);
+    }
+
+    public String viewRec(String tabulado) {
+        String objPunt= tabulado+this.toString()+"\n"+tabulado+"PUNTUACION: "+this.getPuntos();
+        for (Comentario comentario:this.comentarios.values()) {
+            objPunt += "\n"+comentario.viewRec(tabulado+"     ");
+        }
+        return objPunt;
     }
 }
