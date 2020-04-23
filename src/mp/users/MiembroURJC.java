@@ -12,6 +12,7 @@ import java.util.Queue;
 import mp.subforos.ObjetoPuntuable;
 
 public class MiembroURJC implements Serializable,Subscriptor {
+    private static final long serialVersionUID = 1L;
     private static int contador=0;
     private int id;
     private String nombre;

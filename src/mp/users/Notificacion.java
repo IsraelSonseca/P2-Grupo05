@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Notificacion implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private String msg;
 
     public Notificacion(String msg) {
