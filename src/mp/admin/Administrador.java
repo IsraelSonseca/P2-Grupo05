@@ -14,6 +14,7 @@ import java.util.LinkedList;
 
 public class Administrador implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	final private String CONTRASENA="11111";
 	private String cont;
 	private LinkedList<Entrada> entradasAValidar;

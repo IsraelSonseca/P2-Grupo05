@@ -18,7 +18,10 @@ public class Demostrador {
 	public void main() {
 		// TODO - implement Demostrador.main
 		System.out.println();
-		redditURJC=new Sistema();
+		//redditURJC=new Sistema();
+
+		redditURJC = Sistema.leerInfo();
+		//System.out.println(redditURJC);
 
 		//Registro de Usuarios
 		try {//email malo

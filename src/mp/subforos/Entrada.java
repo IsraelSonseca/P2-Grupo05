@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class Entrada extends ObjetoPuntuable implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String titulo;
 	private String texto;
 	private EstadoEntrada estado;
