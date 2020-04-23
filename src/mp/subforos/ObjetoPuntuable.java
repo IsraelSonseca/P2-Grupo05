@@ -1,5 +1,6 @@
 package mp.subforos;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Objects;
@@ -15,9 +16,10 @@ import mp.exceptions.votaciones.VotacionYaExistente;
 import mp.users.MiembroURJC;
 
 
-public class ObjetoPuntuable implements Comparable<ObjetoPuntuable> {
+public class ObjetoPuntuable implements Serializable, Comparable<ObjetoPuntuable> {
 
-	private int puntos;
+    private static final long serialVersionUID = 1L;
+    private int puntos;
 	private static int contador=0;
 	private int id;
 	private HashMap<Integer, Comentario> comentarios;

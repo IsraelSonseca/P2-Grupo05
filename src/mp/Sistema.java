@@ -37,6 +37,7 @@ import mp.exceptions.comentario.ComentarSinPermiso;
 import mp.exceptions.comentario.ComentarioCreado;
 
 public class Sistema implements Serializable {
+    private static final long serialVersionUID = 1L;
     private HashMap<String, MiembroURJC> usuarios;
     private HashMap<Integer, SubForo> subForos;
     private MiembroURJC userLogued;
@@ -104,7 +105,7 @@ public class Sistema implements Serializable {
         if (sesionIniciada()) {
             MiembroURJC user = this.userLogued;
             this.userLogued = null;
-            this.guardarSistema();
+            this.guardarInfo();
             throw new CierreSesion(user);
         } else {
             throw new SesionNoIniciada("LOG OUT CANCELADO");
@@ -312,17 +313,38 @@ public class Sistema implements Serializable {
         this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }
 
-    private void guardarSistema(){
+    public boolean guardarInfo(){
         try {
-            FileOutputStream fos = new FileOutputStream("fichero.bin");
-            ObjectOutputStream oos =new ObjectOutputStream(fos);
-            oos.writeObject(this);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            FileOutputStream f = new FileOutputStream("BaseDeDatos.obj");
+            ObjectOutputStream finalFile = new ObjectOutputStream(f);
+            finalFile.writeObject(this);
+            finalFile.close();
+            f.close();
+            return true;
+
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return false;
         }
     }
+
+    public static Sistema leerInfo(){
+        Sistema s = null;
+        try {
+            FileInputStream file =new FileInputStream("BaseDeDatos.obj");
+            ObjectInputStream inputFile = new ObjectInputStream(file);
+            s = (Sistema) inputFile.readObject();
+
+            inputFile.close();
+            file.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(-1);
+        }
+        return s;
+    }
+
+
 
     public void valorar(String valoracion, int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable, ValoracionNoContemplada, VotacionCreada, VotacionYaExistente, ValorarObjetoPuntuablePropio {
         if (sesionIniciada()){

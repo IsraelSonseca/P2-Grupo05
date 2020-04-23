@@ -13,6 +13,7 @@ import java.util.*;
 
 public class SubForo implements Subject,Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Subscriptor> subscriptors;
 	private static int contador=0;
 	private int id;

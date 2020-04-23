@@ -2,13 +2,15 @@ package mp.subforos;
 
 import mp.users.MiembroURJC;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import static mp.subforos.EstadoValoracion.negativa;
 import static mp.subforos.EstadoValoracion.positiva;
 
-public class Votacion {
+public class Votacion implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private MiembroURJC user;
 	private EstadoValoracion estado;
 

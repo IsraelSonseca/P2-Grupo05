@@ -20,6 +20,9 @@ public class Demostrador {
 		System.out.println();
 		redditURJC=new Sistema();
 
+		//redditURJC = Sistema.leerInfo();
+		//System.out.println(redditURJC);
+
 		//Registro de Usuarios
 		try {//email malo
 			redditURJC.registrarUsuario("Israel","Peñalver Sánchez","IsraelSonseca","12345","i.penalver.2016@s");
