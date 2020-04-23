@@ -1,24 +1,15 @@
 package com.general;
 
-import mp.Sistema;
+import mp.RedditURJC;
 import mp.exceptions.*;
-import mp.exceptions.admin.UsuarioSinPenalizaciones;
-import mp.exceptions.logOut.CierreSesion;
-import mp.exceptions.logOut.SesionNoIniciada;
-import mp.exceptions.subForo.VerSubForoSinPermiso;
-import mp.exceptions.subForo.VerSubforo;
-import mp.exceptions.suscripciones.ForosSuscritos;
-import mp.exceptions.suscripciones.NoSuscritoANingunFor;
-import mp.exceptions.suscripciones.SubforosNoDisponibles;
-import mp.users.MiembroURJC;
 
 public class Demostrador {
-	private Sistema redditURJC;
+	private RedditURJC redditURJC;
 
 	public void main() {
 		// TODO - implement Demostrador.main
 		System.out.println();
-		redditURJC=new Sistema();
+		redditURJC=new RedditURJC();
 
 		//redditURJC = Sistema.leerInfo();
 		//System.out.println(redditURJC);
