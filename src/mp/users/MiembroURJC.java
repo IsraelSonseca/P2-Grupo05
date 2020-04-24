@@ -9,19 +9,29 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
-import mp.subforos.ObjetoPuntuable;
 
-public class MiembroURJC implements Serializable,Subscriptor {
+public class MiembroURJC implements Serializable, Subscriptor {
     private static final long serialVersionUID = 1L;
-    private static int contador=0;
-    private int id;
+    private static int contador = 0;
+    private final int id;
+    private final Queue<Notificacion> notificaciones;
     private String nombre;
     private String apellidos;
     private String nick;
     private String contrasena;
     private String email;
     private Penalizacion penalizacion;
-    private Queue<Notificacion> notificaciones;
+
+    public MiembroURJC(String nombre, String apellidos, String nick, String contrasena, String email) {
+        contador++;
+        this.id = contador;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.nick = nick;
+        this.contrasena = contrasena;
+        this.email = email;
+        this.notificaciones = new LinkedList<Notificacion>();
+    }
 
     //GettersAndSetters
     public int getId() {
@@ -76,18 +86,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
         this.penalizacion = penalizacion;
     }
 
-    public MiembroURJC(String nombre, String apellidos, String nick, String contrasena, String email) {
-        contador++;
-        this.id=contador;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.nick = nick;
-        this.contrasena = contrasena;
-        this.email = email;
-        this.notificaciones=new LinkedList<Notificacion>();
-    }
-
-    public void eliminar(){
+    public void eliminar() {
         contador--;
     }
 
@@ -97,9 +96,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
 
-
     /**
-     *
      * @param idEntrada
      */
     public Comentario comentar(int idEntrada) {
@@ -108,7 +105,6 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     /**
-     *
      * @param idComentario
      */
     public Comentario Responder(int idComentario) {
@@ -117,7 +113,6 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     /**
-     *
      * @param idEntrada
      */
     public void votar(int idEntrada) {
@@ -126,7 +121,6 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     /**
-     *
      * @param idEntrada
      */
     public Entrada compartirEntrada(int idEntrada) {
@@ -135,7 +129,6 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     /**
-     *
      * @param idEntrada
      */
     public Entrada modificarEntrada(int idEntrada) {
@@ -144,7 +137,6 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     /**
-     *
      * @param idSubforo
      */
     public Subscripcion subscribirse(int idSubforo) {
@@ -152,7 +144,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
         throw new UnsupportedOperationException();
     }
 
-    public String viewSubForo(SubForo subForo){
+    public String viewSubForo(SubForo subForo) {
         return subForo.toString();
     }
 
@@ -173,19 +165,19 @@ public class MiembroURJC implements Serializable,Subscriptor {
         return this.getContrasena().equals(cont);
     }
 
-    public void penalizar(){
-        this.penalizacion=new Penalizacion();
+    public void penalizar() {
+        this.penalizacion = new Penalizacion();
     }
 
-    public boolean estaPenalizado(){
-        if (this.penalizacion == null){
+    public boolean estaPenalizado() {
+        if (this.penalizacion == null) {
             return false;
         } else {
             return this.penalizacion.siguePenalizando();
         }
     }
 
-    public void despenalizarUsuario(){
+    public void despenalizarUsuario() {
         this.penalizacion = null;
 
     }
@@ -196,11 +188,11 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     public String listNotificaciones() {
-            String strNotificaciones="";
-            for (int i = 0; i < getNumNotificaciones(); ++i) {
-                strNotificaciones= "\n"+strNotificaciones+notificaciones.remove().toString();
-            }
-            return strNotificaciones;
+        String strNotificaciones = "";
+        for (int i = 0; i < getNumNotificaciones(); ++i) {
+            strNotificaciones = "\n" + strNotificaciones + notificaciones.remove().toString();
+        }
+        return strNotificaciones;
     }
 
     public int getNumNotificaciones() {
@@ -208,10 +200,10 @@ public class MiembroURJC implements Serializable,Subscriptor {
     }
 
     public Comentario crearComentario(String comentario) {
-       return new Comentario(comentario,this); 
+        return new Comentario(comentario, this);
     }
 
     public String viewSubForoRec(SubForo subForo) {
-        return  subForo.viewRec();
+        return subForo.viewRec();
     }
 }

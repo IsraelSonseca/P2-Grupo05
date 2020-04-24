@@ -6,6 +6,6 @@ import mp.users.MiembroURJC;
 
 public class SuscriptorYaExistente extends Result {
     public SuscriptorYaExistente(MiembroURJC user, SubForo subForo) {
-        super("El usuario: "+ user.getNick()+", ya está suscrito al SUBFORO "+subForo.getId()+" -> "+subForo.getNombre()+". SUSCRIPCION CONTINUA ACTIVA");
+        super("El usuario: " + user.getNick() + ", ya está suscrito al SUBFORO " + subForo.getId() + " -> " + subForo.getNombre() + ". SUSCRIPCION CONTINUA ACTIVA");
     }
 }

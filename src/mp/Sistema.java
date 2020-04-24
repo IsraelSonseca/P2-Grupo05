@@ -20,16 +20,15 @@ import mp.exceptions.sistem.VerSistemaSinPermiso;
 import mp.exceptions.subForo.*;
 import mp.exceptions.suscripciones.*;
 import mp.exceptions.votaciones.*;
-import mp.users.MiembroURJC;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
 public interface Sistema {
-    static RedditURJC leerInfo(){
+    static RedditURJC leerInfo() {
         RedditURJC s = null;
         try {
-            FileInputStream file =new FileInputStream("BaseDeDatos.obj");
+            FileInputStream file = new FileInputStream("BaseDeDatos.obj");
             ObjectInputStream inputFile = new ObjectInputStream(file);
             s = (RedditURJC) inputFile.readObject();
 

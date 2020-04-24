@@ -1,27 +1,25 @@
 package mp;
 
-import mp.exceptions.comentario.ComentarSinObjetoPuntuable;
-import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.admin.Administrador;
 import mp.exceptions.admin.*;
+import mp.exceptions.comentario.ComentarSinObjetoPuntuable;
+import mp.exceptions.comentario.ComentarSinPermiso;
+import mp.exceptions.comentario.ComentarioCreado;
+import mp.exceptions.comentario.ComentarioYaExistente;
 import mp.exceptions.crearEntrada.*;
 import mp.exceptions.logIn.*;
 import mp.exceptions.logOut.AdminCierreSesion;
 import mp.exceptions.logOut.AdminSesionNoIniciada;
-import mp.exceptions.sistem.VerSistema;
-import mp.exceptions.sistem.VerSistemaSinPermiso;
-import mp.exceptions.subForo.*;
 import mp.exceptions.logOut.CierreSesion;
 import mp.exceptions.logOut.SesionNoIniciada;
 import mp.exceptions.resgister.EmailIncorrecto;
 import mp.exceptions.resgister.EmailPreviamenteRegistrado;
 import mp.exceptions.resgister.NickYaExistente;
 import mp.exceptions.resgister.RegistroCorrecto;
+import mp.exceptions.sistem.VerSistema;
+import mp.exceptions.sistem.VerSistemaSinPermiso;
+import mp.exceptions.subForo.*;
 import mp.exceptions.suscripciones.*;
-import mp.exceptions.suscripciones.SuscribirSinForo;
-import mp.exceptions.suscripciones.SuscribirSinPermiso;
-import mp.exceptions.suscripciones.SuscripcionActivada;
-import mp.exceptions.suscripciones.SuscriptorYaExistente;
 import mp.exceptions.votaciones.*;
 import mp.subforos.*;
 import mp.users.Alumno;
@@ -29,28 +27,28 @@ import mp.users.MiembroURJC;
 import mp.users.Profesor;
 import mp.users.Subscriptor;
 
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import mp.exceptions.comentario.ComentarSinPermiso;
-import mp.exceptions.comentario.ComentarioCreado;
 
 public class RedditURJC implements Serializable, Sistema {
     private static final long serialVersionUID = 1L;
-    private HashMap<String, MiembroURJC> usuarios;
-    private HashMap<Integer, SubForo> subForos;
+    private final HashMap<String, MiembroURJC> usuarios;
+    private final HashMap<Integer, SubForo> subForos;
+    private final Administrador admin;
     private MiembroURJC userLogued;
-    private Administrador admin;
 
     public RedditURJC() {
         this.usuarios = new HashMap<>();
         this.subForos = new HashMap<>();
-        this.admin= new Administrador();
+        this.admin = new Administrador();
     }
 
     /**
-     *
      * @param cont
      */
     @Override
@@ -83,13 +81,13 @@ public class RedditURJC implements Serializable, Sistema {
         if (usuarios.containsKey(nick)) {
             MiembroURJC user = usuarios.get(nick);
             if (user.accepContrasena(cont)) {
-                if (user.estaPenalizado()){
+                if (user.estaPenalizado()) {
                     throw new UsuarioPenalizado(user);
                 } else {
                     this.userLogued = user;
-                    int n= this.userLogued.getNumNotificaciones();
+                    int n = this.userLogued.getNumNotificaciones();
                     String strNotificaciones = this.userLogued.listNotificaciones();
-                    throw new LogedCorrect(user,strNotificaciones,n);
+                    throw new LogedCorrect(user, strNotificaciones, n);
                 }
             } else {
                 throw new IncorrectPassword(cont, nick);
@@ -188,39 +186,39 @@ public class RedditURJC implements Serializable, Sistema {
 
     @Override
     public void crearSubforo(String nombre) throws SesionNoIniciada, SubforoCreado, SubForoYaExistente, CrearSubforoSinPermiso {
-    	if (sesionIniciada()){
-    		if (this.userLogued instanceof Profesor){
-    			SubForo nuevoSubforo= ((Profesor) this.userLogued).crearSubforo(nombre);
-    			this.addSubforo(nuevoSubforo,this.userLogued);
-			}else{
-    			throw new CrearSubforoSinPermiso(this.userLogued);
-			}
-		}else{
-    		throw new SesionNoIniciada("Creacción del subforo "+nombre+" CANCELADA.");
-		}
-	}
-
-	private void addSubforo(SubForo nuevoForo,MiembroURJC user) throws SubforoCreado, SubForoYaExistente {
-		if (nuevoForo != null) {
-			if (!subForos.containsValue(nuevoForo)) {
-				this.subForos.put(nuevoForo.getId(), nuevoForo);
-				throw new SubforoCreado(nuevoForo,user);
-			} else {
-			    nuevoForo.eliminar();
-				throw new SubForoYaExistente(nuevoForo,user);
-			}
-		}
-	}
-
-	@Override
-    public void listSubforos() throws VerSubForoSinPermiso, VerSubforo {
-        if (sesionIniciada()){
-            String strForos="";
-            for (SubForo subForo : subForos.values()) {
-                strForos+= "\n"+this.userLogued.viewSubForo(subForo);
+        if (sesionIniciada()) {
+            if (this.userLogued instanceof Profesor) {
+                SubForo nuevoSubforo = ((Profesor) this.userLogued).crearSubforo(nombre);
+                this.addSubforo(nuevoSubforo, this.userLogued);
+            } else {
+                throw new CrearSubforoSinPermiso(this.userLogued);
             }
-            throw new VerSubforo(this.userLogued,strForos);
-        }else{
+        } else {
+            throw new SesionNoIniciada("Creacción del subforo " + nombre + " CANCELADA.");
+        }
+    }
+
+    private void addSubforo(SubForo nuevoForo, MiembroURJC user) throws SubforoCreado, SubForoYaExistente {
+        if (nuevoForo != null) {
+            if (!subForos.containsValue(nuevoForo)) {
+                this.subForos.put(nuevoForo.getId(), nuevoForo);
+                throw new SubforoCreado(nuevoForo, user);
+            } else {
+                nuevoForo.eliminar();
+                throw new SubForoYaExistente(nuevoForo, user);
+            }
+        }
+    }
+
+    @Override
+    public void listSubforos() throws VerSubForoSinPermiso, VerSubforo {
+        if (sesionIniciada()) {
+            String strForos = "";
+            for (SubForo subForo : subForos.values()) {
+                strForos += "\n" + this.userLogued.viewSubForo(subForo);
+            }
+            throw new VerSubforo(this.userLogued, strForos);
+        } else {
             throw new VerSubForoSinPermiso();//no tiene permisos
         }
     }
@@ -230,15 +228,15 @@ public class RedditURJC implements Serializable, Sistema {
         ArrayList<Entrada> entradas = new ArrayList<>();
         for (SubForo subForo : subForos.values()) {
             for (Entrada entrada : subForo.getEntradas().values()) {
-                if (entrada.getEstado()== EstadoEntrada.validada){
+                if (entrada.getEstado() == EstadoEntrada.validada) {
                     entradas.add(entrada);
                 }
             }
         }
         Collections.sort(entradas);
         String entradasStr = "";
-        for (Entrada entrada : entradas){
-            entradasStr+="\n"+entrada.toString();
+        for (Entrada entrada : entradas) {
+            entradasStr += "\n" + entrada.toString();
         }
         throw new VerEntradas(entradasStr);
     }
@@ -260,15 +258,15 @@ public class RedditURJC implements Serializable, Sistema {
 
     @Override
     public void crearEntrada(String titulo, String texto, int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
-        if (sesionIniciada()){
-            if(existeForo(foro)){
-                Entrada nuevaEntrada = this.subForos.get(foro).crearEntrada(titulo,texto,this.userLogued);
+        if (sesionIniciada()) {
+            if (existeForo(foro)) {
+                Entrada nuevaEntrada = this.subForos.get(foro).crearEntrada(titulo, texto, this.userLogued);
                 this.admin.anadirEntAValidar(nuevaEntrada);
-                this.addEntrada(nuevaEntrada,foro);
+                this.addEntrada(nuevaEntrada, foro);
             } else {
                 throw new CrearEntradaSinForo(foro);
             }
-        }else{
+        } else {
             throw new CrearEntradaSinPermiso();//no tiene permisos
         }
     }
@@ -283,13 +281,13 @@ public class RedditURJC implements Serializable, Sistema {
 
     @Override
     public void suscribirAForo(int foro) throws SuscriptorYaExistente, SuscripcionActivada, SuscribirSinForo, SuscribirSinPermiso {
-        if (sesionIniciada()){
-            if(existeForo(foro)){
-                this.addSuscriptor(this.userLogued,foro);
+        if (sesionIniciada()) {
+            if (existeForo(foro)) {
+                this.addSuscriptor(this.userLogued, foro);
             } else {
                 throw new SuscribirSinForo(foro);
             }
-        }else{
+        } else {
             throw new SuscribirSinPermiso();//no tiene permisos
         }
     }
@@ -305,26 +303,27 @@ public class RedditURJC implements Serializable, Sistema {
                     ArrayList<Subscriptor> AlumnosSuscritos = subforo.getSuscriptores();
                     for (Subscriptor s : AlumnosSuscritos) {
                         if (s.equals(this.userLogued)) {
-                            a += "\n"+subforo;
+                            a += "\n" + subforo;
                         }
                     }
                 }
                 throw new ForosSuscritos(a);
             }
 
-        }else throw new SubforosNoDisponibles();
+        } else throw new SubforosNoDisponibles();
     }
 
     @Override
     public void despenalizarUsuario(String s) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado {
         this.admin.despenalizarUsuario(s, this.usuarios);
     }
+
     private void addSuscriptor(MiembroURJC userLogued, int subForo) throws SuscriptorYaExistente, SuscripcionActivada {
         this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }
 
     @Override
-    public boolean guardarInfo(){
+    public boolean guardarInfo() {
         try {
             FileOutputStream f = new FileOutputStream("BaseDeDatos.obj");
             ObjectOutputStream finalFile = new ObjectOutputStream(f);
@@ -342,88 +341,88 @@ public class RedditURJC implements Serializable, Sistema {
 
     @Override
     public void valorar(String valoracion, int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable, ValoracionNoContemplada, VotacionCreada, VotacionYaExistente, ValorarObjetoPuntuablePropio {
-        if (sesionIniciada()){
-            if(existeObjetoPuntuable(objetoPuntuable)){
+        if (sesionIniciada()) {
+            if (existeObjetoPuntuable(objetoPuntuable)) {
                 ObjetoPuntuable objetoAValorar = this.devuelveObjetoPuntuable(objetoPuntuable);
-                if (objetoAValorar.getUser().equals(this.userLogued)){
+                if (objetoAValorar.getUser().equals(this.userLogued)) {
                     throw new ValorarObjetoPuntuablePropio(objetoAValorar);
-                }else{
-                    objetoAValorar.valorar(valoracion,this.userLogued);
+                } else {
+                    objetoAValorar.valorar(valoracion, this.userLogued);
                 }
             } else {
                 throw new VotarSinObjetoPuntuable(objetoPuntuable);
             }
-        }else{
+        } else {
             throw new VotarSinPermiso();//no tiene permisos
         }
     }
-    
+
     @Override
     public void crearComentario(String coment, int objetoPuntuable) throws ComentarSinPermiso, ComentarioCreado, ComentarioYaExistente, ComentarSinObjetoPuntuable {
-        if (sesionIniciada()){
-            if(existeObjetoPuntuable(objetoPuntuable)){
+        if (sesionIniciada()) {
+            if (existeObjetoPuntuable(objetoPuntuable)) {
                 ObjetoPuntuable objetoPadre = this.devuelveObjetoPuntuable(objetoPuntuable);
                 Comentario comentario = this.userLogued.crearComentario(coment);
-                
-                this.addComentario(comentario,objetoPadre);
+
+                this.addComentario(comentario, objetoPadre);
             } else {
                 throw new ComentarSinObjetoPuntuable(objetoPuntuable);
             }
-        }else{
+        } else {
             throw new ComentarSinPermiso();//no tiene permisos
         }
     }
 
-    private void addComentario(Comentario nuevo,ObjetoPuntuable padre) throws ComentarioCreado, ComentarioYaExistente{
+    private void addComentario(Comentario nuevo, ObjetoPuntuable padre) throws ComentarioCreado, ComentarioYaExistente {
         padre.addComentario(nuevo);
     }
 
     private boolean existeObjetoPuntuable(int objetoPuntuable) {
-        
+
         boolean encontrado = false;
         Integer i;
-        Set claves= this.subForos.keySet();
+        Set claves = this.subForos.keySet();
         Iterator iterator = claves.iterator();
-        while((!encontrado)&&(iterator.hasNext())){
-            i= (Integer) iterator.next();
-            if(this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)){
-                encontrado = true ;
+        while ((!encontrado) && (iterator.hasNext())) {
+            i = (Integer) iterator.next();
+            if (this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)) {
+                encontrado = true;
             }
-        } 
-        
-        return encontrado ;
-         
+        }
+
+        return encontrado;
+
     }
-    
-     private ObjetoPuntuable devuelveObjetoPuntuable(int objetoPuntuable) {
-        
-        ObjetoPuntuable obj=null;
+
+    private ObjetoPuntuable devuelveObjetoPuntuable(int objetoPuntuable) {
+
+        ObjetoPuntuable obj = null;
         boolean encontrado = false;
-         Integer i;
-        Set claves= this.subForos.keySet();
-         Iterator iterator = claves.iterator();
-         while((!encontrado)&&(iterator.hasNext())){
-            i= (Integer) iterator.next();
-            if(this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)){
+        Integer i;
+        Set claves = this.subForos.keySet();
+        Iterator iterator = claves.iterator();
+        while ((!encontrado) && (iterator.hasNext())) {
+            i = (Integer) iterator.next();
+            if (this.subForos.get(i).contieneObjetoPuntuable(objetoPuntuable)) {
                 obj = this.subForos.get(i).devuelveObjetoPuntuable(objetoPuntuable);
-                encontrado = true ;
+                encontrado = true;
             }
-            
-            
-        } 
-        
-        return obj ;
-     }
+
+
+        }
+
+        return obj;
+    }
 
     @Override
     public void verSistema() throws VerSistemaSinPermiso, VerSistema {
-        if (sesionIniciada()){
-            String sistema="";
+        if (sesionIniciada()) {
+            String sistema = "";
             for (SubForo subForo : subForos.values()) {
-                sistema= sistema+"\n"+this.userLogued.viewSubForoRec(subForo);
+                sistema = sistema + "\n" + this.userLogued.viewSubForoRec(subForo);
             }
-            throw new VerSistema(this.userLogued,sistema);
-        }else{
+            throw new VerSistema(this.userLogued, sistema);
+        } else {
             throw new VerSistemaSinPermiso();//no tiene permisos
         }
     }
