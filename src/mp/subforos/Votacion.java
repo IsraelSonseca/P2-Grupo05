@@ -12,7 +12,7 @@ public class Votacion implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private MiembroURJC user;
-	private EstadoValoracion estado;
+    private EstadoValoracion estado;
 
 
     public Votacion(MiembroURJC user, EstadoValoracion estado) {
@@ -33,28 +33,27 @@ public class Votacion implements Serializable {
     }
 
 
-
     public void setEstado(EstadoValoracion estado) {
         this.estado = estado;
     }
 
     public void like(ObjetoPuntuable obj) {
-		if (estado == positiva){
-                    System.out.println("No se puede valorar positivamente dos veces");    
-                }else{
-                    estado = positiva;
-                    obj.aumentar();
-                }
-	}
+        if (estado == positiva) {
+            System.out.println("No se puede valorar positivamente dos veces");
+        } else {
+            estado = positiva;
+            obj.aumentar();
+        }
+    }
 
-	public void dislike(ObjetoPuntuable obj) {
-		if (estado == negativa){
-                    System.out.println("No se puede valorar negativamente dos veces");                 
-                }else{
-                    estado = negativa;
-                    obj.disminuir();
-                }
-	}
+    public void dislike(ObjetoPuntuable obj) {
+        if (estado == negativa) {
+            System.out.println("No se puede valorar negativamente dos veces");
+        } else {
+            estado = negativa;
+            obj.disminuir();
+        }
+    }
 
     @Override
     public boolean equals(Object o) {

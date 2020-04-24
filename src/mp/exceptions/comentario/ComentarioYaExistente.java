@@ -9,13 +9,12 @@ import mp.exceptions.Result;
 import mp.subforos.Comentario;
 
 /**
- *
  * @author Pablo
  */
-public class ComentarioYaExistente extends Result{
+public class ComentarioYaExistente extends Result {
 
     public ComentarioYaExistente(Comentario comment) {
-      super("Un comentario con id: "+ comment.getId() +", ya está creado. CREACIÓN DEL COMENTARIO CANCELADA");
+        super("Un comentario con id: " + comment.getId() + ", ya está creado. CREACIÓN DEL COMENTARIO CANCELADA");
     }
-    
+
 }

@@ -9,7 +9,10 @@ import java.util.ArrayList;
 
 public interface Subject {
     ArrayList<Subscriptor> subscriptores = new ArrayList<Subscriptor>();
+
     void anadirSubscriptor(MiembroURJC user) throws SuscriptorYaExistente, SuscripcionActivada;
+
     void eliminarSubscriptor(MiembroURJC user);
+
     void notificar(Entrada entrada);
 }

@@ -8,7 +8,6 @@ package mp.exceptions.comentario;
 import mp.exceptions.Result;
 
 /**
- *
  * @author Pablo
  */
 public class ComentarSinPermiso extends Result {

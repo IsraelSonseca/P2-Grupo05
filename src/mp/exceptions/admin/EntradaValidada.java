@@ -5,6 +5,6 @@ import mp.subforos.Entrada;
 
 public class EntradaValidada extends Result {
     public EntradaValidada(Entrada entrada) {
-        super("Entrada con titulo "+entrada.getTitulo()+", y con id  "+entrada.getId()+" validada correctamente. VALIDACIÓN ENTRADA CORRECTA");
+        super("Entrada con titulo " + entrada.getTitulo() + ", y con id  " + entrada.getId() + " validada correctamente. VALIDACIÓN ENTRADA CORRECTA");
     }
 }
