@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mp/RedditURJC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaseDeDatos.obj" beforeDir="false" afterPath="$PROJECT_DIR$/BaseDeDatos.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/RedditURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/RedditURJC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/admin/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/admin/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

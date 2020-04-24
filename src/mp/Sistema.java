@@ -68,7 +68,7 @@ public interface Sistema {
 
     void suscribirAForo(int foro) throws SuscriptorYaExistente, SuscripcionActivada, SuscribirSinForo, SuscribirSinPermiso;
 
-    void verForosSuscritos(MiembroURJC user) throws NoSuscritoANingunFor, ForosSuscritos, SubforosNoDisponibles;
+    void verForosSuscritos() throws NoSuscritoANingunFor, ForosSuscritos, SubforosNoDisponibles;
 
     void despenalizarUsuario(String s) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado;
 

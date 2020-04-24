@@ -99,10 +99,6 @@ public class RedditURJC implements Serializable, Sistema {
         }
     }
 
-    public MiembroURJC getUserLogued(RedditURJC m){
-        return m.userLogued;
-    }
-
     @Override
     public boolean logout() throws CierreSesion, SesionNoIniciada {
         // TODO - implement Sistema.login
@@ -266,7 +262,7 @@ public class RedditURJC implements Serializable, Sistema {
     public void crearEntrada(String titulo, String texto, int foro) throws CrearEntradaSinPermiso, CrearEntradaSinForo, EntradaCreada, EntradaYaExistente {
         if (sesionIniciada()){
             if(existeForo(foro)){
-                Entrada nuevaEntrada = this.userLogued.crearEntrada(titulo,texto,this.subForos.get(foro));
+                Entrada nuevaEntrada = this.subForos.get(foro).crearEntrada(titulo,texto,this.userLogued);
                 this.admin.anadirEntAValidar(nuevaEntrada);
                 this.addEntrada(nuevaEntrada,foro);
             } else {
@@ -279,7 +275,6 @@ public class RedditURJC implements Serializable, Sistema {
 
     private void addEntrada(Entrada nuevaEntrada, int subForo) throws EntradaCreada, EntradaYaExistente {
         this.subForos.get(subForo).addEntrada(nuevaEntrada);
-
     }
 
     private boolean existeForo(int foro) {
@@ -300,7 +295,7 @@ public class RedditURJC implements Serializable, Sistema {
     }
 
     @Override
-    public void verForosSuscritos(MiembroURJC user) throws NoSuscritoANingunFor, ForosSuscritos, SubforosNoDisponibles {
+    public void verForosSuscritos() throws NoSuscritoANingunFor, ForosSuscritos, SubforosNoDisponibles {
         if (sesionIniciada()) {
             if (subForos.isEmpty()) {
                 throw new NoSuscritoANingunFor();
@@ -309,7 +304,7 @@ public class RedditURJC implements Serializable, Sistema {
                 for (SubForo subforo : subForos.values()) {
                     ArrayList<Subscriptor> AlumnosSuscritos = subforo.getSuscriptores();
                     for (Subscriptor s : AlumnosSuscritos) {
-                        if (s.equals(user)) {
+                        if (s.equals(this.userLogued)) {
                             a += "\n"+subforo;
                         }
                     }

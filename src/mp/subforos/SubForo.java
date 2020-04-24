@@ -169,4 +169,8 @@ public class SubForo implements Subject,Serializable {
 			}
 		return strForo;
 	}
+
+    public Entrada crearEntrada(String titulo, String texto, MiembroURJC userLogued) {
+		return new Entrada(titulo,texto,userLogued,this);
+    }
 }

@@ -96,15 +96,7 @@ public class MiembroURJC implements Serializable,Subscriptor {
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * Es el compartir entrada general que solo permite a�adir texto plano
-     * @param txt
-     * @param titulo
-     */
-    public Entrada crearEntrada(String titulo, String txt,SubForo subForo) {
-        // TODO - implement MiembroURJC.crearEntrada
-        return new Entrada(titulo,txt,this,subForo);
-    }
+
 
     /**
      *

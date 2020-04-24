@@ -395,7 +395,7 @@ public class Demostrador {
 			System.out.println(result.getMessage());
 		}
 		try {
-			redditURJC.verForosSuscritos(redditURJC.getUserLogued(redditURJC));
+			redditURJC.verForosSuscritos();
 		} catch (Result result) {
 			System.out.println(result.getMessage());
 		}
