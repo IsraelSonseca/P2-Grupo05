@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavaDocConfiguration">
     <GENERAL>
-      <MODE>UPDATE</MODE>
+      <MODE>REPLACE</MODE>
       <OVERRIDDEN_METHODS>false</OVERRIDDEN_METHODS>
       <SPLITTED_CLASS_NAME>true</SPLITTED_CLASS_NAME>
       <LEVELS>

@@ -27,10 +27,7 @@ import mp.users.MiembroURJC;
 import mp.users.Profesor;
 import mp.users.Subscriptor;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,11 +38,40 @@ public class RedditURJC implements Serializable, Sistema {
     private final HashMap<Integer, SubForo> subForos;
     private final Administrador admin;
     private MiembroURJC userLogued;
+    private static RedditURJC instancia=null;
 
-    public RedditURJC() {
+    public static RedditURJC getInstance(){
+        if (instancia==null){
+            File f=new File("BaseDeDatos.obj");
+            if (f.exists()){
+                instancia=leerInfo();
+            }else{
+                instancia=new RedditURJC();
+            }
+        }
+        return instancia;
+    }
+
+    RedditURJC() {
         this.usuarios = new HashMap<>();
         this.subForos = new HashMap<>();
         this.admin = new Administrador();
+    }
+
+    private static RedditURJC leerInfo() {
+        RedditURJC s = null;
+        try {
+            FileInputStream file = new FileInputStream("BaseDeDatos.obj");
+            ObjectInputStream inputFile = new ObjectInputStream(file);
+            s = (RedditURJC) inputFile.readObject();
+
+            inputFile.close();
+            file.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(-1);
+        }
+        return s;
     }
 
     /**

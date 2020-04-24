@@ -9,9 +9,9 @@ public class Demostrador {
     public void main() {
         // TODO - implement Demostrador.main
         System.out.println();
-        redditURJC = new RedditURJC();
+        redditURJC = RedditURJC.getInstance();
 
-        //redditURJC = Sistema.leerInfo();
+        //redditURJC = RedditURJC.leerInfo();
         //System.out.println(redditURJC);
 
         //Registro de Usuarios
