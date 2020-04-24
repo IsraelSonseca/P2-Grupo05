@@ -3,8 +3,8 @@ package com.general;
 import mp.RedditURJC;
 import mp.exceptions.Result;
 
-public class Demostrador {
-    private RedditURJC redditURJC;
+public class Demostrador1 {
+    public RedditURJC redditURJC;
 
     public void main() {
         // TODO - implement Demostrador.main

@@ -52,6 +52,11 @@ public class RedditURJC implements Serializable, Sistema {
         return instancia;
     }
 
+    @Override
+    public void destroy() {
+        instancia=null;
+    }
+
     RedditURJC() {
         this.usuarios = new HashMap<>();
         this.subForos = new HashMap<>();
@@ -348,8 +353,7 @@ public class RedditURJC implements Serializable, Sistema {
         this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }
 
-    @Override
-    public boolean guardarInfo() {
+    private boolean guardarInfo() {
         try {
             FileOutputStream f = new FileOutputStream("BaseDeDatos.obj");
             ObjectOutputStream finalFile = new ObjectOutputStream(f);
@@ -452,6 +456,8 @@ public class RedditURJC implements Serializable, Sistema {
             throw new VerSistemaSinPermiso();//no tiene permisos
         }
     }
+
+
 
 
 }

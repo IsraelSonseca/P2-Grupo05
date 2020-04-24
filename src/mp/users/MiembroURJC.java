@@ -206,4 +206,12 @@ public class MiembroURJC implements Serializable, Subscriptor {
     public String viewSubForoRec(SubForo subForo) {
         return subForo.viewRec();
     }
+
+    @Override
+    public String toString() {
+        return  "Nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", nick='" + nick + '\'' +
+                ", email='" + email + '\'';
+    }
 }
