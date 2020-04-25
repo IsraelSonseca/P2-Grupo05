@@ -20,20 +20,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/general/Demostrador2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/RegistroCorrecto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/RegistroCorrecto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/general/Demostrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Demostrador1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/general/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/general/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/RedditURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/RedditURJC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/resgister/RegistroCorrecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/resgister/RegistroCorrecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/META-INF/-P2-Grupo05.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/DespenalizarUsuariosSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazadaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidadaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradasRevisadas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/UsuarioDespenalizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/UsuarioSinPenalizaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/VerEntradasPendientes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/VerEntradasPendientesSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinObjetoPuntuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioCreado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/CrearEntradaSinForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/CrearEntradaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaCreada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/VerEntradas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminIncorrectPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminLogedCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminWasLoged.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/IncorrectPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/LogedCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/SesionYaIniciada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/UsuarioNoExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/UsuarioPenalizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/AdminCierreSesion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/AdminSesionNoIniciada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/CierreSesion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/SesionNoIniciada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/EmailIncorrecto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/EmailPreviamenteRegistrado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/NickYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/RegistroCorrecto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/sistem/VerSistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/sistem/VerSistemaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/CrearSubforoSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/SubForoYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/SubforoCreado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/VerSubForoSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/VerSubforo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/ForosSuscritos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/NoSuscritoANingunFor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SubforosNoDisponibles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscribirSinForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscribirSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscripcionActivada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscriptorYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValoracionNoContemplada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionCreada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotarSinObjetoPuntuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotarSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/penalizaciones/Penalizacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Ejercicio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Encuesta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Entrada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/EstadoEntrada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/EstadoValoracion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Subject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Texto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/TipoComentario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Votacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Alumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Notificacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Profesor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Subscripcion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Subscriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Usuario.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,23 +142,23 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="mp" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
-      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.general" />
-      <recent name="mp.exceptions" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="mp.exceptions.sistem" />
       <recent name="mp.exceptions.votaciones" />
       <recent name="mp.exceptions.crearEntrada" />
       <recent name="mp.exceptions.logIn" />
       <recent name="mp.exceptions.admin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.general" />
+      <recent name="mp.exceptions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
+      <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
     </key>
   </component>
   <component name="RunManager">
@@ -154,22 +223,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="561" y="299" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587741327914" />
-    <state width="1139" height="152" key="GridCell.Tab.0.bottom" timestamp="1587767751389">
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1587835907105">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1139" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587767751389" />
-    <state width="1139" height="152" key="GridCell.Tab.0.center" timestamp="1587767751389">
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587835907105" />
+    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1587835907105">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1139" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587767751389" />
-    <state width="1139" height="152" key="GridCell.Tab.0.left" timestamp="1587767751389">
+    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587835907105" />
+    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1587835907104">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1139" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587767751389" />
-    <state width="1139" height="152" key="GridCell.Tab.0.right" timestamp="1587767751389">
+    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587835907104" />
+    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1587835907105">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1139" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587767751389" />
+    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587835907105" />
     <state width="1343" height="485" key="GridCell.Tab.1.bottom" timestamp="1587767256743">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
