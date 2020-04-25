@@ -107,14 +107,14 @@ public class SubForo implements Subject, Serializable {
     }
 
     @Override
-    public void notificar(Entrada entrada) {
+    public void notificar(EntradaGenerica entrada) {
         Notificacion notificacion = this.generateNotificacion(entrada);
         for (Subscriptor user : subscriptors) {
             user.recibirNotificacion(notificacion);
         }
     }
 
-    public Notificacion generateNotificacion(Entrada entrada) {
+    public Notificacion generateNotificacion(EntradaGenerica entrada) {
         return new Notificacion(this.getNombre() + ": " + entrada.msgNotificacion());
     }
 

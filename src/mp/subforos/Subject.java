@@ -14,5 +14,5 @@ public interface Subject {
 
     void eliminarSubscriptor(MiembroURJC user);
 
-    void notificar(Entrada entrada);
+    void notificar(EntradaGenerica entrada);
 }

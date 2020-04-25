@@ -256,9 +256,9 @@ public class RedditURJC implements Serializable, Sistema {
 
     @Override
     public void verEntradasMayorValoración() throws VerEntradas {
-        ArrayList<Entrada> entradas = new ArrayList<>();
+        ArrayList<EntradaGenerica> entradas = new ArrayList<>();
         for (SubForo subForo : subForos.values()) {
-            for (Entrada entrada : subForo.getEntradas().values()) {
+            for (EntradaGenerica entrada : subForo.getEntradas().values()) {
                 if (entrada.getEstado() == EstadoEntrada.validada) {
                     entradas.add(entrada);
                 }
@@ -266,7 +266,7 @@ public class RedditURJC implements Serializable, Sistema {
         }
         Collections.sort(entradas);
         String entradasStr = "";
-        for (Entrada entrada : entradas) {
+        for (EntradaGenerica entrada : entradas) {
             entradasStr += "\n" + entrada.toString();
         }
         throw new VerEntradas(entradasStr);
@@ -458,7 +458,7 @@ public class RedditURJC implements Serializable, Sistema {
     }
     public void modificarEntrada(String titulo, String texto, int entrada) throws ModificarEntradaNoExistente, ModificarEntradaSinPermiso, ModificarEntradaAjena, ModificacionEntradaCorrecta{
         if (sesionIniciada()) {
-            Entrada entradaParaModificar = devuelveEntrada(entrada);
+            EntradaGenerica entradaParaModificar = devuelveEntrada(entrada);
             if (!(entradaParaModificar == null)) { //Existe la entrada que queremos Modificar
                 if(entradaParaModificar.getUser()== this.userLogued){
                     entradaParaModificar.setTitulo(titulo);
@@ -490,20 +490,21 @@ public class RedditURJC implements Serializable, Sistema {
                Integer iEntrada = (Integer) iteratorEntrada.next();
                if(entrada==iEntrada){
                    encontrado= true;
-                   entradaFinal = subForos.get(iForo).getEntradas().get(iEntrada);
+                   entradaFinal = (Entrada) subForos.get(iForo).getEntradas().get(iEntrada);
                }
            }
        }
        return entradaFinal;
    }
-  /*  
-    public void anadiraEntrada(String titulo, String texto, int entrada,String tipo) throws ModificarEntradaNoExistente, ModificarEntradaSinPermiso, ModificarEntradaAjena, ModificacionEntradaCorrecta{
+
+    public void anadiraEntrada(String titulo, String texto, int entrada,String tipo) throws NuevoContenido, NuevoContenidoNoContemplado, ModificarEntradaAjena, ModificarEntradaNoExistente, ModificarEntradaSinPermiso {
         if (sesionIniciada()) {
             Entrada entradaParaModificar = devuelveEntrada(entrada);
             if (!(entradaParaModificar == null)) { //Existe la entrada que queremos Modificar
                 if(entradaParaModificar.getUser()== this.userLogued){
-                    entradaParaModificar.anadirElemento(titulo,texto,tipo);
-                    throw new ModificacionEntradaCorrecta(entradaParaModificar);
+                    EntradaGenerica entradaAnadida= entradaParaModificar.anadirElemento(titulo,texto,tipo);
+                    this.admin.anadirEntAValidar(entradaAnadida);
+                    throw new NuevoContenido(entradaParaModificar,entradaAnadida);
                 }
                 else{
                     throw new ModificarEntradaAjena(this.userLogued,entradaParaModificar);
@@ -515,6 +516,6 @@ public class RedditURJC implements Serializable, Sistema {
         } else {
             throw new ModificarEntradaSinPermiso();//no tiene permisos
         }
-    }*/
+    }
          
  }
