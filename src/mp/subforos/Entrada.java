@@ -10,12 +10,21 @@ import java.util.ArrayList;
 
 public class Entrada extends EntradaGenerica {
 
-
+    private SubForo subforo;
     private ArrayList<EntradaGenerica> contenido;
 
     public Entrada(String titulo, String texto, MiembroURJC user, SubForo subForo) {
         super(titulo, texto, user);
+        this.subforo=subForo;
         this.contenido= new ArrayList<>();
+    }
+
+    public SubForo getSubforo() {
+        return subforo;
+    }
+
+    public void setSubforo(SubForo subforo) {
+        this.subforo = subforo;
     }
 
     @Override
@@ -31,11 +40,11 @@ public class Entrada extends EntradaGenerica {
     public EntradaGenerica anadirElemento(String titulo, String texto, String tipo) throws NuevoContenidoNoContemplado {
         EntradaGenerica nuevoCont=null;
         if (tipo=="TextoPlano"){
-            nuevoCont=new TextoPlano(titulo,texto,this.getUser());
+            nuevoCont=new TextoPlano(titulo,texto,this.getUser(),this);
         } else if (tipo=="Ejercicio"){
-            nuevoCont=new Ejercicio(titulo,texto,this.getUser());
+            nuevoCont=new Ejercicio(titulo,texto,this.getUser(),this);
         } else if (tipo=="Encuesta"){
-            nuevoCont=new Encuesta(titulo,texto,this.getUser());
+            nuevoCont=new Encuesta(titulo,texto,this.getUser(),this);
         } else {
             throw new NuevoContenidoNoContemplado(tipo);
         }

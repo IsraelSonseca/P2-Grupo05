@@ -10,12 +10,22 @@ public abstract class EntradaGenerica extends ObjetoPuntuable implements Seriali
     private String titulo;
     private String texto;
     private EstadoEntrada estado;
+    private Entrada entradaRaiz;
 
     public EntradaGenerica(String titulo, String texto, MiembroURJC user) {
         super(0, user);
         this.titulo = titulo;
         this.texto = texto;
         this.estado = EstadoEntrada.creada;
+        this.entradaRaiz= (Entrada) this;
+    }
+
+    public EntradaGenerica(String titulo, String texto, MiembroURJC user,Entrada entradaRaiz) {
+        super(0, user);
+        this.titulo = titulo;
+        this.texto = texto;
+        this.estado = EstadoEntrada.creada;
+        this.entradaRaiz=entradaRaiz;
     }
 
     public String getTitulo() {
@@ -40,6 +50,14 @@ public abstract class EntradaGenerica extends ObjetoPuntuable implements Seriali
 
     public void setEstado(EstadoEntrada estado) {
         this.estado = estado;
+    }
+
+    public Entrada getEntradaRaiz() {
+        return entradaRaiz;
+    }
+
+    public void setEntradaRaiz(Entrada entradaRaiz) {
+        this.entradaRaiz = entradaRaiz;
     }
 
     public void crear() {
@@ -75,7 +93,7 @@ public abstract class EntradaGenerica extends ObjetoPuntuable implements Seriali
     }
 
     public String msgNotificacion() {
-        return "Nueva entrada con título " + this.getTitulo();
+        return "Nuevo "+this.getClass()+": " + this.getTitulo();
     }
 
 

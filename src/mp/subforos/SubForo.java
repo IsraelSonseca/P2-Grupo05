@@ -73,7 +73,6 @@ public class SubForo implements Subject, Serializable {
     public void addEntrada(Entrada entrada) throws EntradaYaExistente, EntradaCreada {
         if (!entradas.containsValue(entrada)) {
             this.entradas.put(entrada.getId(), entrada);
-            this.notificar(entrada);
             throw new EntradaCreada(entrada, this);
         } else {
             entrada.eliminar();

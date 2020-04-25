@@ -45,6 +45,7 @@ public class Administrador implements Serializable {
             if (existsEntradasPendientes()) {
                 EntradaGenerica entrada = entradasAValidar.removeLast();
                 entrada.validar();
+                entrada.getEntradaRaiz().getSubforo().notificar(entrada);
                 throw new EntradaValidada(entrada);
             } else {
                 throw new EntradasRevisadas();

@@ -720,6 +720,18 @@ public class Demostrador1 {
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
+        try {//cerramos sesion
+            redditURJC.logout();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        try {//iniciamos sesion
+            redditURJC.login("IsraelSonseca","12345");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
 
         //Ejecuta Correctamente todas las funcionalidades desarrolladas
         int a = 11 + 11;

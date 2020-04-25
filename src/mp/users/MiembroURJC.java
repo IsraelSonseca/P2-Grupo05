@@ -189,8 +189,9 @@ public class MiembroURJC implements Serializable, Subscriptor {
 
     public String listNotificaciones() {
         String strNotificaciones = "";
-        for (int i = 0; i < getNumNotificaciones(); ++i) {
-            strNotificaciones = "\n" + strNotificaciones + notificaciones.remove().toString();
+        int n= getNumNotificaciones();
+        for (int i = 0; i < n; ++i) {
+            strNotificaciones += "\n" + notificaciones.remove().toString();
         }
         return strNotificaciones;
     }
