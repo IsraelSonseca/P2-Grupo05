@@ -651,6 +651,76 @@ public class Demostrador1 {
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
+
+
+
+
+         // Vamos a probarla funcionalidad de anadir nuevo contedio:ModificarEntradaSinPermiso, ModificarEntradaNoExistente, ModificarEntradaAjena, NuevoContenidoNoContemplado, NuevoContenido
+        try {//1ModificarEntradaSinPermiso
+            redditURJC.logout();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {
+            redditURJC.anadiraEntrada("titulo","dasfas",1,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//2ModificarEntradaNoExistente
+            redditURJC.login("agpardo","12345");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {
+            redditURJC.anadiraEntrada("titulo","dasfas",-1,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//3ModificarEntradaAjena
+            redditURJC.anadiraEntrada("titulo","dasfas",6,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//4NuevoContenidoNoContemplado
+            redditURJC.anadiraEntrada("titulo","dasfas",1,"Examen");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//5NuevoContenido texto plano
+            redditURJC.anadiraEntrada("Titulo del texto plano añadido","Texto del texto plano añadido",1,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//5NuevoContenido encuesta
+            redditURJC.anadiraEntrada("Titulo de la encuesta añadida","Texto de la encuesta añadida",1,"Encuesta");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//5NuevoContenido ejercicio
+            redditURJC.anadiraEntrada("Titulo del ejercicio añadido","Texto del ejercicio añadido",1,"Ejercicio");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        try {//ver sistema
+            redditURJC.verSistema();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        //A continuacion vamos a validar por el admin las entradas
+        try {//validar
+            redditURJC.validarEntrada();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//validar
+            redditURJC.validarEntrada();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//validar
+            redditURJC.validarEntrada();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        try {//ver sistema
+            redditURJC.verSistema();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
         //Ejecuta Correctamente todas las funcionalidades desarrolladas
         int a = 11 + 11;
         //COMPROBADO QUE SIGUE BIEN
