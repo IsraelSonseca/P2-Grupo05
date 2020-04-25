@@ -608,6 +608,49 @@ public class Demostrador1 {
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
+        
+        //Vamos a probar la funcionalidad de modificar entradas  throws ModificarEntradaNoExistente, ModificarEntradaSinPermiso, ModificarEntradaAjena, ModificacionEntradaCorrecta
+        try {
+            redditURJC.modificarEntrada("Titulo","Esto es un texto de una entrada que no se va a modificar",-1);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        //Vamos a modificar una entrada sin permiso
+           try {
+            redditURJC.logout();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+          try {
+            redditURJC.modificarEntrada("Titulo","Esto es un texto de una entrada que no se va a modificar",-1);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        
+         //Vamos a intentar modificar una entrada ajena
+           try {
+            redditURJC.login("agpardo","12345");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+          try {
+            redditURJC.modificarEntrada("Titulo","Esto es un texto de una entrada que no se va a modificar",6);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+          
+          //Vamos a intentar modificar una entrada propia correctamente
+          try {
+            redditURJC.modificarEntrada("Titulo Modificado de la PRAC1","Este es el texto modificado de la entrada: ",1);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        //Mostramos el sistema para mostrar los cambios
+         try {
+            redditURJC.verSistema();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
         //Ejecuta Correctamente todas las funcionalidades desarrolladas
         int a = 11 + 11;
         //COMPROBADO QUE SIGUE BIEN
