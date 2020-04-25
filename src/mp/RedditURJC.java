@@ -477,23 +477,44 @@ public class RedditURJC implements Serializable, Sistema {
         }
     }
         
-         private Entrada devuelveEntrada(int entrada) {
-            Entrada entradaFinal = null;
-            Set clavesForo = subForos.keySet();
-            Iterator iteratorForo = clavesForo.iterator();
-            boolean encontrado = false;
-            while((iteratorForo.hasNext())&&(!encontrado)){
-                Integer iForo = (Integer) iteratorForo.next();
-                Set clavesEntrada = subForos.get(iForo).getEntradas().keySet();
-                Iterator iteratorEntrada = clavesEntrada.iterator();
-                while((iteratorEntrada.hasNext())&&(!encontrado)){
-                    Integer iEntrada = (Integer) iteratorEntrada.next();
-                    if(entrada==iEntrada){
-                        encontrado= true;
-                        entradaFinal = subForos.get(iForo).getEntradas().get(iEntrada);
-                    }
+    private Entrada devuelveEntrada(int entrada) {
+       Entrada entradaFinal = null;
+       Set clavesForo = subForos.keySet();
+       Iterator iteratorForo = clavesForo.iterator();
+       boolean encontrado = false;
+       while((iteratorForo.hasNext())&&(!encontrado)){
+           Integer iForo = (Integer) iteratorForo.next();
+           Set clavesEntrada = subForos.get(iForo).getEntradas().keySet();
+           Iterator iteratorEntrada = clavesEntrada.iterator();
+           while((iteratorEntrada.hasNext())&&(!encontrado)){
+               Integer iEntrada = (Integer) iteratorEntrada.next();
+               if(entrada==iEntrada){
+                   encontrado= true;
+                   entradaFinal = subForos.get(iForo).getEntradas().get(iEntrada);
+               }
+           }
+       }
+       return entradaFinal;
+   }
+  /*  
+    public void anadiraEntrada(String titulo, String texto, int entrada,String tipo) throws ModificarEntradaNoExistente, ModificarEntradaSinPermiso, ModificarEntradaAjena, ModificacionEntradaCorrecta{
+        if (sesionIniciada()) {
+            Entrada entradaParaModificar = devuelveEntrada(entrada);
+            if (!(entradaParaModificar == null)) { //Existe la entrada que queremos Modificar
+                if(entradaParaModificar.getUser()== this.userLogued){
+                    entradaParaModificar.anadirElemento(titulo,texto,tipo);
+                    throw new ModificacionEntradaCorrecta(entradaParaModificar);
                 }
+                else{
+                    throw new ModificarEntradaAjena(this.userLogued,entradaParaModificar);
+                }
+                
+            } else {
+                throw new ModificarEntradaNoExistente(entrada);
             }
-            return entradaFinal;
+        } else {
+            throw new ModificarEntradaSinPermiso();//no tiene permisos
         }
+    }*/
+         
  }
