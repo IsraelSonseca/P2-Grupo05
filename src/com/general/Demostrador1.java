@@ -3,8 +3,8 @@ package com.general;
 import mp.RedditURJC;
 import mp.exceptions.Result;
 
-public class Demostrador {
-    private RedditURJC redditURJC;
+public class Demostrador1 {
+    public RedditURJC redditURJC;
 
     public void main() {
         // TODO - implement Demostrador.main
@@ -608,6 +608,131 @@ public class Demostrador {
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
+        
+        //Vamos a probar la funcionalidad de modificar entradas  throws ModificarEntradaNoExistente, ModificarEntradaSinPermiso, ModificarEntradaAjena, ModificacionEntradaCorrecta
+        try {
+            redditURJC.modificarEntrada("Titulo","Esto es un texto de una entrada que no se va a modificar",-1);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        //Vamos a modificar una entrada sin permiso
+           try {
+            redditURJC.logout();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+          try {
+            redditURJC.modificarEntrada("Titulo","Esto es un texto de una entrada que no se va a modificar",-1);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        
+         //Vamos a intentar modificar una entrada ajena
+           try {
+            redditURJC.login("agpardo","12345");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+          try {
+            redditURJC.modificarEntrada("Titulo","Esto es un texto de una entrada que no se va a modificar",6);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+          
+          //Vamos a intentar modificar una entrada propia correctamente
+          try {
+            redditURJC.modificarEntrada("Titulo Modificado de la PRAC1","Este es el texto modificado de la entrada: ",1);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        //Mostramos el sistema para mostrar los cambios
+         try {
+            redditURJC.verSistema();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+
+
+
+         // Vamos a probarla funcionalidad de anadir nuevo contedio:ModificarEntradaSinPermiso, ModificarEntradaNoExistente, ModificarEntradaAjena, NuevoContenidoNoContemplado, NuevoContenido
+        try {//1ModificarEntradaSinPermiso
+            redditURJC.logout();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {
+            redditURJC.anadiraEntrada("titulo","dasfas",1,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//2ModificarEntradaNoExistente
+            redditURJC.login("agpardo","12345");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {
+            redditURJC.anadiraEntrada("titulo","dasfas",-1,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//3ModificarEntradaAjena
+            redditURJC.anadiraEntrada("titulo","dasfas",6,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//4NuevoContenidoNoContemplado
+            redditURJC.anadiraEntrada("titulo","dasfas",1,"Examen");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//5NuevoContenido texto plano
+            redditURJC.anadiraEntrada("Titulo del texto plano añadido","Texto del texto plano añadido",1,"TextoPlano");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//5NuevoContenido encuesta
+            redditURJC.anadiraEntrada("Titulo de la encuesta añadida","Texto de la encuesta añadida",1,"Encuesta");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//5NuevoContenido ejercicio
+            redditURJC.anadiraEntrada("Titulo del ejercicio añadido","Texto del ejercicio añadido",1,"Ejercicio");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        try {//ver sistema
+            redditURJC.verSistema();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        //A continuacion vamos a validar por el admin las entradas
+        try {//validar
+            redditURJC.validarEntrada();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//validar
+            redditURJC.validarEntrada();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        } try {//validar
+            redditURJC.validarEntrada();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        try {//ver sistema
+            redditURJC.verSistema();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        try {//cerramos sesion
+            redditURJC.logout();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        try {//iniciamos sesion
+            redditURJC.login("IsraelSonseca","12345");
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+
         //Ejecuta Correctamente todas las funcionalidades desarrolladas
         int a = 11 + 11;
         //COMPROBADO QUE SIGUE BIEN

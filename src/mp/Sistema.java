@@ -71,11 +71,11 @@ public interface Sistema {
 
     void despenalizarUsuario(String s) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado;
 
-    boolean guardarInfo();
-
     void valorar(String valoracion, int objetoPuntuable) throws VotarSinPermiso, VotarSinObjetoPuntuable, ValoracionNoContemplada, VotacionCreada, VotacionYaExistente, ValorarObjetoPuntuablePropio;
 
     void crearComentario(String coment, int objetoPuntuable) throws ComentarSinPermiso, ComentarioCreado, ComentarioYaExistente, ComentarSinObjetoPuntuable;
 
     void verSistema() throws VerSistemaSinPermiso, VerSistema;
+
+    void destroy();
 }

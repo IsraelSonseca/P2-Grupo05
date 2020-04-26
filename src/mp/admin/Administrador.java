@@ -7,6 +7,7 @@ import mp.exceptions.logIn.AdminWasLoged;
 import mp.exceptions.logOut.AdminCierreSesion;
 import mp.exceptions.logOut.AdminSesionNoIniciada;
 import mp.subforos.Entrada;
+import mp.subforos.EntradaGenerica;
 import mp.users.MiembroURJC;
 
 import java.io.Serializable;
@@ -17,7 +18,7 @@ public class Administrador implements Serializable {
 
     private static final long serialVersionUID = 1L;
     final private String CONTRASENA = "11111";
-    private final LinkedList<Entrada> entradasAValidar;
+    private final LinkedList<EntradaGenerica> entradasAValidar;
     private String cont;
     private boolean logued;
 
@@ -42,8 +43,9 @@ public class Administrador implements Serializable {
         // TODO - implement Administrador.validarEntrada
         if (this.isLogued()) {
             if (existsEntradasPendientes()) {
-                Entrada entrada = entradasAValidar.removeLast();
+                EntradaGenerica entrada = entradasAValidar.removeLast();
                 entrada.validar();
+                entrada.getEntradaRaiz().getSubforo().notificar(entrada);
                 throw new EntradaValidada(entrada);
             } else {
                 throw new EntradasRevisadas();
@@ -60,7 +62,7 @@ public class Administrador implements Serializable {
         // TODO - implement Administrador.validarEntrada
         if (this.isLogued()) {
             if (existsEntradasPendientes()) {
-                Entrada entrada = entradasAValidar.removeLast();
+                EntradaGenerica entrada = entradasAValidar.removeLast();
                 entrada.rechazar();
                 MiembroURJC creador = usuarios.get(entrada.getUser().getNick());
                 creador.penalizar();
@@ -85,7 +87,7 @@ public class Administrador implements Serializable {
         throw new UnsupportedOperationException();
     }
 
-    public void anadirEntAValidar(Entrada entrada) {
+    public void anadirEntAValidar(EntradaGenerica entrada) {
         entradasAValidar.addFirst(entrada);
     }
 
@@ -127,7 +129,7 @@ public class Administrador implements Serializable {
     public void verEntradasPendientes() throws VerEntradasPendientes, VerEntradasPendientesSinPermiso {
         if (this.isLogued()) {
             String strEntradas = "";
-            for (Entrada entrada : entradasAValidar) {
+            for (EntradaGenerica entrada : entradasAValidar) {
                 strEntradas += "\n" + this.viewEntrada(entrada);
             }
             throw new VerEntradasPendientes(strEntradas);
@@ -148,7 +150,7 @@ public class Administrador implements Serializable {
         }
     }
 
-    private String viewEntrada(Entrada entrada) {
+    private String viewEntrada(EntradaGenerica entrada) {
         return entrada.toString();
     }
 

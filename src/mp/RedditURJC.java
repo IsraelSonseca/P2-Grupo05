@@ -52,6 +52,11 @@ public class RedditURJC implements Serializable, Sistema {
         return instancia;
     }
 
+    @Override
+    public void destroy() {
+        instancia=null;
+    }
+
     RedditURJC() {
         this.usuarios = new HashMap<>();
         this.subForos = new HashMap<>();
@@ -251,9 +256,9 @@ public class RedditURJC implements Serializable, Sistema {
 
     @Override
     public void verEntradasMayorValoración() throws VerEntradas {
-        ArrayList<Entrada> entradas = new ArrayList<>();
+        ArrayList<EntradaGenerica> entradas = new ArrayList<>();
         for (SubForo subForo : subForos.values()) {
-            for (Entrada entrada : subForo.getEntradas().values()) {
+            for (EntradaGenerica entrada : subForo.getEntradas().values()) {
                 if (entrada.getEstado() == EstadoEntrada.validada) {
                     entradas.add(entrada);
                 }
@@ -261,7 +266,7 @@ public class RedditURJC implements Serializable, Sistema {
         }
         Collections.sort(entradas);
         String entradasStr = "";
-        for (Entrada entrada : entradas) {
+        for (EntradaGenerica entrada : entradas) {
             entradasStr += "\n" + entrada.toString();
         }
         throw new VerEntradas(entradasStr);
@@ -348,8 +353,7 @@ public class RedditURJC implements Serializable, Sistema {
         this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }
 
-    @Override
-    public boolean guardarInfo() {
+    private boolean guardarInfo() {
         try {
             FileOutputStream f = new FileOutputStream("BaseDeDatos.obj");
             ObjectOutputStream finalFile = new ObjectOutputStream(f);
@@ -452,6 +456,66 @@ public class RedditURJC implements Serializable, Sistema {
             throw new VerSistemaSinPermiso();//no tiene permisos
         }
     }
+    public void modificarEntrada(String titulo, String texto, int entrada) throws ModificarEntradaNoExistente, ModificarEntradaSinPermiso, ModificarEntradaAjena, ModificacionEntradaCorrecta{
+        if (sesionIniciada()) {
+            EntradaGenerica entradaParaModificar = devuelveEntrada(entrada);
+            if (!(entradaParaModificar == null)) { //Existe la entrada que queremos Modificar
+                if(entradaParaModificar.getUser()== this.userLogued){
+                    entradaParaModificar.setTitulo(titulo);
+                    entradaParaModificar.setTexto(texto);
+                    throw new ModificacionEntradaCorrecta(entradaParaModificar);
+                }
+                else{
+                    throw new ModificarEntradaAjena(this.userLogued,entradaParaModificar);
+                }
+                
+            } else {
+                throw new ModificarEntradaNoExistente(entrada);
+            }
+        } else {
+            throw new ModificarEntradaSinPermiso();//no tiene permisos
+        }
+    }
+        
+    private Entrada devuelveEntrada(int entrada) {
+       Entrada entradaFinal = null;
+       Set clavesForo = subForos.keySet();
+       Iterator iteratorForo = clavesForo.iterator();
+       boolean encontrado = false;
+       while((iteratorForo.hasNext())&&(!encontrado)){
+           Integer iForo = (Integer) iteratorForo.next();
+           Set clavesEntrada = subForos.get(iForo).getEntradas().keySet();
+           Iterator iteratorEntrada = clavesEntrada.iterator();
+           while((iteratorEntrada.hasNext())&&(!encontrado)){
+               Integer iEntrada = (Integer) iteratorEntrada.next();
+               if(entrada==iEntrada){
+                   encontrado= true;
+                   entradaFinal = (Entrada) subForos.get(iForo).getEntradas().get(iEntrada);
+               }
+           }
+       }
+       return entradaFinal;
+   }
 
-
-}
+    public void anadiraEntrada(String titulo, String texto, int entrada,String tipo) throws NuevoContenido, NuevoContenidoNoContemplado, ModificarEntradaAjena, ModificarEntradaNoExistente, ModificarEntradaSinPermiso {
+        if (sesionIniciada()) {
+            Entrada entradaParaModificar = devuelveEntrada(entrada);
+            if (!(entradaParaModificar == null)) { //Existe la entrada que queremos Modificar
+                if(entradaParaModificar.getUser()== this.userLogued){
+                    EntradaGenerica entradaAnadida= entradaParaModificar.anadirElemento(titulo,texto,tipo);
+                    this.admin.anadirEntAValidar(entradaAnadida);
+                    throw new NuevoContenido(entradaParaModificar,entradaAnadida);
+                }
+                else{
+                    throw new ModificarEntradaAjena(this.userLogued,entradaParaModificar);
+                }
+                
+            } else {
+                throw new ModificarEntradaNoExistente(entrada);
+            }
+        } else {
+            throw new ModificarEntradaSinPermiso();//no tiene permisos
+        }
+    }
+         
+ }
