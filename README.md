@@ -34,11 +34,9 @@ RedditURJC
 
 ## Requirements ##
 [DocumentodeRequisitos](./doc/Enunciado_P1-editado.pdf)
-https://1drv.ms/b/s!AsOMPQ_2QuND4yy-xF5A4uUEMVx9?e=7nGh5Z
 
 ## Class UML Diagram ##
 <img src="./imagenes/classDiagram.png">
 
 ## INTERFAZ ##
-[DocumentodeRequisitos](./doc/memoria.pdf)
-https://1drv.ms/b/s!AsOMPQ_2QuND4yy-xF5A4uUEMVx9?e=7nGh5Z
+[Funcionamiento Interfaz Sistema implementada por REDDITURJC](./doc/memoria.pdf)
