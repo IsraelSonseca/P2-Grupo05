@@ -2,6 +2,10 @@ package com.general;
 
 import mp.RedditURJC;
 import mp.exceptions.Result;
+import mp.exceptions.suscripciones.DarseBajaSinForo;
+import mp.exceptions.suscripciones.DarseBajaSinPermiso;
+import mp.exceptions.suscripciones.NoSucritoAlForo;
+import mp.exceptions.suscripciones.UsuarioDadoDeBaja;
 
 public class Demostrador1 {
     public RedditURJC redditURJC;
@@ -436,6 +440,24 @@ public class Demostrador1 {
         }
         try {
             redditURJC.verForosSuscritos();
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+
+        //Procedemos a darnos de baja de un subforo
+
+        try { //nos damos de baja correctamente
+            redditURJC.desuscribirForo(2);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        try { //nos intentamos dar de baja cuando no estamos suscritos
+            redditURJC.desuscribirForo(2);
+        } catch (Result result) {
+            System.out.println(result.getMessage());
+        }
+        try { //nos intentamos dar de baja a un foro que no existe actualmente
+            redditURJC.desuscribirForo(-1);
         } catch (Result result) {
             System.out.println(result.getMessage());
         }

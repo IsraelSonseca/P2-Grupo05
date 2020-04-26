@@ -2,8 +2,10 @@ package mp.subforos;
 
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
+import mp.exceptions.suscripciones.NoSucritoAlForo;
 import mp.exceptions.suscripciones.SuscripcionActivada;
 import mp.exceptions.suscripciones.SuscriptorYaExistente;
+import mp.exceptions.suscripciones.UsuarioDadoDeBaja;
 import mp.users.MiembroURJC;
 import mp.users.Notificacion;
 import mp.users.Subscriptor;
@@ -98,6 +100,16 @@ public class SubForo implements Subject, Serializable {
             throw new SuscriptorYaExistente(user, this);
         }
 
+    }
+
+    @Override
+    public void quitarSuscriptor(MiembroURJC user) throws UsuarioDadoDeBaja, NoSucritoAlForo {
+        if (subscriptors.contains(user)) {
+            this.subscriptors.remove(user);
+            throw new UsuarioDadoDeBaja(user, this);
+        } else {
+            throw new NoSucritoAlForo(user, this);
+        }
     }
 
     @Override

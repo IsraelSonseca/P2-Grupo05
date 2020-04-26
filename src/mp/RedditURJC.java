@@ -353,6 +353,10 @@ public class RedditURJC implements Serializable, Sistema {
         this.subForos.get(subForo).anadirSubscriptor(userLogued);
     }
 
+    private void quitarSuscriptor(MiembroURJC userLogued, int subForo) throws UsuarioDadoDeBaja, NoSucritoAlForo {
+        this.subForos.get(subForo).quitarSuscriptor(userLogued);
+    }
+
     private boolean guardarInfo() {
         try {
             FileOutputStream f = new FileOutputStream("BaseDeDatos.obj");
@@ -517,5 +521,18 @@ public class RedditURJC implements Serializable, Sistema {
             throw new ModificarEntradaSinPermiso();//no tiene permisos
         }
     }
+
+    public void desuscribirForo(int foro) throws DarseBajaSinForo, DarseBajaSinPermiso, UsuarioDadoDeBaja, NoSucritoAlForo {
+        if (sesionIniciada()) {
+            if (existeForo(foro)) {
+                this.quitarSuscriptor(this.userLogued, foro);
+            } else {
+                throw new DarseBajaSinForo(foro);
+            }
+        } else {
+            throw new DarseBajaSinPermiso();//no tiene permisos
+        }
+    }
+
          
  }

@@ -67,6 +67,8 @@ public interface Sistema {
 
     void suscribirAForo(int foro) throws SuscriptorYaExistente, SuscripcionActivada, SuscribirSinForo, SuscribirSinPermiso;
 
+    void desuscribirForo(int foro) throws DarseBajaSinForo, DarseBajaSinPermiso, UsuarioDadoDeBaja, NoSucritoAlForo;
+
     void verForosSuscritos() throws NoSuscritoANingunFor, ForosSuscritos, SubforosNoDisponibles;
 
     void despenalizarUsuario(String s) throws UsuarioSinPenalizaciones, DespenalizarUsuariosSinPermiso, UsuarioDespenalizado;
