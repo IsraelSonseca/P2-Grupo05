@@ -1,8 +1,7 @@
 package mp.exceptions.crearEntrada;
 
 import mp.exceptions.Result;
-import mp.subforos.Entrada;
-import mp.subforos.EntradaGenerica;
+import mp.subforos.entradas.EntradaGenerica;
 
 public class NuevoContenido extends Result {
     public NuevoContenido(EntradaGenerica entrada, EntradaGenerica nuevo) {

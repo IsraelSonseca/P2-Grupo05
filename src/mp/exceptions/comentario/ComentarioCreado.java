@@ -6,7 +6,7 @@
 package mp.exceptions.comentario;
 
 import mp.exceptions.Result;
-import mp.subforos.ObjetoPuntuable;
+import mp.subforos.entradas.ObjetoPuntuable;
 
 /**
  * @author Pablo
