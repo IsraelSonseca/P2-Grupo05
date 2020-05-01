@@ -9,9 +9,6 @@ import static org.junit.Assert.*;
  * @author ar.cobb.2018
  */
 public class PenalizacionTest {
-    
-    public PenalizacionTest() {
-    }
 
     /**
      * Test of getFechaInicio method, of class Penalizacion.

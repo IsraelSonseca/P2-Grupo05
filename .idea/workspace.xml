@@ -20,86 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/mp/RedditURJCTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/admin/AdministradorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/penalizaciones/PenalizacionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/SubForoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/EntradaGenericaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/EntradaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/EstadoEntradaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/ObjetoPuntuableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/ComentarioTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/EstadoValoracionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/VotacionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/users/MiembroURJCTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/mp/users/NotificacionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/-P2-Grupo05.iml" beforeDir="false" afterPath="$PROJECT_DIR$/-P2-Grupo05.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaseDeDatos.obj" beforeDir="false" afterPath="$PROJECT_DIR$/BaseDeDatos.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioCreado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioCreado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioYaExistente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioYaExistente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaCreada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaCreada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaYaExistente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaYaExistente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificacionEntradaCorrecta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificacionEntradaCorrecta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaAjena.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaAjena.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/NuevoContenido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/NuevoContenido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionCreada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionCreada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionYaExistente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionYaExistente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Comentario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Ejercicio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Encuesta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Entrada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/EntradaGenerica.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/EstadoEntrada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/EstadoValoracion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/ObjetoPuntuable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Subject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Texto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/TextoPlano.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/TipoComentario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Votacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Profesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Profesor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Subscripcion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/RedditURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/RedditURJC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/admin/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/admin/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaRechazada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaValidada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/admin/EntradaValidada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/comentario/ComentarioCreado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/comentario/ComentarioCreado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/comentario/ComentarioYaExistente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/comentario/ComentarioYaExistente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/EntradaCreada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/EntradaCreada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/EntradaYaExistente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/EntradaYaExistente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/ModificacionEntradaCorrecta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/ModificacionEntradaCorrecta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/ModificarEntradaAjena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/ModificarEntradaAjena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/NuevoContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/crearEntrada/NuevoContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/votaciones/VotacionCreada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/votaciones/VotacionCreada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/exceptions/votaciones/VotacionYaExistente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/exceptions/votaciones/VotacionYaExistente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/opiniones/Comentario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Ejercicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/contenido/Ejercicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Encuesta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/contenido/Encuesta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/Entrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/EntradaGenerica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/EntradaGenerica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/EstadoEntrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/EstadoEntrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/EstadoValoracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/opiniones/EstadoValoracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/ObjetoPuntuable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/ObjetoPuntuable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/SubForo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Texto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/TextoPlano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/contenido/TextoPlano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/TipoComentario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/subforos/Votacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/subforos/entradas/opiniones/Votacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/MiembroURJC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/users/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mp/users/Profesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/users/Subscripcion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mp/users/Usuario.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/RedditURJCTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/admin/AdministradorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/penalizaciones/PenalizacionTest (2).java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/SubForoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/EntradaGenericaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/EntradaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/EstadoEntradaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/opiniones/ComentarioTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/opiniones/EstadoValoracionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/opiniones/VotacionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/users/MiembroURJCTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/mp/users/NotificacionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/RedditURJCTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/admin/AdministradorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/penalizaciones/PenalizacionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/SubForoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/EntradaGenericaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/EntradaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/EstadoEntradaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/ObjetoPuntuableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/ComentarioTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/EstadoValoracionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/VotacionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/users/MiembroURJCTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mp/users/NotificacionTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,12 +83,14 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -159,16 +107,16 @@
       <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.general" />
+      <recent name="mp.exceptions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\com\general" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\admin" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\penalizaciones" />
       <recent name="C:\Users\Usuario\IdeaProjects\-P2-Grupo05\src\mp\subforos" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.general" />
-      <recent name="mp.exceptions" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="mp.exceptions.sistem" />
@@ -289,10 +237,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="513" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587840538876" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1588241174914">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1588353192009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588241174914" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588353192009" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1587574053427">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
