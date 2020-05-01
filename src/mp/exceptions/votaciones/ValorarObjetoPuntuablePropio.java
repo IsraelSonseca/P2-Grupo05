@@ -1,7 +1,7 @@
 package mp.exceptions.votaciones;
 
 import mp.exceptions.Result;
-import mp.subforos.ObjetoPuntuable;
+import mp.subforos.entradas.ObjetoPuntuable;
 
 public class ValorarObjetoPuntuablePropio extends Result {
     public ValorarObjetoPuntuablePropio(ObjetoPuntuable objetoAValorar) {

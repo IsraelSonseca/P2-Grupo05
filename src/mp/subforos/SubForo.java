@@ -6,6 +6,10 @@ import mp.exceptions.suscripciones.NoSucritoAlForo;
 import mp.exceptions.suscripciones.SuscripcionActivada;
 import mp.exceptions.suscripciones.SuscriptorYaExistente;
 import mp.exceptions.suscripciones.UsuarioDadoDeBaja;
+import mp.subforos.entradas.Entrada;
+import mp.subforos.entradas.EntradaGenerica;
+import mp.subforos.entradas.EstadoEntrada;
+import mp.subforos.entradas.ObjetoPuntuable;
 import mp.users.MiembroURJC;
 import mp.users.Notificacion;
 import mp.users.Subscriptor;
@@ -112,10 +116,7 @@ public class SubForo implements Subject, Serializable {
         }
     }
 
-    @Override
-    public void eliminarSubscriptor(MiembroURJC user) {
-        this.subscriptors.remove(user);
-    }
+
 
     @Override
     public void notificar(EntradaGenerica entrada) {

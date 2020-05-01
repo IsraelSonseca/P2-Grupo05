@@ -1,8 +1,7 @@
 package mp.exceptions.admin;
 
 import mp.exceptions.Result;
-import mp.subforos.Entrada;
-import mp.subforos.EntradaGenerica;
+import mp.subforos.entradas.EntradaGenerica;
 
 public class EntradaValidada extends Result {
     public EntradaValidada(EntradaGenerica entrada) {

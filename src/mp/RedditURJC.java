@@ -22,6 +22,8 @@ import mp.exceptions.subForo.*;
 import mp.exceptions.suscripciones.*;
 import mp.exceptions.votaciones.*;
 import mp.subforos.*;
+import mp.subforos.entradas.*;
+import mp.subforos.entradas.opiniones.Comentario;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import mp.users.Profesor;

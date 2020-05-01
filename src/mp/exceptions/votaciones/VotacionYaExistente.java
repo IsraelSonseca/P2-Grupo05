@@ -1,8 +1,8 @@
 package mp.exceptions.votaciones;
 
 import mp.exceptions.Result;
-import mp.subforos.ObjetoPuntuable;
-import mp.subforos.Votacion;
+import mp.subforos.entradas.ObjetoPuntuable;
+import mp.subforos.entradas.opiniones.Votacion;
 
 public class VotacionYaExistente extends Result {
     public VotacionYaExistente(Votacion votacion, ObjetoPuntuable objetoPuntuable) {

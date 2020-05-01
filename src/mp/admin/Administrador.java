@@ -6,8 +6,7 @@ import mp.exceptions.logIn.AdminLogedCorrect;
 import mp.exceptions.logIn.AdminWasLoged;
 import mp.exceptions.logOut.AdminCierreSesion;
 import mp.exceptions.logOut.AdminSesionNoIniciada;
-import mp.subforos.Entrada;
-import mp.subforos.EntradaGenerica;
+import mp.subforos.entradas.EntradaGenerica;
 import mp.users.MiembroURJC;
 
 import java.io.Serializable;
@@ -77,14 +76,6 @@ public class Administrador implements Serializable {
 
     private boolean existsEntradasPendientes() {
         return (entradasAValidar.size() > 0);
-    }
-
-    /**
-     * @param parameter
-     */
-    public void penalizar(MiembroURJC parameter) {
-        // TODO - implement Administrador.penalizar
-        throw new UnsupportedOperationException();
     }
 
     public void anadirEntAValidar(EntradaGenerica entrada) {

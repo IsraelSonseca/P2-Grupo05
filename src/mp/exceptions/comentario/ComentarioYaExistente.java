@@ -6,7 +6,7 @@
 package mp.exceptions.comentario;
 
 import mp.exceptions.Result;
-import mp.subforos.Comentario;
+import mp.subforos.entradas.opiniones.Comentario;
 
 /**
  * @author Pablo
