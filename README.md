@@ -6,6 +6,7 @@
  - [Teachers](#Teachers)
  - [Requirements](#Requirements)
  - [Class UML Diagram](#Class-UML-Diagram)
+ - [Funcionamiento Interfaz Sistema implementada por REDDITURJC](#INTERFAZ)
 
 
 
@@ -16,7 +17,7 @@ Class UML Diagram
 ## Name of the  application ##
 RedditURJC
 
-## [Members of the development team ##
+## Members of the development team ##
 | Name | Mail | GitHub |
 | ---- | ---- | ------ |
 | Israel Peñalver Sánchez | i.penalver.2016@alumnos.urjc.es | [IsraelSonseca](https://github.com/IsraelSonseca) |
@@ -24,7 +25,7 @@ RedditURJC
 | Eduardo Ivorra Salinas |	e.ivorra.2017@alumnos.urjc.es |	[EduardoIvorra](https://github.com/EduardoIvorra) |
 | Allan Robert Cobb Bellido |	a.robert.2017@alumnos.urjc.es|	[Allanmaster](https://github.com/Allanmaster) |
 
-## [Teachers ##
+## Teachers ##
 | Name | Mail | GitHub |
 | ---- | ---- | ------ |
 | Antonio Gonzále Pardo | antonio.gpardo@urjc.es | [agpardo](https://github.com/agpardo) |
@@ -32,7 +33,10 @@ RedditURJC
 
 
 ## Requirements ##
-https://1drv.ms/b/s!AsOMPQ_2QuND4yy-xF5A4uUEMVx9?e=7nGh5Z
+[DocumentodeRequisitos](./doc/Enunciado_P1-editado.pdf)
 
 ## Class UML Diagram ##
 <img src="./imagenes/classDiagram.png">
+
+## INTERFAZ ##
+[Funcionamiento Interfaz Sistema implementada por REDDITURJC](./doc/memoria.pdf)
