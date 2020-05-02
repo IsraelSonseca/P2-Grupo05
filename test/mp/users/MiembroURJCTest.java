@@ -192,7 +192,7 @@ public class MiembroURJCTest {
         Notificacion n = new Notificacion("Le ha llegado una notificacion de este subforo");
         MiembroURJC usuario = new MiembroURJC("Allan","Cobb","Nickname","123","unemail@urjc.es");
         usuario.recibirNotificacion(n);
-        assertEquals(usuario.getNumNotificaciones(),1);
+        assertEquals(usuario.getNumNotificaciones(),1); /** Solo se ha añadido una notificacion, asique la lista tiene que tener de longitud 1**/
     }
 
     @Test
