@@ -138,15 +138,18 @@ public class SubForoTest {
     @Test
     public void eliminarTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
+        int i = subforo.getId();
         subforo.eliminar();
-        assertEquals(subforo, null);
-        //el metodo eliminar lo que hace es reducir en 1 la variable contador, no elimina completamente el subforo, por lo tanto al no poder acceder a este variable como comparamos
+        SubForo subforo2 = new SubForo("Otra asignatura");
+        int k = subforo2.getId();
+        assertEquals(i, k);
     }
 
     @Test
     public void testToStringTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        String a = "SubForo 1 => Metodologia de la programacion";
+        int i = subforo.getId();
+        String a = "SubForo " + i + " => Metodologia de la programacion";
         assertEquals(subforo.toString(),a);
     }
 
