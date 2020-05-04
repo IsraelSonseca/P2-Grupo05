@@ -7,6 +7,7 @@
  - [Requirements](#Requirements)
  - [Class UML Diagram](#Class-UML-Diagram)
  - [Funcionamiento Interfaz Sistema implementada por REDDITURJC](#INTERFAZ)
+ - [Pruebas Unitarias](#Pruebas-unitarias)
 
 
 
@@ -40,3 +41,5 @@ RedditURJC
 
 ## INTERFAZ ##
 [Funcionamiento Interfaz Sistema implementada por REDDITURJC](./doc/memoria.pdf)
+
+## PRUEBAS UNITARIAS ##
