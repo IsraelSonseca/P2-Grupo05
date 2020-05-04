@@ -151,14 +151,9 @@ public class MiembroURJCTest {
         MiembroURJC usuario = new MiembroURJC("Allan","Cobb","Nickname","123","unemail@urjc.es");
         usuario.penalizar();
         assertTrue(usuario.estaPenalizado());
-        Penalizacion p = usuario.getPenalizacion();
-        assertTrue(p.siguePenalizando());
         usuario.despenalizarUsuario();
-        p = usuario.getPenalizacion();
-        //assertFalse(p.siguePenalizando());
-        assertNull(usuario.getPenalizacion()); /** Hay problemas con este metodo. Si se quita la penalizacion,
-                                                *  no se puede llamar a esta funcion al dar error java.lang.NullPointerException, es decir,
-                                                * si se elimina la penalizacion, no se puede comprobar si sigue penalizado (a través de este método)**/
+        assertFalse(usuario.estaPenalizado());
+        assertNull(usuario.getPenalizacion()); 
     }
 
     @Test
