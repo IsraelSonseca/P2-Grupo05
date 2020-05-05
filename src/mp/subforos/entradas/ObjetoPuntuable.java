@@ -48,16 +48,8 @@ public class ObjetoPuntuable implements Serializable, Comparable<ObjetoPuntuable
         return user;
     }
 
-    public void setUser(MiembroURJC user) {
-        this.user = user;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public HashMap<Integer, Comentario> getComentarios() {

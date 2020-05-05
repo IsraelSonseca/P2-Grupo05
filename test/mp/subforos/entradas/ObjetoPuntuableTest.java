@@ -1,5 +1,7 @@
 package mp.subforos.entradas;
 
+import mp.users.Alumno;
+import mp.users.MiembroURJC;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -8,26 +10,36 @@ public class ObjetoPuntuableTest {
 
     @Test
     public void getPuntosTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        int puntos = 10;
+        ObjetoPuntuable objeto = new ObjetoPuntuable(puntos,isra);
+        assertEquals(puntos,objeto.getPuntos());
     }
 
     @Test
     public void setPuntosTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        int puntos = 10;
+        ObjetoPuntuable objeto = new ObjetoPuntuable(0,isra);
+        objeto.setPuntos(puntos);
+        assertEquals(puntos,objeto.getPuntos());
     }
 
     @Test
     public void getUserTest() {
-    }
-
-    @Test
-    public void setUserTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        int puntos = 10;
+        ObjetoPuntuable objeto = new ObjetoPuntuable(puntos,isra);
+        assertEquals(isra,objeto.getUser());
     }
 
     @Test
     public void getIdTest() {
-    }
-
-    @Test
-    public void setIdTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        int puntos = 10;
+        ObjetoPuntuable objeto1 = new ObjetoPuntuable(puntos,isra);
+        ObjetoPuntuable objeto2 = new ObjetoPuntuable(puntos,isra);
+        assertEquals(objeto1.getId()+1,objeto2.getId());
     }
 
     @Test
