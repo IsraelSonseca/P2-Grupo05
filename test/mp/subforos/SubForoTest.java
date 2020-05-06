@@ -1,5 +1,6 @@
 package mp.subforos;
 
+import mp.exceptions.Result;
 import mp.exceptions.crearEntrada.EntradaCreada;
 import mp.exceptions.crearEntrada.EntradaYaExistente;
 import mp.exceptions.suscripciones.NoSucritoAlForo;
@@ -57,10 +58,7 @@ public class SubForoTest {
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         try {
             subforo.addEntrada(entrada);
-        } catch (EntradaYaExistente entradaYaExistente) {
-            entradaYaExistente.printStackTrace();
-        } catch (EntradaCreada entradaCreada) {
-            entradaCreada.printStackTrace();
+        } catch (Result r) {
         }
         HashMap<Integer, Entrada> entradas = subforo.getEntradas();
         assertEquals(entradas.values().size(),1);
@@ -73,10 +71,7 @@ public class SubForoTest {
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         try {
             subforo.addEntrada(entrada);
-        } catch (EntradaYaExistente entradaYaExistente) {
-            entradaYaExistente.printStackTrace();
-        } catch (EntradaCreada entradaCreada) {
-            entradaCreada.printStackTrace();
+        } catch (Result r) {
         }
         HashMap<Integer, Entrada> entradas = subforo.getEntradas();
         Entrada entradamodificada = new Entrada("titulo modificado","texto",israel,subforo);
@@ -92,10 +87,7 @@ public class SubForoTest {
         MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         try {
             subforo.anadirSubscriptor(israel);
-        } catch (SuscriptorYaExistente suscriptorYaExistente) {
-            suscriptorYaExistente.printStackTrace();
-        } catch (SuscripcionActivada suscripcionActivada) {
-            suscripcionActivada.printStackTrace();
+        } catch (Result r) {
         }
         ArrayList<Subscriptor> suscriptores = subforo.getSuscriptores();
         assertEquals(suscriptores.get(0),israel);
@@ -124,10 +116,7 @@ public class SubForoTest {
         SubForo subforo2 = new SubForo("Suboforo Modificado");
         try {
             subforo2.addEntrada(entrada);
-        } catch (EntradaYaExistente entradaYaExistente) {
-            entradaYaExistente.printStackTrace();
-        } catch (EntradaCreada entradaCreada) {
-            entradaCreada.printStackTrace();
+        } catch (Result r) {
         }
         HashMap<Integer, Entrada> entradas = subforo2.getEntradas();
         entradas.values();
@@ -159,10 +148,7 @@ public class SubForoTest {
         SubForo subforo = new SubForo("Metodologia de la programacion");
         try {
             subforo.anadirSubscriptor(israel);
-        } catch (SuscriptorYaExistente suscriptorYaExistente) {
-            suscriptorYaExistente.printStackTrace();
-        } catch (SuscripcionActivada suscripcionActivada) {
-            suscripcionActivada.printStackTrace();
+        } catch (Result r) {
         }
         ArrayList<Subscriptor> suscriptores = subforo.getSuscriptores();
         assertEquals(suscriptores.size(),1);
@@ -174,17 +160,11 @@ public class SubForoTest {
         SubForo subforo = new SubForo("Metodologia de la programacion");
         try {
             subforo.anadirSubscriptor(israel);
-        } catch (SuscriptorYaExistente suscriptorYaExistente) {
-            suscriptorYaExistente.printStackTrace();
-        } catch (SuscripcionActivada suscripcionActivada) {
-            suscripcionActivada.printStackTrace();
+        } catch (Result r) {
         }
         try {
             subforo.quitarSuscriptor(israel);
-        } catch (UsuarioDadoDeBaja usuarioDadoDeBaja) {
-            usuarioDadoDeBaja.printStackTrace();
-        } catch (NoSucritoAlForo noSucritoAlForo) {
-            noSucritoAlForo.printStackTrace();
+        } catch (Result r) {
         }
         ArrayList<Subscriptor> suscriptores = subforo.getSuscriptores();
         assertEquals(suscriptores.size(),0);

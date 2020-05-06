@@ -1,8 +1,14 @@
 package mp.subforos.entradas;
 
+import mp.exceptions.Result;
+import mp.exceptions.comentario.ComentarioCreado;
+import mp.exceptions.comentario.ComentarioYaExistente;
+import mp.subforos.entradas.opiniones.Comentario;
 import mp.users.Alumno;
 import mp.users.MiembroURJC;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -44,10 +50,27 @@ public class ObjetoPuntuableTest {
 
     @Test
     public void getComentariosTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        ObjetoPuntuable objeto1 = new ObjetoPuntuable(0,isra);
+        Comentario comen = new Comentario("txtComent",isra);
+        try {
+            objeto1.addComentario(comen);
+        } catch (Result r) {
+        }
+        assertEquals(1,objeto1.getComentarios().size());
+        assertTrue(objeto1.getComentarios().containsValue(comen));
     }
 
     @Test
     public void setComentariosTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        ObjetoPuntuable objeto1 = new ObjetoPuntuable(0,isra);
+        Comentario comen = new Comentario("txtComent",isra);
+        HashMap<Integer, Comentario> comentarios=new HashMap<>();
+        comentarios.put(comen.getId(),comen);
+        objeto1.setComentarios(comentarios);
+        assertEquals(1,objeto1.getComentarios().size());
+        assertTrue(objeto1.getComentarios().containsValue(comen));
     }
 
     @Test
@@ -56,6 +79,16 @@ public class ObjetoPuntuableTest {
 
     @Test
     public void addComentarioTest() {
+        MiembroURJC isra=new Alumno("a","b","c","12345","a@alumnos.urjc.es");
+        ObjetoPuntuable objeto1 = new ObjetoPuntuable(0,isra);
+        Comentario comen = new Comentario("txtComent",isra);
+        assertEquals(0,objeto1.getComentarios().size());
+        try {
+            objeto1.addComentario(comen);
+        } catch (Result r) {
+        }
+        assertEquals(1,objeto1.getComentarios().size());
+        assertTrue(objeto1.getComentarios().containsValue(comen));
     }
 
     @Test

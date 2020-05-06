@@ -112,7 +112,6 @@ public class ObjetoPuntuable implements Serializable, Comparable<ObjetoPuntuable
 
     public void eliminar() {
         contador--;
-
     }
 
     @Override

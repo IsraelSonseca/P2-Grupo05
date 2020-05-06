@@ -1,5 +1,6 @@
 package mp.admin;
 
+import mp.exceptions.Result;
 import mp.exceptions.logIn.AdminIncorrectPassword;
 import mp.exceptions.logIn.AdminLogedCorrect;
 import mp.exceptions.logIn.AdminWasLoged;
@@ -33,12 +34,7 @@ public class AdministradorTest {
         Administrador admin = new Administrador();
         try {
             admin.logIn("11111");
-        } catch (AdminLogedCorrect adminLogedCorrect) {
-            adminLogedCorrect.printStackTrace();
-        } catch (AdminIncorrectPassword adminIncorrectPassword) {
-            adminIncorrectPassword.printStackTrace();
-        } catch (AdminWasLoged adminWasLoged) {
-            adminWasLoged.printStackTrace();
+        } catch (Result r) {
         }
         assertTrue(admin.isLogued());
     }
@@ -48,12 +44,7 @@ public class AdministradorTest {
         Administrador admin = new Administrador();
         try {
             admin.logIn("11111");
-        } catch (AdminLogedCorrect adminLogedCorrect) {
-            adminLogedCorrect.printStackTrace();
-        } catch (AdminIncorrectPassword adminIncorrectPassword) {
-            adminIncorrectPassword.printStackTrace();
-        } catch (AdminWasLoged adminWasLoged) {
-            adminWasLoged.printStackTrace();
+        } catch (Result r) {
         }
         assertTrue(admin.isLogued());
     }
@@ -63,19 +54,11 @@ public class AdministradorTest {
         Administrador admin = new Administrador();
         try {
             admin.logIn("11111");
-        } catch (AdminLogedCorrect adminLogedCorrect) {
-            adminLogedCorrect.printStackTrace();
-        } catch (AdminIncorrectPassword adminIncorrectPassword) {
-            adminIncorrectPassword.printStackTrace();
-        } catch (AdminWasLoged adminWasLoged) {
-            adminWasLoged.printStackTrace();
+        } catch (Result r) {
         }
         try {
             admin.logOut();
-        } catch (AdminCierreSesion adminCierreSesion) {
-            adminCierreSesion.printStackTrace();
-        } catch (AdminSesionNoIniciada adminSesionNoIniciada) {
-            adminSesionNoIniciada.printStackTrace();
+        } catch (Result r) {
         }
         assertFalse(admin.isLogued());
     }
