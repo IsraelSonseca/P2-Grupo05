@@ -20,32 +20,111 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/mp/RedditURJCTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/admin/AdministradorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/penalizaciones/PenalizacionTest (2).java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/SubForoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/EntradaGenericaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/EntradaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/EstadoEntradaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/opiniones/ComentarioTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/opiniones/EstadoValoracionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/opiniones/VotacionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/users/MiembroURJCTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp/users/NotificacionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/RedditURJCTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/admin/AdministradorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/penalizaciones/PenalizacionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/SubForoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/EntradaGenericaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/EntradaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/EstadoEntradaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/ObjetoPuntuableTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/ComentarioTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/EstadoValoracionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/subforos/entradas/opiniones/VotacionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/users/MiembroURJCTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mp/users/NotificacionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/META-INF/-P2-Grupo05.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/DespenalizarUsuariosSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazadaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidadaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradasRevisadas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/UsuarioDespenalizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/UsuarioSinPenalizaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/VerEntradasPendientes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/VerEntradasPendientesSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinObjetoPuntuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioCreado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/CrearEntradaSinForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/CrearEntradaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaCreada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificacionEntradaCorrecta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaAjena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaNoExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/NuevoContenido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/NuevoContenidoNoContemplado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/VerEntradas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminIncorrectPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminLogedCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminWasLoged.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/IncorrectPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/LogedCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/SesionYaIniciada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/UsuarioNoExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/UsuarioPenalizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/AdminCierreSesion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/AdminSesionNoIniciada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/CierreSesion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/SesionNoIniciada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/EmailIncorrecto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/EmailPreviamenteRegistrado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/NickYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/RegistroCorrecto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/sistem/VerSistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/sistem/VerSistemaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/CrearSubforoSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/SubForoYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/SubforoCreado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/VerSubForoSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/VerSubforo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/DarseBajaSinForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/DarseBajaSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/ForosSuscritos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/NoSucritoAlForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/NoSuscritoANingunFor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SubforosNoDisponibles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscribirSinForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscribirSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscripcionActivada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscriptorYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/UsuarioDadoDeBaja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValoracionNoContemplada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionCreada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionYaExistente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotarSinObjetoPuntuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotarSinPermiso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/penalizaciones/Penalizacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Subject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/Entrada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/EntradaGenerica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/EstadoEntrada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/ObjetoPuntuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/contenido/Ejercicio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/contenido/Encuesta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/contenido/TextoPlano.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/opiniones/Comentario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/opiniones/EstadoValoracion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/opiniones/Votacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Alumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Notificacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Profesor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Subscriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/META-INF/-P2-Grupo05.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/RedditURJCTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/admin/AdministradorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/penalizaciones/PenalizacionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/SubForoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/EntradaGenericaTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/EntradaTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/EstadoEntradaTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/ObjetoPuntuableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/opiniones/ComentarioTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/opiniones/EstadoValoracionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/opiniones/VotacionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/users/MiembroURJCTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/users/NotificacionTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +205,7 @@
       <recent name="mp.exceptions.admin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in -P2-Grupo05">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.general.Main" />
       <module name="-P2-Grupo05" />
@@ -147,8 +226,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in -P2-Grupo05" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in -P2-Grupo05" />
       </list>
     </recent_temporary>
   </component>
