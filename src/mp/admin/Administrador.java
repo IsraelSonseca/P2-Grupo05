@@ -35,9 +35,14 @@ public class Administrador implements Serializable {
         this.cont = cont;
     }
 
+    public LinkedList<EntradaGenerica> getEntradasAValidar() {
+        return entradasAValidar;
+    }
+
     /**
      *
      */
+
     public boolean validarEntrada() throws EntradaValidada, EntradaValidadaSinPermiso, EntradasRevisadas {
         // TODO - implement Administrador.validarEntrada
         if (this.isLogued()) {

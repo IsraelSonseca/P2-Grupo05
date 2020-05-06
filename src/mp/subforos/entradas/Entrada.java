@@ -21,6 +21,14 @@ public class Entrada extends EntradaGenerica {
         this.contenido= new ArrayList<>();
     }
 
+    public ArrayList<EntradaGenerica> getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(ArrayList<EntradaGenerica> contenido) {
+        this.contenido = contenido;
+    }
+
     public SubForo getSubforo() {
         return subforo;
     }
@@ -31,10 +39,6 @@ public class Entrada extends EntradaGenerica {
 
     @Override
     public String toString() {
-        String contenido=null;
-        for (EntradaGenerica elem:this.contenido){
-            contenido+="\n"+elem.toString();
-        }
         return "Entrada" + this.getId() + " " + this.getUser().getNick() + " => TÍTULO: '" + this.getTitulo() + '\'' + ", TEXTO: '" + this.getTexto() + '\'';
     }
 

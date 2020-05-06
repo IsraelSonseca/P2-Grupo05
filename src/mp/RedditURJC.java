@@ -54,9 +54,25 @@ public class RedditURJC implements Serializable, Sistema {
         return instancia;
     }
 
+    public static RedditURJC getInstancia() {
+        return instancia;
+    }
+
     @Override
     public void destroy() {
         instancia=null;
+    }
+
+    public Administrador getAdmin() {
+        return admin;
+    }
+
+    public MiembroURJC getUserLogued() {
+        return userLogued;
+    }
+
+    public HashMap<String, MiembroURJC> getUsuarios() {
+        return usuarios;
     }
 
     RedditURJC() {
