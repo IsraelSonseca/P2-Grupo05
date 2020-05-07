@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/AllTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaseDeDatos.obj" beforeDir="false" afterPath="$PROJECT_DIR$/BaseDeDatos.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +31,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -103,11 +102,20 @@
       <recent name="mp.exceptions.admin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ObjetoPuntuableTest">
+  <component name="RunManager" selected="JUnit.All in -P2-Grupo05">
     <configuration name="All in -P2-Grupo05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="-P2-Grupo05" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="-P2-Grupo05" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AllTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,29 +167,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObjetoPuntuableTest.valorarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="-P2-Grupo05" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mp.subforos.entradas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mp.subforos.entradas" />
-      <option name="MAIN_CLASS_NAME" value="mp.subforos.entradas.ObjetoPuntuableTest" />
-      <option name="METHOD_NAME" value="valorarTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in -P2-Grupo05" />
+        <item itemvalue="JUnit.AllTest" />
         <item itemvalue="JUnit.ObjetoPuntuableTest" />
         <item itemvalue="JUnit.ObjetoPuntuableTest.devuelveObjetoPuntuableTest" />
         <item itemvalue="JUnit.ObjetoPuntuableTest.contieneObjetoPuntuableTest" />
-        <item itemvalue="JUnit.All in -P2-Grupo05" />
-        <item itemvalue="JUnit.ObjetoPuntuableTest.valorarTest" />
       </list>
     </recent_temporary>
   </component>
@@ -238,22 +230,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="561" y="299" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587741327914" />
-    <state width="1493" height="164" key="GridCell.Tab.0.bottom" timestamp="1588842830722">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1588843631774">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588842830722" />
-    <state width="1493" height="164" key="GridCell.Tab.0.center" timestamp="1588842830721">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588843631774" />
+    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1588843631774">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588842830721" />
-    <state width="1493" height="164" key="GridCell.Tab.0.left" timestamp="1588842830721">
+    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588843631774" />
+    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1588843631774">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588842830721" />
-    <state width="1493" height="164" key="GridCell.Tab.0.right" timestamp="1588842830722">
+    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588843631774" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1588843631774">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588842830722" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588843631774" />
     <state width="1493" height="194" key="GridCell.Tab.1.bottom" timestamp="1588842596794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -328,7 +320,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java</url>
-          <line>169</line>
+          <line>177</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
