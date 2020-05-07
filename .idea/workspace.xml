@@ -20,111 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80dddee5-8072-4502-9f8b-86c66c2445f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/META-INF/-P2-Grupo05.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Demostrador2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/com/general/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/RedditURJC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/Sistema.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/admin/Administrador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/DespenalizarUsuariosSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaRechazadaSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradaValidadaSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/EntradasRevisadas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/UsuarioDespenalizado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/UsuarioSinPenalizaciones.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/VerEntradasPendientes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/admin/VerEntradasPendientesSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinObjetoPuntuable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioCreado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/comentario/ComentarioYaExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/CrearEntradaSinForo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/CrearEntradaSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaCreada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/EntradaYaExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificacionEntradaCorrecta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaAjena.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaNoExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/ModificarEntradaSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/NuevoContenido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/NuevoContenidoNoContemplado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/crearEntrada/VerEntradas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminIncorrectPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminLogedCorrect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/AdminWasLoged.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/IncorrectPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/LogedCorrect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/SesionYaIniciada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/UsuarioNoExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logIn/UsuarioPenalizado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/AdminCierreSesion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/AdminSesionNoIniciada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/CierreSesion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/logOut/SesionNoIniciada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/EmailIncorrecto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/EmailPreviamenteRegistrado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/NickYaExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/resgister/RegistroCorrecto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/sistem/VerSistema.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/sistem/VerSistemaSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/CrearSubforoSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/SubForoYaExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/SubforoCreado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/VerSubForoSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/subForo/VerSubforo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/DarseBajaSinForo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/DarseBajaSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/ForosSuscritos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/NoSucritoAlForo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/NoSuscritoANingunFor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SubforosNoDisponibles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscribirSinForo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscribirSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscripcionActivada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/SuscriptorYaExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/suscripciones/UsuarioDadoDeBaja.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValoracionNoContemplada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/ValorarObjetoPuntuablePropio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionCreada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotacionYaExistente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotarSinObjetoPuntuable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/exceptions/votaciones/VotarSinPermiso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/penalizaciones/Penalizacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/SubForo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/Subject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/Entrada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/EntradaGenerica.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/EstadoEntrada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/ObjetoPuntuable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/contenido/Ejercicio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/contenido/Encuesta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/contenido/TextoPlano.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/opiniones/Comentario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/opiniones/EstadoValoracion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/subforos/entradas/opiniones/Votacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Alumno.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/MiembroURJC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Notificacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Profesor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/-P2-Grupo05/mp/users/Subscriptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/META-INF/-P2-Grupo05.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/RedditURJCTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/admin/AdministradorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/penalizaciones/PenalizacionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/SubForoTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/EntradaGenericaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/EntradaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/EstadoEntradaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/ObjetoPuntuableTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/opiniones/ComentarioTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/opiniones/EstadoValoracionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/subforos/entradas/opiniones/VotacionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/users/MiembroURJCTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/-P2-Grupo05/mp/users/NotificacionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaseDeDatos.obj" beforeDir="false" afterPath="$PROJECT_DIR$/BaseDeDatos.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,17 +103,7 @@
       <recent name="mp.exceptions.admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.general.Main" />
-      <module name="-P2-Grupo05" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ObjetoPuntuableTest">
     <configuration name="All in -P2-Grupo05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="-P2-Grupo05" />
       <option name="PACKAGE_NAME" value="" />
@@ -224,10 +112,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ObjetoPuntuableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="-P2-Grupo05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mp.subforos.entradas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mp.subforos.entradas" />
+      <option name="MAIN_CLASS_NAME" value="mp.subforos.entradas.ObjetoPuntuableTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjetoPuntuableTest.contieneObjetoPuntuableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="-P2-Grupo05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mp.subforos.entradas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mp.subforos.entradas" />
+      <option name="MAIN_CLASS_NAME" value="mp.subforos.entradas.ObjetoPuntuableTest" />
+      <option name="METHOD_NAME" value="contieneObjetoPuntuableTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjetoPuntuableTest.devuelveObjetoPuntuableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="-P2-Grupo05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mp.subforos.entradas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mp.subforos.entradas" />
+      <option name="MAIN_CLASS_NAME" value="mp.subforos.entradas.ObjetoPuntuableTest" />
+      <option name="METHOD_NAME" value="devuelveObjetoPuntuableTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjetoPuntuableTest.valorarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="-P2-Grupo05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mp.subforos.entradas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mp.subforos.entradas" />
+      <option name="MAIN_CLASS_NAME" value="mp.subforos.entradas.ObjetoPuntuableTest" />
+      <option name="METHOD_NAME" value="valorarTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ObjetoPuntuableTest" />
+        <item itemvalue="JUnit.ObjetoPuntuableTest.devuelveObjetoPuntuableTest" />
+        <item itemvalue="JUnit.ObjetoPuntuableTest.contieneObjetoPuntuableTest" />
         <item itemvalue="JUnit.All in -P2-Grupo05" />
+        <item itemvalue="JUnit.ObjetoPuntuableTest.valorarTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,38 +238,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="561" y="299" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587741327914" />
-    <state width="1493" height="583" key="GridCell.Tab.0.bottom" timestamp="1588244946906">
+    <state width="1493" height="164" key="GridCell.Tab.0.bottom" timestamp="1588842830722">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="583" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588244946906" />
-    <state width="1493" height="583" key="GridCell.Tab.0.center" timestamp="1588244946906">
+    <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588842830722" />
+    <state width="1493" height="164" key="GridCell.Tab.0.center" timestamp="1588842830721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="583" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588244946906" />
-    <state width="1493" height="583" key="GridCell.Tab.0.left" timestamp="1588244946906">
+    <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588842830721" />
+    <state width="1493" height="164" key="GridCell.Tab.0.left" timestamp="1588842830721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="583" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588244946906" />
-    <state width="1493" height="583" key="GridCell.Tab.0.right" timestamp="1588244946906">
+    <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588842830721" />
+    <state width="1493" height="164" key="GridCell.Tab.0.right" timestamp="1588842830722">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="583" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588244946906" />
-    <state width="1493" height="513" key="GridCell.Tab.1.bottom" timestamp="1587840538876">
+    <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588842830722" />
+    <state width="1493" height="194" key="GridCell.Tab.1.bottom" timestamp="1588842596794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="513" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587840538876" />
-    <state width="1493" height="513" key="GridCell.Tab.1.center" timestamp="1587840538876">
+    <state width="1493" height="194" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588842596794" />
+    <state width="1493" height="194" key="GridCell.Tab.1.center" timestamp="1588842596793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="513" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587840538876" />
-    <state width="1493" height="513" key="GridCell.Tab.1.left" timestamp="1587840538876">
+    <state width="1493" height="194" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588842596793" />
+    <state width="1493" height="194" key="GridCell.Tab.1.left" timestamp="1588842596793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="513" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587840538876" />
-    <state width="1493" height="513" key="GridCell.Tab.1.right" timestamp="1587840538876">
+    <state width="1493" height="194" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588842596793" />
+    <state width="1493" height="194" key="GridCell.Tab.1.right" timestamp="1588842596793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="513" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587840538876" />
+    <state width="1493" height="194" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588842596793" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1588353192009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -332,6 +286,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1016" y="129" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1588244717613" />
+    <state x="611" y="170" key="refactoring.ChangeSignatureDialog" timestamp="1588841383630">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="611" y="170" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1588841383630" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1588241383753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -367,6 +325,11 @@
           <url>file://$PROJECT_DIR$/src/com/general/Demostrador1.java</url>
           <line>729</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/mp/subforos/entradas/ObjetoPuntuableTest.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
