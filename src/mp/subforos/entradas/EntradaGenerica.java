@@ -56,10 +56,6 @@ public abstract class EntradaGenerica extends ObjetoPuntuable implements Seriali
         return entradaRaiz;
     }
 
-    public void setEntradaRaiz(Entrada entradaRaiz) {
-        this.entradaRaiz = entradaRaiz;
-    }
-
     public void validar() {
         // TODO - implement Entrada.validar
         this.setEstado(EstadoEntrada.validada);
