@@ -40,6 +40,7 @@ RedditURJC
 <img src="./imagenes/classDiagram.png">
 
 ## INTERFAZ ##
-[Funcionamiento Interfaz Sistema implementada por REDDITURJC](./doc/memoria.pdf)
+[Funcionamiento Interfaz Sistema implementada por REDDITURJC (Memoria 2)](./doc/memoria.pdf)
 
 ## PRUEBAS UNITARIAS ##
+[Pruebas UNITARIAS (Memoria 3)](./doc/memoria3.pdf)
