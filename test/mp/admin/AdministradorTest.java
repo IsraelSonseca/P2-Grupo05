@@ -22,7 +22,7 @@ public class AdministradorTest {
     @Test
     public void anadirEntAValidarTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         Administrador admin = new Administrador();
         admin.anadirEntAValidar(entrada);

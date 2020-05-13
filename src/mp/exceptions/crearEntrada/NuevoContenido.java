@@ -5,6 +5,6 @@ import mp.subforos.entradas.EntradaGenerica;
 
 public class NuevoContenido extends Result {
     public NuevoContenido(EntradaGenerica entrada, EntradaGenerica nuevo) {
-        super("Nuevo contenido: "+nuevo.toString()+" añadido correctamente a la entrada: "+entrada.getId()+" "+entrada.getTitulo()+"NUEVO");
+        super("Nuevo contenido: "+nuevo.toString()+" anadido correctamente a la entrada: "+entrada.getId()+" "+entrada.getTitulo()+"NUEVO");
     }
 }

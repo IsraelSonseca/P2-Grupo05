@@ -14,8 +14,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // write your code here
-        File f=new File("BaseDeDatos.obj");
-        if (f.exists()){
+        File f = new File("BaseDeDatos.obj");
+        if (f.exists()) {
             f.delete();
         }
         Demostrador1 demostrador1 = new Demostrador1();

@@ -13,7 +13,7 @@ public class EntradaTest {
 
     @Test
     public void getSubforoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("titulo","texto",israel,foro);
         assertEquals(foro,entrada.getSubforo());
@@ -21,7 +21,7 @@ public class EntradaTest {
 
     @Test
     public void setSubforoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("titulo","texto",israel,foro);
         SubForo foroModificado = new SubForo("AsignaturaMPmODIFICACION");
@@ -31,7 +31,7 @@ public class EntradaTest {
 
     @Test
     public void anadirElementoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("titulo","texto",israel,foro);
         EntradaGenerica txt = new TextoPlano("tituloTXTPlano","textoTXTPlano",israel,entrada);
@@ -45,7 +45,7 @@ public class EntradaTest {
 
     @Test
     public void testToStringTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("titulo","texto",israel,foro);
         String s = "Entrada" + entrada.getId() + " " + entrada.getUser().getNick() + " => TÍTULO: '" + entrada.getTitulo() + '\'' + ", TEXTO: '" + entrada.getTexto() + '\'';

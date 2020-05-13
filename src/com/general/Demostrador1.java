@@ -20,22 +20,22 @@ public class Demostrador1 {
 
         //Registro de Usuarios
         try {//email malo
-            redditURJC.registrarUsuario("Israel", "Peñalver Sánchez", "IsraelSonseca", "12345", "i.penalver.2016@s");
+            redditURJC.registrarUsuario("Israel", "Penalver Sánchez", "IsraelSonseca", "12345", "i.penalver.2016@s");
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
         try {//registro alumno correcto
-            redditURJC.registrarUsuario("Israel", "Peñalver Sánchez", "IsraelSonseca", "12345", "i.penalver.2016@alumnos.urjc.es");
+            redditURJC.registrarUsuario("Israel", "Penalver Sánchez", "IsraelSonseca", "12345", "i.penalver.2016@alumnos.urjc.es");
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
         try {//email previamente registrado
-            redditURJC.registrarUsuario("Israel", "Peñalver Sánchez", "IsraelSonsec", "12345", "i.penalver.2016@alumnos.urjc.es");
+            redditURJC.registrarUsuario("Israel", "Penalver Sánchez", "IsraelSonsec", "12345", "i.penalver.2016@alumnos.urjc.es");
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
         try {//nick en uso
-            redditURJC.registrarUsuario("Israel", "Peñalver Sánchez", "IsraelSonseca", "12345", "a.penalver.2016@alumnos.urjc.es");
+            redditURJC.registrarUsuario("Israel", "Penalver Sánchez", "IsraelSonseca", "12345", "a.penalver.2016@alumnos.urjc.es");
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
@@ -52,7 +52,7 @@ public class Demostrador1 {
         } catch (Result result) {
             System.out.println(result.getMessage());
         }
-        try {//2 contraseña incorrecta
+        try {//2 contrasena incorrecta
             redditURJC.login("IsraelSonseca", "123");
         } catch (Result result) {
             System.out.println(result.getMessage());
@@ -379,7 +379,7 @@ public class Demostrador1 {
         }
 
 
-        //1añadir subscriptor, 2 usuario no existe, 3 foro no existe, 4 ya estaba subscrito
+        //1anadir subscriptor, 2 usuario no existe, 3 foro no existe, 4 ya estaba subscrito
         //SuscribirSinPermiso, SuscripcionActivada, SuscriptorYaExistente, SuscribirSinForo
         try {//1SuscribirSinPermiso
             redditURJC.logout();
@@ -703,15 +703,15 @@ public class Demostrador1 {
         } catch (Result result) {
             System.out.println(result.getMessage());
         } try {//5NuevoContenido texto plano
-            redditURJC.anadiraEntrada("Titulo del texto plano añadido","Texto del texto plano añadido",1,"TextoPlano");
+            redditURJC.anadiraEntrada("Titulo del texto plano anadido","Texto del texto plano anadido",1,"TextoPlano");
         } catch (Result result) {
             System.out.println(result.getMessage());
         } try {//5NuevoContenido encuesta
-            redditURJC.anadiraEntrada("Titulo de la encuesta añadida","Texto de la encuesta añadida",1,"Encuesta");
+            redditURJC.anadiraEntrada("Titulo de la encuesta anadida","Texto de la encuesta anadida",1,"Encuesta");
         } catch (Result result) {
             System.out.println(result.getMessage());
         } try {//5NuevoContenido ejercicio
-            redditURJC.anadiraEntrada("Titulo del ejercicio añadido","Texto del ejercicio añadido",1,"Ejercicio");
+            redditURJC.anadiraEntrada("Titulo del ejercicio anadido","Texto del ejercicio anadido",1,"Ejercicio");
         } catch (Result result) {
             System.out.println(result.getMessage());
         }

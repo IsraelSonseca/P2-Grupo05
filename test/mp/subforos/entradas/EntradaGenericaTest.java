@@ -14,7 +14,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void getTituloTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         assertEquals("Entrada para probar la genérica",entrada.getTitulo());
@@ -22,7 +22,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void setTituloTest() {
-            MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+            MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
             SubForo foro = new SubForo("AsignaturaMP");
             Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
             entrada.setTitulo("Este es el titulo nuevo para la entrada");
@@ -31,7 +31,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void getTextoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         assertEquals("Esta es una entrada para probar si funciona la entrada genérica",entrada.getTexto());
@@ -39,7 +39,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void setTextoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         entrada.setTexto("Nuevo texto para la entrada");
@@ -48,7 +48,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void getEstadoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         entrada.setEstado(creada);
@@ -57,7 +57,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void setEstadoTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         entrada.setEstado(validada);
@@ -66,7 +66,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void getEntradaRaizTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entradaraiz = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         assertEquals(entradaraiz,entradaraiz.getEntradaRaiz());
@@ -74,7 +74,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void validarTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         entrada.setEstado(validada);
@@ -83,7 +83,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void rechazarTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         entrada.setEstado(validada);
@@ -93,7 +93,7 @@ public class EntradaGenericaTest {
 
     @Test
     public void msgNotificacionTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo foro = new SubForo("AsignaturaMP");
         Entrada entrada = new Entrada("Entrada para probar la genérica","Esta es una entrada para probar si funciona la entrada genérica",israel,foro);
         String comparacion = "Nuevo "+entrada.getClass()+": " + entrada.getTitulo();
