@@ -1,5 +1,7 @@
 #  P2-Grupo05
+<img src="./imagenes/repository-open-graph-template.png">
  RedditURJC Practica2 MetodologíaDeLaProgramación
+ 
 # RedditURJC
  - [Name of the application](#Name-of-the-application)
  - [Members of the development team](#Members-of-the-development-team)
