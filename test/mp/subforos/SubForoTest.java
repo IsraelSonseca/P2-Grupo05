@@ -54,7 +54,7 @@ public class SubForoTest {
     @Test
     public void getEntradasTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         try {
             subforo.addEntrada(entrada);
@@ -67,7 +67,7 @@ public class SubForoTest {
     @Test
     public void setEntradasTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         try {
             subforo.addEntrada(entrada);
@@ -84,7 +84,7 @@ public class SubForoTest {
     @Test
     public void getSuscriptoresTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         try {
             subforo.anadirSubscriptor(israel);
         } catch (Result r) {
@@ -111,7 +111,7 @@ public class SubForoTest {
     @Test
     public void addEntradaTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         SubForo subforo2 = new SubForo("Suboforo Modificado");
         try {
@@ -144,7 +144,7 @@ public class SubForoTest {
 
     @Test
     public void anadirSubscriptorTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo subforo = new SubForo("Metodologia de la programacion");
         try {
             subforo.anadirSubscriptor(israel);
@@ -156,7 +156,7 @@ public class SubForoTest {
 
     @Test
     public void quitarSuscriptorTest() {
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         SubForo subforo = new SubForo("Metodologia de la programacion");
         try {
             subforo.anadirSubscriptor(israel);
@@ -173,7 +173,7 @@ public class SubForoTest {
     @Test
     public void generateNotificacionTest() {
         SubForo subforo = new SubForo("Metodologia de la programacion");
-        MiembroURJC israel= new Alumno("Isra","Peñalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
+        MiembroURJC israel= new Alumno("Isra","Penalver","IsraelSonseca","12345","israelsonseca@gmaial.com");
         Entrada entrada = new Entrada("titulo","texto",israel,subforo);
         Notificacion not = subforo.generateNotificacion(entrada);
         ArrayList<Notificacion> notificaciones = new ArrayList<>();

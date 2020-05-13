@@ -13,7 +13,7 @@ public class MiembroURJCTest {
         int k = usuario.getId();
         MiembroURJC usuario2 = new MiembroURJC("nombre2","apellido2","Nick2","1232","unemail@urjc.es");
         int i = usuario2.getId();
-        assertEquals(k+1,i); /**Por cada usuario añadido, se suma uno al id, aunque también sirve si no son iguales**/       
+        assertEquals(k+1,i); /**Por cada usuario anadido, se suma uno al id, aunque también sirve si no son iguales**/
     }
 
     @Test
@@ -142,7 +142,7 @@ public class MiembroURJCTest {
         MiembroURJC usuario = new MiembroURJC("Allan","Cobb","Nickname","123","unemail@urjc.es");
         usuario.penalizar();
         Penalizacion p1 = usuario.getPenalizacion();
-        assertEquals(p1.getFechaInicio().getTime(),p1.getFechaFin().getTime() - 172800000); /**Vemos si añade 2 días a la fecha fin respecto a la fecha ini**/
+        assertEquals(p1.getFechaInicio().getTime(),p1.getFechaFin().getTime() - 172800000); /**Vemos si anade 2 días a la fecha fin respecto a la fecha ini**/
         
     }
 
@@ -176,7 +176,7 @@ public class MiembroURJCTest {
         int k = usuario.getNumNotificaciones();
         usuario.recibirNotificacion(n2);
         int i = usuario.getNumNotificaciones();
-        assertEquals(i,k+1); /** Vemos si se han añadido el numero correcto de notificaciones**/
+        assertEquals(i,k+1); /** Vemos si se han anadido el numero correcto de notificaciones**/
         assertEquals(i,2);
         assertEquals(k,1);
          
@@ -187,7 +187,7 @@ public class MiembroURJCTest {
         Notificacion n = new Notificacion("Le ha llegado una notificacion de este subforo");
         MiembroURJC usuario = new MiembroURJC("Allan","Cobb","Nickname","123","unemail@urjc.es");
         usuario.recibirNotificacion(n);
-        assertEquals(usuario.getNumNotificaciones(),1); /** Solo se ha añadido una notificacion, asique la lista tiene que tener de longitud 1**/
+        assertEquals(usuario.getNumNotificaciones(),1); /** Solo se ha anadido una notificacion, asique la lista tiene que tener de longitud 1**/
     }
 
     @Test
